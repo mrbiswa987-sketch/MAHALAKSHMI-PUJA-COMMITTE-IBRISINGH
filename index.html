@@ -3,162 +3,240 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maa Mahalakshmi Puja Committee</title>
+
 <style>
-:root{--orange:#f58220;--dark:#171717;--green:#168447;--muted:#6b7280;--bg:#f5f6f8}
+:root{
+  --cream:#fbf6eb;
+  --cream2:#f3e7d0;
+  --paper:#fffdf8;
+  --brown:#493323;
+  --brown2:#72533b;
+  --gold:#c58b38;
+  --green:#287447;
+  --red:#a33d32;
+  --yellow:#fff0c2;
+  --border:#e6d8c3;
+  --muted:#817361;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#202124}
-header{background:var(--dark);color:white;padding:25px 18px;border-bottom:4px solid var(--orange)}
-.header-inner,main{max-width:1100px;margin:auto}
-.brand{color:#ffab55;font-size:12px;font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(23px,4vw,35px);margin:12px 0}
-header p{color:#ddd;line-height:1.5}
-main{padding:22px 14px 40px}
-.section-title{margin:27px 0 13px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px}
-.card{background:white;border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin-bottom:12px}
-.card-label,.small{color:var(--muted);font-size:13px}
-.card-value{font-size:26px;font-weight:bold;margin-top:10px}
-.orange{color:var(--orange)}.green{color:var(--green)}
-.note{background:#fff7ed;border:1px solid #fed7aa;padding:13px;border-radius:9px;font-size:13px;line-height:1.6;margin:16px 0}
+body{margin:0;background:var(--cream);color:var(--brown);
+  font-family:Arial,Helvetica,sans-serif}
+header{background:var(--brown);color:#fff8eb;border-bottom:4px solid var(--gold)}
+.header-inner{max-width:1150px;margin:auto;padding:20px 16px}
+.topbar{display:flex;align-items:center;gap:14px}
+.menu-btn{background:transparent;border:1px solid #bba17f;color:white;
+  font-size:25px;padding:7px 12px;cursor:pointer}
+.brand{color:#f1c77c;font-size:11px;letter-spacing:2px;font-weight:bold}
+h1{font-size:clamp(21px,4vw,34px);margin:9px 0}
+header p{margin:5px 0;color:#f1e5d4;font-size:14px}
+main{max-width:1150px;margin:auto;padding:20px 14px 45px}
+h2{font-size:21px;margin:28px 0 13px}
+h3{margin:20px 0 10px}
+.small{font-size:12px;line-height:1.6;color:var(--muted)}
+.note{background:#fff3d9;border:1px solid #e9d0a1;padding:13px;
+  border-radius:10px;font-size:13px;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--border);
+  border-radius:13px;padding:16px;min-width:0;box-shadow:0 3px 10px #49332308}
+.card-label{font-size:12px;color:var(--muted)}
+.card-value{font-size:clamp(21px,3vw,28px);font-weight:bold;margin-top:9px;overflow-wrap:anywhere}
+.gold{color:var(--gold)}.green{color:var(--green)}
 .toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}
-input,select,button{font:inherit;padding:11px;border:1px solid #d1d5db;border-radius:8px}
-input,select{background:white;max-width:100%}
-input{min-width:0;width:100%}
-button{cursor:pointer;background:var(--dark);color:white;border:0;font-weight:bold}
-button.secondary{background:#eee;color:#222}
-button:disabled{opacity:.5;cursor:not-allowed}
+input,select,button{font:inherit;border-radius:8px;padding:11px;
+  border:1px solid var(--border);max-width:100%}
+input,select{background:#fffdf8;color:var(--brown);width:100%;min-width:0}
+button{background:var(--brown);color:white;border:1px solid var(--brown);
+  cursor:pointer;font-weight:bold}
+button:hover{opacity:.9}
+button.light{background:var(--cream2);color:var(--brown);border-color:var(--border)}
+button.gold-btn{background:var(--gold);border-color:var(--gold);color:#fff}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 form{display:grid;gap:10px}
-.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
-.table-wrap{overflow-x:auto;background:white;border:1px solid #e5e7eb;border-radius:12px}
-table{border-collapse:collapse;width:100%;min-width:570px}
-th,td{padding:12px;text-align:left;border-bottom:1px solid #eee;font-size:14px}
-th{background:#fafafa;color:#555}
-.pill{display:inline-block;border-radius:30px;padding:6px 9px;font-size:11px;font-weight:bold;white-space:nowrap}
-.complete{background:#dcfce7;color:#166534}.pending{background:#fef3c7;color:#92400e}
+.table-wrap{overflow-x:auto;background:var(--paper);
+  border:1px solid var(--border);border-radius:11px}
+table{width:100%;border-collapse:collapse;min-width:580px}
+th,td{padding:12px;text-align:left;border-bottom:1px solid var(--border);
+  font-size:13px;vertical-align:top}
+th{background:var(--cream2);color:var(--brown)}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:5px 8px;border-radius:20px;
+  font-size:11px;font-weight:bold;white-space:nowrap}
+.paid{background:#dff2e4;color:#205d37}
+.pending{background:var(--yellow);color:#825c12}
 .hidden{display:none!important}
-.status{padding:10px;border-radius:8px;background:#f3f4f6;margin:10px 0;font-size:13px;white-space:pre-wrap}
-.status.error{background:#fee2e2;color:#991b1b}
-.status.ok{background:#dcfce7;color:#166534}
-footer{text-align:center;color:#777;font-size:12px;padding:22px}
+.status{padding:11px;background:var(--cream2);border-radius:8px;
+  margin:12px 0;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}
+.status.error{background:#fbe4df;color:#8c2d25}
+.status.ok{background:#dff2e4;color:#205d37}
+.drawer-backdrop{position:fixed;inset:0;background:#0008;z-index:9}
+.drawer{position:fixed;top:0;left:0;width:min(300px,85vw);height:100%;
+  background:var(--paper);z-index:10;padding:20px;box-shadow:4px 0 20px #0002;
+  overflow:auto}
+.drawer h3{margin-top:8px}
+.drawer button{width:100%;text-align:left;margin:5px 0}
+.member-detail{margin-top:15px}
+.history-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+@media(max-width:760px){
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .header-inner{padding:16px 12px}
+ main{padding:15px 10px 35px}
+ .card{padding:13px}
+ h2{font-size:19px}
+}
+@media(max-width:430px){
+ .form-grid,.history-grid{grid-template-columns:1fr}
+ .topbar{gap:10px}
+ .brand{letter-spacing:1px}
+}
 </style>
 </head>
 <body>
+
 <header>
  <div class="header-inner">
-  <div class="brand">IBRISINGH • ODISHA</div>
-  <h1>🛕 Maa Mahalakshmi Puja Committee</h1>
-  <p>Unity • Devotion • Transparency</p>
-  <p>Member Contributions & Puja Accounts</p>
+  <div class="topbar">
+   <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+   <div>
+    <div class="brand">IBRISINGH • ODISHA</div>
+    <h1>🛕 Maa Mahalakshmi Puja Committee</h1>
+    <p>Unity • Devotion • Transparency</p>
+   </div>
+  </div>
  </div>
 </header>
 
-<main>
+<div id="drawerBackdrop" class="drawer-backdrop hidden"></div>
+<nav id="drawer" class="drawer hidden" aria-label="Main menu">
+ <h3>☰ Menu</h3>
+ <p class="small">Maa Mahalakshmi Puja Committee</p>
+ <button data-go="home">🏠 Home</button>
+ <button data-go="memberSearch">👥 Members & Payments</button>
+ <button data-go="accounts">📊 Puja Accounts</button>
+ <button data-go="adminSection">🔐 Admin Login</button>
+ <button id="closeMenu" class="light">Close Menu ✕</button>
+</nav>
+
+<main id="home">
  <div class="note">
-  <strong>COMMITTEE ACCOUNT SYSTEM</strong><br>
-  Monthly contribution: ₹200 per member. Year completion requires 12 verified monthly payments. Please verify all entries carefully.
+  <strong>Committee Contribution System</strong><br>
+  Monthly contribution: ₹200. Payment status and totals are calculated from saved records.
+  Payment screenshots are intended for authorised admin access only.
  </div>
 
- <h2 class="section-title">📊 Contribution Overview</h2>
+ <h2>📊 Puja Accounts Overview</h2>
  <section class="cards">
-  <div class="card"><div class="card-label">Monthly Contribution</div><div class="card-value orange">₹200</div><div class="small">Per member / month</div></div>
-  <div class="card"><div class="card-label">Verified Collection</div><div class="card-value" id="collection">₹0</div></div>
-  <div class="card"><div class="card-label">Puja Expenses</div><div class="card-value" id="expenses">₹0</div></div>
-  <div class="card"><div class="card-label">Remaining Balance</div><div class="card-value green" id="balance">₹0</div></div>
+  <div class="card"><div class="card-label">Monthly Contribution</div><div class="card-value gold">₹200</div><div class="small">Per member / month</div></div>
+  <div class="card"><div class="card-label">Verified Collection</div><div id="collection" class="card-value">₹0</div></div>
+  <div class="card"><div class="card-label">Total Expenses</div><div id="expensesTotal" class="card-value">₹0</div></div>
+  <div class="card"><div class="card-label">Remaining Balance</div><div id="balance" class="card-value green">₹0</div></div>
  </section>
 
- <h2 class="section-title">👥 Member Contribution Status</h2>
+ <h2 id="memberSearch">👥 Find Member Payment Details</h2>
+ <p class="small">Search by member name to see the recorded payment history and totals.</p>
  <div class="toolbar">
-  <input id="search" type="search" placeholder="Search member name...">
-  <select id="filter">
-   <option value="all">All Members</option>
-   <option value="complete">🟢 Year Completed</option>
-   <option value="pending">🟡 In Progress</option>
-  </select>
-  <button id="refreshBtn" type="button">↻ Refresh</button>
+  <input id="searchName" type="search" placeholder="Type member name...">
+  <button id="clearSearch" class="light" type="button">Clear</button>
  </div>
- <div class="table-wrap">
-  <table>
-   <thead><tr><th>Member Name</th><th>Paid Months</th><th>Verified Amount</th><th>Annual Status</th></tr></thead>
-   <tbody id="members"><tr><td colspan="4">Loading records...</td></tr></tbody>
-  </table>
- </div>
+ <div id="memberResults"></div>
 
- <h2 class="section-title">🔐 Admin Login</h2>
- <section class="card">
-  <div id="loginArea">
-   <p class="small">Only the authorised committee admin can change records.</p>
-   <form id="loginForm">
-    <input id="email" type="email" autocomplete="username" placeholder="Admin email" required>
-    <input id="password" type="password" autocomplete="current-password" placeholder="Admin password" required>
-    <button type="submit">Login as Admin</button>
-   </form>
-  </div>
-  <div id="adminArea" class="hidden">
-   <p id="adminIdentity"></p>
-   <button id="logoutBtn" type="button" class="secondary">Logout</button>
-
-   <h3>Add Member</h3>
-   <form id="memberForm">
-    <input id="memberName" maxlength="100" placeholder="Full member name" required>
-    <button type="submit">Add Member</button>
-   </form>
-
-   <h3>Record Verified Monthly Payment</h3>
-   <p class="small">Use this only after the treasurer has checked the payment. Each member can have one entry per month.</p>
-   <form id="paymentForm">
-    <div class="form-grid">
-     <select id="paymentMember" required><option value="">Select member</option></select>
-     <select id="paymentMonth" required></select>
-    </div>
-    <input id="paymentNote" maxlength="200" placeholder="Optional note / receipt reference (no private details)">
-    <button type="submit">Verify & Save ₹200 Payment</button>
-   </form>
-
-   <h3>Add Puja Expense</h3>
-   <form id="expenseForm">
-    <input id="expenseDescription" maxlength="150" placeholder="Expense description" required>
-    <input id="expenseAmount" type="number" min="1" max="10000000" step="1" placeholder="Amount in ₹" required>
-    <input id="expenseDate" type="date" required>
-    <button type="submit">Save Expense</button>
-   </form>
-   <div id="adminStatus" class="status" role="status">Admin tools ready.</div>
-  </div>
- </section>
-
- <h2 class="section-title">📜 Recent Payment Records</h2>
- <div class="table-wrap">
-  <table>
-   <thead><tr><th>Member</th><th>Month</th><th>Amount</th><th>Status</th></tr></thead>
-   <tbody id="paymentRows"><tr><td colspan="4">Loading...</td></tr></tbody>
-  </table>
- </div>
-
- <h2 class="section-title">📋 Recent Expenses</h2>
+ <h2 id="accounts">📋 Recent Expenses</h2>
  <div class="table-wrap">
   <table>
    <thead><tr><th>Description</th><th>Date</th><th>Amount</th></tr></thead>
    <tbody id="expenseRows"><tr><td colspan="3">Loading...</td></tr></tbody>
   </table>
  </div>
- <p class="small">Public page: records are visible to visitors. Do not store personal addresses, phone numbers, passwords or private payment information in public records.</p>
+
+ <h2 id="adminSection">🔐 Admin</h2>
+ <section class="card">
+  <div id="loginArea">
+   <p class="small">Admin login is available from the menu. Use your authorised Firebase account.</p>
+   <form id="loginForm">
+    <input id="adminEmail" type="email" placeholder="Admin email" autocomplete="username" required>
+    <input id="adminPassword" type="password" placeholder="Admin password" autocomplete="current-password" required>
+    <button type="submit">Login</button>
+   </form>
+  </div>
+
+  <div id="adminArea" class="hidden">
+   <p id="adminIdentity" class="small"></p>
+   <button id="logoutBtn" type="button" class="light">Logout</button>
+
+   <h3>1. Add Member</h3>
+   <form id="memberForm">
+    <input id="newMemberName" maxlength="100" placeholder="Member full name" required>
+    <div class="form-grid">
+     <label class="small">Joining date<input id="joiningDate" type="date" required></label>
+     <label class="small">Contribution starts from<input id="startMonth" type="month" required></label>
+    </div>
+    <button type="submit">Add Member</button>
+   </form>
+
+   <h3>2. Add Monthly Payment + Screenshot</h3>
+   <p class="small">Select the member and month, then attach the payment screenshot. Saving this form records the payment as verified by the admin, so use it only after checking the payment.</p>
+   <form id="paymentForm">
+    <select id="paymentMember" required><option value="">Select member</option></select>
+    <div class="form-grid">
+     <label class="small">Payment month<input id="paymentMonth" type="month" required></label>
+     <label class="small">Amount in ₹<input id="paymentAmount" type="number" min="1" max="10000000" value="200" required></label>
+    </div>
+    <label class="small">Payment screenshot (image)
+     <input id="paymentScreenshot" type="file" accept="image/png,image/jpeg,image/webp" required>
+    </label>
+    <input id="paymentNote" maxlength="150" placeholder="Optional receipt reference">
+    <button type="submit" class="gold-btn">Upload Screenshot & Save Payment</button>
+   </form>
+
+   <h3>3. Add Expense</h3>
+   <form id="expenseForm">
+    <input id="expenseDescription" maxlength="150" placeholder="Expense description" required>
+    <div class="form-grid">
+     <input id="expenseAmount" type="number" min="1" max="10000000" placeholder="Amount in ₹" required>
+     <input id="expenseDate" type="date" required>
+    </div>
+    <button type="submit">Save Expense</button>
+   </form>
+
+   <h3>4. Download Reports</h3>
+   <div class="toolbar">
+    <button id="allPdf" type="button">📄 All Members PDF</button>
+    <button id="onePdf" type="button" class="light">📄 Selected Member PDF</button>
+   </div>
+   <p class="small">For the individual PDF, first search and select a member below. PDF reports contain payment details, not screenshot images.</p>
+
+   <h3>5. Payment Screenshot Records</h3>
+   <p class="small">Screenshots can only be opened by an authorised admin when Storage rules are configured correctly.</p>
+   <div class="table-wrap">
+    <table>
+     <thead><tr><th>Member</th><th>Month</th><th>Screenshot</th></tr></thead>
+     <tbody id="proofRows"><tr><td colspan="3">No records loaded.</td></tr></tbody>
+    </table>
+   </div>
+   <div id="adminStatus" class="status">Admin tools ready.</div>
+  </div>
+ </section>
 </main>
 
 <footer>Maa Mahalakshmi Puja Committee • Ibrisingh, Odisha</footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import {
  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 import {
- getFirestore, collection, getDocs, doc, setDoc, addDoc,
- runTransaction, serverTimestamp
+ getFirestore, collection, getDocs, doc, addDoc, runTransaction, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+import {
+ getStorage, ref, uploadBytes, getBlob
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-storage.js";
 
 const firebaseConfig = {
- apiKey: "AIzaSyDSeLJuSaJE31XvNaUSUJBVA1aTd6HDMKM",
+ apiKey: "AIzaSyDSeJLuSaJE31XvNaUSUJBVA1aTd6HDMKM",
  authDomain: "maa-mahalakshmi-puja-committee.firebaseapp.com",
  projectId: "maa-mahalakshmi-puja-committee",
  storageBucket: "maa-mahalakshmi-puja-committee.firebasestorage.app",
@@ -171,216 +249,345 @@ const ADMIN_UID = "trDB4F74DVP8FYTPqLyBdeO1bzD3";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const currentYear = new Date().getFullYear();
-const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const storage = getStorage(app);
 
-let membersCache = [];
-let paymentsCache = [];
-let expensesCache = [];
+let members = [], payments = [], expenses = [];
+let selectedMemberId = null;
 
 const $ = id => document.getElementById(id);
 const money = n => "₹" + Number(n || 0).toLocaleString("en-IN");
-const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({
- "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-}[c]));
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+ ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
-function setStatus(message, error=false) {
+function isAdmin(user) { return !!user && user.uid === ADMIN_UID; }
+function setStatus(message,error=false) {
  $("adminStatus").textContent = message;
  $("adminStatus").className = "status " + (error ? "error" : "ok");
 }
-
-function isAdmin(user) {
- return !!user && user.uid === ADMIN_UID;
+function closeDrawer() {
+ $("drawer").classList.add("hidden");
+ $("drawerBackdrop").classList.add("hidden");
 }
+$("menuBtn").onclick = () => {
+ $("drawer").classList.remove("hidden");
+ $("drawerBackdrop").classList.remove("hidden");
+};
+$("closeMenu").onclick = closeDrawer;
+$("drawerBackdrop").onclick = closeDrawer;
+document.querySelectorAll("[data-go]").forEach(btn => btn.addEventListener("click",()=>{
+ closeDrawer();
+ const target = $(btn.dataset.go);
+ if(target) target.scrollIntoView({behavior:"smooth",block:"start"});
+ if(btn.dataset.go==="adminSection" && !isAdmin(auth.currentUser))
+  setTimeout(()=>$("adminEmail").focus(),250);
+}));
 
-function setupMonths() {
- $("paymentMonth").innerHTML = monthNames.map((name, i) => {
-  const value = `${currentYear}-${String(i+1).padStart(2,"0")}`;
-  return `<option value="${value}">${name} ${currentYear}</option>`;
+function monthLabel(key) {
+ if(!/^\d{4}-\d{2}$/.test(String(key||""))) return String(key||"");
+ const [y,m] = key.split("-").map(Number);
+ return `${monthNames[m-1] || ""} ${y}`;
+}
+function monthsBetween(start,end) {
+ const out=[];
+ if(!start || !end || !/^\d{4}-\d{2}$/.test(start) || !/^\d{4}-\d{2}$/.test(end)) return out;
+ let [y,m]=start.split("-").map(Number);
+ const [ey,em]=end.split("-").map(Number);
+ while(y<ey || (y===ey && m<=em)) {
+  out.push(`${y}-${String(m).padStart(2,"0")}`);
+  m++;
+  if(m===13){m=1;y++;}
+  if(out.length>240) break;
+ }
+ return out;
+}
+function paymentsFor(memberId) {
+ return payments.filter(p=>p.memberId===memberId && p.verified===true)
+  .sort((a,b)=>String(a.month).localeCompare(String(b.month)));
+}
+function paidMonthSet(memberId) {
+ return new Set(paymentsFor(memberId).map(p=>p.month));
+}
+function renderTotals() {
+ const collected=payments.filter(p=>p.verified===true)
+  .reduce((s,p)=>s+Number(p.amount||0),0);
+ const spent=expenses.reduce((s,e)=>s+Number(e.amount||0),0);
+ $("collection").textContent=money(collected);
+ $("expensesTotal").textContent=money(spent);
+ $("balance").textContent=money(collected-spent);
+ $("expenseRows").innerHTML=expenses.length
+  ? [...expenses].sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")))
+    .slice(0,50).map(e=>`<tr><td>${esc(e.description)}</td><td>${esc(e.date)}</td><td>${money(e.amount)}</td></tr>`).join("")
+  : '<tr><td colspan="3">No expenses recorded.</td></tr>';
+}
+function renderMemberSelect() {
+ $("paymentMember").innerHTML='<option value="">Select member</option>'+
+  [...members].sort((a,b)=>String(a.name).localeCompare(String(b.name)))
+   .map(m=>`<option value="${esc(m.id)}">${esc(m.name)}</option>`).join("");
+}
+function renderSearch() {
+ const q=$("searchName").value.trim().toLowerCase();
+ if(!q){$("memberResults").innerHTML='<p class="small">Search for a member to see payment details.</p>';selectedMemberId=null;return;}
+ const matches=members.filter(m=>String(m.name||"").toLowerCase().includes(q));
+ if(!matches.length){$("memberResults").innerHTML='<div class="card">No matching member found.</div>';selectedMemberId=null;return;}
+ $("memberResults").innerHTML=matches.map(m=>{
+  const mp=paymentsFor(m.id);
+  const total=mp.reduce((s,p)=>s+Number(p.amount||0),0);
+  const paid=paidMonthSet(m.id);
+  const now=new Date();
+  const thisMonth=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}`;
+  const expected=monthsBetween(m.startMonth,thisMonth);
+  const pending=expected.filter(x=>!paid.has(x));
+  const yearMonths=mp.filter(p=>String(p.month).startsWith(now.getFullYear()+"-"));
+  const yearCount=new Set(yearMonths.map(p=>p.month)).size;
+  return `<div class="card member-detail">
+   <h3>${esc(m.name)}</h3>
+   <p class="small">Joined: ${esc(m.joiningDate||"Not entered")} · Contribution starts: ${esc(monthLabel(m.startMonth))}</p>
+   <div class="history-grid">
+    <div class="card"><div class="card-label">Total paid months</div><div class="card-value">${mp.length}</div></div>
+    <div class="card"><div class="card-label">Total verified amount</div><div class="card-value green">${money(total)}</div></div>
+    <div class="card"><div class="card-label">Unpaid months so far</div><div class="card-value">${pending.length}</div></div>
+    <div class="card"><div class="card-label">Estimated unpaid amount</div><div class="card-value gold">${money(pending.length*200)}</div></div>
+   </div>
+   <p><span class="pill ${yearCount===12?"paid":"pending"}">${yearCount===12?"🟢 12 months paid this year":"🟡 "+yearCount+"/12 months paid this year"}</span></p>
+   <h3>Month-wise payment history</h3>
+   <div class="table-wrap"><table><thead><tr><th>Month</th><th>Amount</th><th>Status</th></tr></thead><tbody>
+   ${monthsBetween(m.startMonth,thisMonth).map(mon=>{
+    const p=mp.find(x=>x.month===mon);
+    return `<tr><td>${esc(monthLabel(mon))}</td><td>${p?money(p.amount):"—"}</td><td><span class="pill ${p?"paid":"pending"}">${p?"🟢 Paid":"🟡 Pending"}</span></td></tr>`;
+   }).join("") || '<tr><td colspan="3">No month range available.</td></tr>'}
+   </tbody></table></div>
+   ${isAdmin(auth.currentUser)?`<button class="light" data-select-pdf="${esc(m.id)}">Select for Individual PDF</button>`:""}
+  </div>`;
  }).join("");
- $("paymentMonth").value = `${currentYear}-${String(new Date().getMonth()+1).padStart(2,"0")}`;
- $("expenseDate").value = new Date().toISOString().slice(0,10);
+ document.querySelectorAll("[data-select-pdf]").forEach(btn=>btn.addEventListener("click",()=>{
+  selectedMemberId=btn.dataset.selectPdf;
+  setStatus("Member selected for individual PDF.");
+  $("adminSection").scrollIntoView({behavior:"smooth"});
+ }));
 }
-
-function renderMembers() {
- const term = $("search").value.trim().toLowerCase();
- const filter = $("filter").value;
- const visible = membersCache.filter(m => {
-  const paidMonths = Array.isArray(m.paidMonths) ? m.paidMonths : [];
-  const yearMonths = paidMonths.filter(v => String(v).startsWith(currentYear + "-"));
-  const complete = new Set(yearMonths).size === 12;
-  return String(m.name || "").toLowerCase().includes(term) &&
-   (filter === "all" || (filter === "complete" && complete) || (filter === "pending" && !complete));
- });
-
- $("members").innerHTML = visible.length ? visible.map(m => {
-  const paidMonths = Array.isArray(m.paidMonths) ? m.paidMonths : [];
-  const yearMonths = [...new Set(paidMonths.filter(v => String(v).startsWith(currentYear + "-")))];
-  const complete = yearMonths.length === 12;
-  return `<tr><td><strong>${escapeHtml(m.name)}</strong></td>
-   <td>${yearMonths.length}/12</td><td>${money(yearMonths.length*200)}</td>
-   <td><span class="pill ${complete ? "complete" : "pending"}">${complete ? "🟢 GREEN LIGHT" : "🟡 IN PROGRESS"}</span></td></tr>`;
- }).join("") : '<tr><td colspan="4">No members found.</td></tr>';
-
- $("paymentMember").innerHTML = '<option value="">Select member</option>' +
-  membersCache.map(m => `<option value="${escapeHtml(m.id)}">${escapeHtml(m.name)}</option>`).join("");
+function renderProofs() {
+ if(!isAdmin(auth.currentUser)) return;
+ const list=[...payments].sort((a,b)=>String(b.month||"").localeCompare(String(a.month||"")));
+ $("proofRows").innerHTML=list.length?list.slice(0,100).map(p=>{
+  const member=members.find(m=>m.id===p.memberId);
+  return `<tr><td>${esc(member?.name||p.memberName||"Member")}</td>
+   <td>${esc(monthLabel(p.month))}</td>
+   <td>${p.screenshotPath?`<button type="button" data-proof="${esc(p.id)}">View Screenshot</button>`:"No screenshot"}</td></tr>`;
+ }).join(""):'<tr><td colspan="3">No payment records yet.</td></tr>';
+ document.querySelectorAll("[data-proof]").forEach(btn=>btn.addEventListener("click",async()=>{
+  if(!isAdmin(auth.currentUser)) return;
+  const p=payments.find(x=>x.id===btn.dataset.proof);
+  if(!p?.screenshotPath) return;
+  try{
+   const blob=await getBlob(ref(storage,p.screenshotPath));
+   const url=URL.createObjectURL(blob);
+   const win=window.open(url,"_blank");
+   if(!win) setStatus("Popup blocked. Allow popups to view the screenshot.",true);
+   setTimeout(()=>URL.revokeObjectURL(url),60000);
+  }catch(err){
+   console.error(err);
+   setStatus("Cannot open screenshot. Check Firebase Storage setup and rules.",true);
+  }
+ }));
 }
-
-function renderPayments() {
- const sorted = [...paymentsCache].sort((a,b) => String(b.month || "").localeCompare(String(a.month || "")));
- $("paymentRows").innerHTML = sorted.length ? sorted.slice(0,50).map(p => {
-  const member = membersCache.find(m => m.id === p.memberId);
-  return `<tr><td>${escapeHtml(member?.name || p.memberName || "Member")}</td>
-   <td>${escapeHtml(p.month || "")}</td><td>${money(p.amount)}</td>
-   <td><span class="pill complete">${p.verified ? "VERIFIED" : "PENDING"}</span></td></tr>`;
- }).join("") : '<tr><td colspan="4">No payment records yet.</td></tr>';
-}
-
-function renderExpenses() {
- const total = expensesCache.reduce((sum,e) => sum + Number(e.amount || 0), 0);
- const collectionTotal = paymentsCache.filter(p => p.verified === true)
-  .reduce((sum,p) => sum + Number(p.amount || 0), 0);
- $("collection").textContent = money(collectionTotal);
- $("expenses").textContent = money(total);
- $("balance").textContent = money(collectionTotal-total);
-
- const sorted = [...expensesCache].sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
- $("expenseRows").innerHTML = sorted.length ? sorted.slice(0,50).map(e =>
-  `<tr><td>${escapeHtml(e.description)}</td><td>${escapeHtml(e.date || "")}</td><td>${money(e.amount)}</td></tr>`
- ).join("") : '<tr><td colspan="3">No expenses recorded.</td></tr>';
-}
-
 async function loadData() {
- $("members").innerHTML = '<tr><td colspan="4">Loading records...</td></tr>';
- try {
-  const [memberSnap, paymentSnap, expenseSnap] = await Promise.all([
+ try{
+  const [ms,ps,es]=await Promise.all([
    getDocs(collection(db,"members")),
    getDocs(collection(db,"payments")),
    getDocs(collection(db,"expenses"))
   ]);
-  membersCache = memberSnap.docs.map(d => ({id:d.id,...d.data()}));
-  paymentsCache = paymentSnap.docs.map(d => ({id:d.id,...d.data()}));
-  expensesCache = expenseSnap.docs.map(d => ({id:d.id,...d.data()}));
-  renderMembers();
-  renderPayments();
-  renderExpenses();
- } catch (err) {
+  members=ms.docs.map(d=>({id:d.id,...d.data()}));
+  payments=ps.docs.map(d=>({id:d.id,...d.data()}));
+  expenses=es.docs.map(d=>({id:d.id,...d.data()}));
+  renderTotals();renderMemberSelect();renderSearch();renderProofs();
+ }catch(err){
   console.error(err);
-  $("members").innerHTML = '<tr><td colspan="4">Could not load records. Check Firestore Rules and internet connection.</td></tr>';
+  $("memberResults").innerHTML='<div class="status error">Could not load Firebase records. Check Firestore Rules and connection.</div>';
+  if(isAdmin(auth.currentUser)) setStatus("Could not load records. Check Firestore Rules.",true);
  }
 }
-
-$("loginForm").addEventListener("submit", async e => {
+$("searchName").addEventListener("input",renderSearch);
+$("clearSearch").onclick=()=>{$("searchName").value="";renderSearch();};
+$("loginForm").addEventListener("submit",async e=>{
  e.preventDefault();
- try {
-  const result = await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
-  if (result.user.uid !== ADMIN_UID) {
+ try{
+  const result=await signInWithEmailAndPassword(auth,$("adminEmail").value.trim(),$("adminPassword").value);
+  if(result.user.uid!==ADMIN_UID){
    await signOut(auth);
-   setStatus("This account is not authorised as the committee admin.",true);
+   setStatus("This account is not the authorised admin.",true);
   }
- } catch (err) {
-  setStatus("Login failed. Check the email/password and Firebase Authentication settings.",true);
+ }catch(err){
   console.error(err);
+  setStatus("Login failed. Check email, password and Firebase Authentication.",true);
  }
 });
-
-$("logoutBtn").addEventListener("click", () => signOut(auth));
-
-onAuthStateChanged(auth, async user => {
- const admin = isAdmin(user);
+$("logoutBtn").onclick=()=>signOut(auth);
+onAuthStateChanged(auth,async user=>{
+ const admin=isAdmin(user);
  $("loginArea").classList.toggle("hidden",admin);
  $("adminArea").classList.toggle("hidden",!admin);
- if (admin) {
-  $("adminIdentity").textContent = "Logged in as authorised admin: " + user.email;
+ if(user&&!admin) await signOut(auth);
+ if(admin){
+  $("adminIdentity").textContent="Authorised Admin: "+(user.email||"");
   setStatus("Admin login successful.");
- } else if (user) {
-  await signOut(auth);
  }
  await loadData();
 });
-
-$("memberForm").addEventListener("submit", async e => {
+$("memberForm").addEventListener("submit",async e=>{
  e.preventDefault();
- if (!isAdmin(auth.currentUser)) return;
- const name = $("memberName").value.trim();
- if (!name) return;
- try {
-  await addDoc(collection(db,"members"), {
-   name, paidMonths: [], createdAt: serverTimestamp()
+ if(!isAdmin(auth.currentUser)) return;
+ const name=$("newMemberName").value.trim();
+ const joiningDate=$("joiningDate").value;
+ const startMonth=$("startMonth").value;
+ if(!name||!joiningDate||!startMonth)return;
+ try{
+  await addDoc(collection(db,"members"),{
+   name,joiningDate,startMonth,createdAt:serverTimestamp()
   });
-  $("memberName").value = "";
+  $("newMemberName").value="";
   setStatus("Member added successfully.");
   await loadData();
- } catch (err) {
-  setStatus("Could not add member. Check Firestore Rules.",true);
-  console.error(err);
- }
+ }catch(err){console.error(err);setStatus("Could not add member. Check Firestore Rules.",true);}
 });
-
-$("paymentForm").addEventListener("submit", async e => {
+$("paymentForm").addEventListener("submit",async e=>{
  e.preventDefault();
- if (!isAdmin(auth.currentUser)) return;
- const memberId = $("paymentMember").value;
- const month = $("paymentMonth").value;
- const note = $("paymentNote").value.trim();
- if (!memberId || !month) return setStatus("Select a member and month first.",true);
-
- const memberRef = doc(db,"members",memberId);
- const paymentRef = doc(collection(db,"payments"));
- try {
-  await runTransaction(db, async transaction => {
-   const snap = await transaction.get(memberRef);
-   if (!snap.exists()) throw new Error("Member not found.");
-   const data = snap.data();
-   const paidMonths = Array.isArray(data.paidMonths) ? data.paidMonths : [];
-   if (paidMonths.includes(month)) throw new Error("This member already has a payment for that month.");
-   transaction.update(memberRef,{
-    paidMonths:[...paidMonths,month],
-    updatedAt:serverTimestamp()
-   });
-   transaction.set(paymentRef,{
-    memberId, memberName:data.name, month, amount:200,
-    verified:true, note, createdAt:serverTimestamp(),
+ if(!isAdmin(auth.currentUser)) return;
+ const memberId=$("paymentMember").value;
+ const month=$("paymentMonth").value;
+ const amount=Number($("paymentAmount").value);
+ const file=$("paymentScreenshot").files[0];
+ const note=$("paymentNote").value.trim();
+ if(!memberId||!month||!file||!Number.isFinite(amount)||amount<=0){
+  setStatus("Select member, month, valid amount and screenshot.",true);return;
+ }
+ if(!["image/jpeg","image/png","image/webp"].includes(file.type)){
+  setStatus("Please choose a JPG, PNG or WEBP image.",true);return;
+ }
+ if(file.size>5*1024*1024){
+  setStatus("Screenshot must be 5 MB or smaller.",true);return;
+ }
+ const member=members.find(m=>m.id===memberId);
+ if(!member){setStatus("Member not found.",true);return;}
+ if(month<member.startMonth){setStatus("Payment month is earlier than the member's contribution start month.",true);return;}
+ const paymentId=memberId+"_"+month;
+ const paymentRef=doc(db,"payments",paymentId);
+ const proofPath=`paymentProofs/${memberId}/${paymentId}_${Date.now()}.${file.type==="image/png"?"png":file.type==="image/webp"?"webp":"jpg"}`;
+ try{
+  setStatus("Uploading screenshot. Please wait...");
+  const storageRef=ref(storage,proofPath);
+  await uploadBytes(storageRef,file,{contentType:file.type,customMetadata:{uploadedBy:auth.currentUser.uid}});
+  await runTransaction(db,async tx=>{
+   const existing=await tx.get(paymentRef);
+   if(existing.exists()) throw new Error("Payment already exists for this member and month.");
+   tx.set(paymentRef,{
+    memberId,memberName:member.name,month,amount,verified:true,note,
+    screenshotPath:proofPath,createdAt:serverTimestamp(),
     verifiedBy:auth.currentUser.uid
    });
   });
-  $("paymentNote").value = "";
-  setStatus("₹200 payment verified and saved.");
+  $("paymentNote").value="";
+  $("paymentScreenshot").value="";
+  setStatus("Screenshot uploaded and payment record saved.");
   await loadData();
- } catch (err) {
-  setStatus(err.message || "Payment save failed. Check Firestore Rules.",true);
+ }catch(err){
   console.error(err);
+  setStatus(err.message||"Upload failed. Enable Firebase Storage and check its rules.",true);
  }
 });
-
-$("expenseForm").addEventListener("submit", async e => {
+$("expenseForm").addEventListener("submit",async e=>{
  e.preventDefault();
- if (!isAdmin(auth.currentUser)) return;
- const description = $("expenseDescription").value.trim();
- const amount = Number($("expenseAmount").value);
- const date = $("expenseDate").value;
- if (!description || !Number.isFinite(amount) || amount <= 0 || !date) {
-  return setStatus("Enter a valid description, amount and date.",true);
- }
- try {
-  await addDoc(collection(db,"expenses"),{
-   description, amount, date, createdAt:serverTimestamp(),
-   createdBy:auth.currentUser.uid
-  });
-  $("expenseDescription").value = "";
-  $("expenseAmount").value = "";
+ if(!isAdmin(auth.currentUser))return;
+ const description=$("expenseDescription").value.trim();
+ const amount=Number($("expenseAmount").value);
+ const date=$("expenseDate").value;
+ if(!description||!date||!Number.isFinite(amount)||amount<=0)return;
+ try{
+  await addDoc(collection(db,"expenses"),{description,amount,date,createdAt:serverTimestamp(),createdBy:auth.currentUser.uid});
+  $("expenseDescription").value="";$("expenseAmount").value="";
   setStatus("Expense saved successfully.");
   await loadData();
- } catch (err) {
-  setStatus("Could not save expense. Check Firestore Rules.",true);
-  console.error(err);
- }
+ }catch(err){console.error(err);setStatus("Could not save expense. Check Firestore Rules.",true);}
 });
 
-$("search").addEventListener("input",renderMembers);
-$("filter").addEventListener("change",renderMembers);
-$("refreshBtn").addEventListener("click",loadData);
-setupMonths();
+function pdfBase(title){
+ if(!window.jspdf?.jsPDF){setStatus("PDF library did not load. Check your internet connection.",true);return null;}
+ const pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4"});
+ pdf.setFont("helvetica","bold");pdf.setFontSize(16);
+ pdf.text("Maa Mahalakshmi Puja Committee",14,17);
+ pdf.setFont("helvetica","normal");pdf.setFontSize(10);
+ pdf.text("Ibrisingh, Odisha",14,24);
+ pdf.text(title,14,32);
+ pdf.text("Generated: "+new Date().toLocaleDateString("en-IN"),14,39);
+ return pdf;
+}
+function addTable(pdf,head,rows,startY=47){
+ const left=14,width=182,rowH=8;
+ let y=startY;
+ pdf.setFontSize(8);pdf.setFont("helvetica","bold");
+ const colW=width/head.length;
+ const drawHeader=()=>{
+  pdf.setFillColor(243,231,208);pdf.rect(left,y-5,width,rowH,"F");
+  head.forEach((h,i)=>pdf.text(String(h).slice(0,26),left+i*colW+2,y));
+  y+=rowH;pdf.setFont("helvetica","normal");
+ };
+ drawHeader();
+ rows.forEach(row=>{
+  if(y>278){pdf.addPage();y=18;drawHeader();}
+  row.forEach((v,i)=>pdf.text(String(v??"").slice(0,28),left+i*colW+2,y));
+  y+=rowH;
+ });
+ return y;
+}
+function downloadAllPDF(){
+ if(!isAdmin(auth.currentUser))return;
+ const pdf=pdfBase("All Members Contribution Report");
+ if(!pdf)return;
+ const rows=[];
+ for(const m of members){
+  const mp=paymentsFor(m.id);
+  const total=mp.reduce((s,p)=>s+Number(p.amount||0),0);
+  const current=new Date();
+  const end=`${current.getFullYear()}-${String(current.getMonth()+1).padStart(2,"0")}`;
+  const due=monthsBetween(m.startMonth,end);
+  const paid=paidMonthSet(m.id);
+  rows.push([m.name,monthLabel(m.startMonth),mp.length,money(total),due.filter(x=>!paid.has(x)).length]);
+ }
+ addTable(pdf,["Member","Start Month","Paid Entries","Total Paid","Unpaid Months"],rows);
+ pdf.save("Maa-Mahalakshmi-All-Members.pdf");
+}
+function downloadOnePDF(){
+ if(!isAdmin(auth.currentUser))return;
+ const m=members.find(x=>x.id===selectedMemberId);
+ if(!m){setStatus("Search a member and click Select for Individual PDF first.",true);return;}
+ const pdf=pdfBase("Individual Contribution Report");
+ if(!pdf)return;
+ pdf.setFontSize(10);
+ pdf.text("Member: "+m.name,14,47);
+ pdf.text("Joining date: "+(m.joiningDate||"Not entered"),14,54);
+ pdf.text("Contribution starts: "+monthLabel(m.startMonth),14,61);
+ const mp=paymentsFor(m.id),paid=paidMonthSet(m.id);
+ const endDate=new Date();
+ const end=`${endDate.getFullYear()}-${String(endDate.getMonth()+1).padStart(2,"0")}`;
+ const months=monthsBetween(m.startMonth,end);
+ const rows=months.map(mon=>{
+  const p=mp.find(x=>x.month===mon);
+  return [monthLabel(mon),p?money(p.amount):"—",p?"PAID":"PENDING"];
+ });
+ addTable(pdf,["Month","Amount","Status"],rows,70);
+ pdf.text("Total verified amount: "+money(mp.reduce((s,p)=>s+Number(p.amount||0),0)),14,Math.min(280,75+rows.length*8));
+ pdf.save("Member-"+m.name.replace(/[^a-z0-9_-]/gi,"-")+".pdf");
+}
+$("allPdf").onclick=downloadAllPDF;
+$("onePdf").onclick=downloadOnePDF;
+
+const today=new Date();
+$("joiningDate").value=today.toISOString().slice(0,10);
+$("startMonth").value=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}`;
+$("paymentMonth").value=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,"0")}`;
+$("expenseDate").value=today.toISOString().slice(0,10);
+renderSearch();
 </script>
 </body>
 </html>
