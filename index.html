@@ -6,250 +6,381 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maa Mahalakshmi Puja Committee</title>
 <style>
-:root {
-  --orange: #f58220;
-  --dark: #171717;
-  --green: #168447;
-  --muted: #6b7280;
-  --bg: #f5f6f8;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: #202124;
-}
-header {
-  background: var(--dark);
-  color: white;
-  padding: 28px 20px;
-  border-bottom: 4px solid var(--orange);
-}
-.header-inner, main {
-  max-width: 1100px;
-  margin: auto;
-}
-.brand {
-  color: #ffab55;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-h1 { font-size: clamp(23px, 4vw, 36px); margin: 12px 0; }
-header p { color: #ddd; margin-bottom: 0; line-height: 1.6; }
-main { padding: 24px 16px 40px; }
-.section-title { margin: 26px 0 14px; }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 3px 12px #00000006;
-}
-.card-label { color: var(--muted); font-size: 13px; }
-.card-value { font-size: 27px; font-weight: bold; margin-top: 10px; }
-.orange { color: var(--orange); }
-.green { color: var(--green); }
-.note {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
-  padding: 13px 15px;
-  border-radius: 9px;
-  font-size: 13px;
-  line-height: 1.6;
-  margin: 18px 0;
-}
-.toolbar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 14px 0;
-}
-input, select {
-  padding: 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  background: white;
-  font-size: 14px;
-}
-input { flex: 1; min-width: 180px; }
-.table-wrap {
-  overflow-x: auto;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-}
-table { border-collapse: collapse; width: 100%; min-width: 620px; }
-th, td {
-  padding: 15px 13px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-}
-th { background: #fafafa; color: #555; }
-tr:last-child td { border-bottom: 0; }
-.pill {
-  display: inline-block;
-  border-radius: 30px;
-  padding: 6px 10px;
-  font-size: 12px;
-  font-weight: bold;
-  white-space: nowrap;
-}
-.complete { background: #dcfce7; color: #166534; }
-.pending { background: #fef3c7; color: #92400e; }
-footer {
-  text-align: center;
-  color: #777;
-  font-size: 12px;
-  padding: 22px;
-}
-.small { font-size: 12px; color: var(--muted); line-height: 1.6; }
+:root{--orange:#f58220;--dark:#171717;--green:#168447;--muted:#6b7280;--bg:#f5f6f8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#202124}
+header{background:var(--dark);color:white;padding:25px 18px;border-bottom:4px solid var(--orange)}
+.header-inner,main{max-width:1100px;margin:auto}
+.brand{color:#ffab55;font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(23px,4vw,35px);margin:12px 0}
+header p{color:#ddd;line-height:1.5}
+main{padding:22px 14px 40px}
+.section-title{margin:27px 0 13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:12px;padding:18px;margin-bottom:12px}
+.card-label,.small{color:var(--muted);font-size:13px}
+.card-value{font-size:26px;font-weight:bold;margin-top:10px}
+.orange{color:var(--orange)}.green{color:var(--green)}
+.note{background:#fff7ed;border:1px solid #fed7aa;padding:13px;border-radius:9px;font-size:13px;line-height:1.6;margin:16px 0}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0}
+input,select,button{font:inherit;padding:11px;border:1px solid #d1d5db;border-radius:8px}
+input,select{background:white;max-width:100%}
+input{min-width:0;width:100%}
+button{cursor:pointer;background:var(--dark);color:white;border:0;font-weight:bold}
+button.secondary{background:#eee;color:#222}
+button:disabled{opacity:.5;cursor:not-allowed}
+form{display:grid;gap:10px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.table-wrap{overflow-x:auto;background:white;border:1px solid #e5e7eb;border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:570px}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #eee;font-size:14px}
+th{background:#fafafa;color:#555}
+.pill{display:inline-block;border-radius:30px;padding:6px 9px;font-size:11px;font-weight:bold;white-space:nowrap}
+.complete{background:#dcfce7;color:#166534}.pending{background:#fef3c7;color:#92400e}
+.hidden{display:none!important}
+.status{padding:10px;border-radius:8px;background:#f3f4f6;margin:10px 0;font-size:13px;white-space:pre-wrap}
+.status.error{background:#fee2e2;color:#991b1b}
+.status.ok{background:#dcfce7;color:#166534}
+footer{text-align:center;color:#777;font-size:12px;padding:22px}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="header-inner">
-    <div class="brand">IBRISINGH • ODISHA</div>
-    <h1>🛕 Maa Mahalakshmi Puja Committee</h1>
-    <p>Unity • Devotion • Transparency</p>
-    <p>Member Contributions & Puja Accounts</p>
-  </div>
+ <div class="header-inner">
+  <div class="brand">IBRISINGH • ODISHA</div>
+  <h1>🛕 Maa Mahalakshmi Puja Committee</h1>
+  <p>Unity • Devotion • Transparency</p>
+  <p>Member Contributions & Puja Accounts</p>
+ </div>
 </header>
 
 <main>
-  <div class="note">
-    <strong>DEMO WEBSITE</strong><br>
-    All names and figures below are sample data for testing.
-    Official accounts must be updated and verified by the committee treasurer.
+ <div class="note">
+  <strong>COMMITTEE ACCOUNT SYSTEM</strong><br>
+  Monthly contribution: ₹200 per member. Year completion requires 12 verified monthly payments. Please verify all entries carefully.
+ </div>
+
+ <h2 class="section-title">📊 Contribution Overview</h2>
+ <section class="cards">
+  <div class="card"><div class="card-label">Monthly Contribution</div><div class="card-value orange">₹200</div><div class="small">Per member / month</div></div>
+  <div class="card"><div class="card-label">Verified Collection</div><div class="card-value" id="collection">₹0</div></div>
+  <div class="card"><div class="card-label">Puja Expenses</div><div class="card-value" id="expenses">₹0</div></div>
+  <div class="card"><div class="card-label">Remaining Balance</div><div class="card-value green" id="balance">₹0</div></div>
+ </section>
+
+ <h2 class="section-title">👥 Member Contribution Status</h2>
+ <div class="toolbar">
+  <input id="search" type="search" placeholder="Search member name...">
+  <select id="filter">
+   <option value="all">All Members</option>
+   <option value="complete">🟢 Year Completed</option>
+   <option value="pending">🟡 In Progress</option>
+  </select>
+  <button id="refreshBtn" type="button">↻ Refresh</button>
+ </div>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Member Name</th><th>Paid Months</th><th>Verified Amount</th><th>Annual Status</th></tr></thead>
+   <tbody id="members"><tr><td colspan="4">Loading records...</td></tr></tbody>
+  </table>
+ </div>
+
+ <h2 class="section-title">🔐 Admin Login</h2>
+ <section class="card">
+  <div id="loginArea">
+   <p class="small">Only the authorised committee admin can change records.</p>
+   <form id="loginForm">
+    <input id="email" type="email" autocomplete="username" placeholder="Admin email" required>
+    <input id="password" type="password" autocomplete="current-password" placeholder="Admin password" required>
+    <button type="submit">Login as Admin</button>
+   </form>
   </div>
+  <div id="adminArea" class="hidden">
+   <p id="adminIdentity"></p>
+   <button id="logoutBtn" type="button" class="secondary">Logout</button>
 
-  <h2 class="section-title">📊 Contribution Overview</h2>
+   <h3>Add Member</h3>
+   <form id="memberForm">
+    <input id="memberName" maxlength="100" placeholder="Full member name" required>
+    <button type="submit">Add Member</button>
+   </form>
 
-  <section class="cards">
-    <div class="card">
-      <div class="card-label">Monthly Contribution</div>
-      <div class="card-value orange">₹200</div>
-      <div class="small">Per member / month</div>
+   <h3>Record Verified Monthly Payment</h3>
+   <p class="small">Use this only after the treasurer has checked the payment. Each member can have one entry per month.</p>
+   <form id="paymentForm">
+    <div class="form-grid">
+     <select id="paymentMember" required><option value="">Select member</option></select>
+     <select id="paymentMonth" required></select>
     </div>
-    <div class="card">
-      <div class="card-label">Verified Collection</div>
-      <div class="card-value" id="collection">₹0</div>
-      <div class="small">Sample records only</div>
-    </div>
-    <div class="card">
-      <div class="card-label">Puja Expenses</div>
-      <div class="card-value" id="expenses">₹3,500</div>
-      <div class="small">Sample expense figure</div>
-    </div>
-    <div class="card">
-      <div class="card-label">Remaining Balance</div>
-      <div class="card-value green" id="balance">₹0</div>
-      <div class="small">Collection minus expenses</div>
-    </div>
-  </section>
+    <input id="paymentNote" maxlength="200" placeholder="Optional note / receipt reference (no private details)">
+    <button type="submit">Verify & Save ₹200 Payment</button>
+   </form>
 
-  <h2 class="section-title">👥 Member Contribution Status</h2>
-  <div class="toolbar">
-    <input id="search" type="search" placeholder="Search member name...">
-    <select id="filter">
-      <option value="all">All Members</option>
-      <option value="complete">🟢 Year Completed</option>
-      <option value="pending">🟡 In Progress</option>
-    </select>
+   <h3>Add Puja Expense</h3>
+   <form id="expenseForm">
+    <input id="expenseDescription" maxlength="150" placeholder="Expense description" required>
+    <input id="expenseAmount" type="number" min="1" max="10000000" step="1" placeholder="Amount in ₹" required>
+    <input id="expenseDate" type="date" required>
+    <button type="submit">Save Expense</button>
+   </form>
+   <div id="adminStatus" class="status" role="status">Admin tools ready.</div>
   </div>
+ </section>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Member Name</th>
-          <th>Paid Months</th>
-          <th>Verified Amount</th>
-          <th>Annual Status</th>
-        </tr>
-      </thead>
-      <tbody id="members"></tbody>
-    </table>
-  </div>
+ <h2 class="section-title">📜 Recent Payment Records</h2>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Member</th><th>Month</th><th>Amount</th><th>Status</th></tr></thead>
+   <tbody id="paymentRows"><tr><td colspan="4">Loading...</td></tr></tbody>
+  </table>
+ </div>
 
-  <h2 class="section-title">📋 Committee Rules</h2>
-  <div class="card">
-    <p>• Monthly contribution: <strong>₹200</strong></p>
-    <p>• Full-year contribution: <strong>₹2,400</strong></p>
-    <p>• 🟢 Green Light: all 12 months paid and verified.</p>
-    <p>• 🟡 In Progress: one or more months are pending.</p>
-    <p>• Payment screenshots require treasurer verification.</p>
-    <p class="small">Member names, payment receipts, expenses and balances
-    must be added to the official system only after verification.</p>
-  </div>
+ <h2 class="section-title">📋 Recent Expenses</h2>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Description</th><th>Date</th><th>Amount</th></tr></thead>
+   <tbody id="expenseRows"><tr><td colspan="3">Loading...</td></tr></tbody>
+  </table>
+ </div>
+ <p class="small">Public page: records are visible to visitors. Do not store personal addresses, phone numbers, passwords or private payment information in public records.</p>
 </main>
 
-<footer>
-  Maa Mahalakshmi Puja Committee • Ibrisingh<br>
-  Demo version — not an official financial record
-</footer>
+<footer>Maa Mahalakshmi Puja Committee • Ibrisingh, Odisha</footer>
 
-<script>
-const members = [
-  { name: "Sample Member 1", months: 12, paid: 2400 },
-  { name: "Sample Member 2", months: 8, paid: 1600 },
-  { name: "Sample Member 3", months: 5, paid: 1000 }
-];
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import {
+ getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import {
+ getFirestore, collection, getDocs, doc, setDoc, addDoc,
+ runTransaction, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 
-const sampleExpenses = 3500;
-const tbody = document.getElementById("members");
+const firebaseConfig = {
+ apiKey: "AIzaSyDSeLJuSaJE31XvNaUSUJBVA1aTd6HDMKM",
+ authDomain: "maa-mahalakshmi-puja-committee.firebaseapp.com",
+ projectId: "maa-mahalakshmi-puja-committee",
+ storageBucket: "maa-mahalakshmi-puja-committee.firebasestorage.app",
+ messagingSenderId: "324204187722",
+ appId: "1:324204187722:web:0f6f7bf96f343cefa516b3",
+ measurementId: "G-FMBYM4JS5F"
+};
 
-function rupees(amount) {
-  return "₹" + amount.toLocaleString("en-IN");
+const ADMIN_UID = "trDB4F74DVP8FYTPqLyBdeO1bzD3";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const currentYear = new Date().getFullYear();
+const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+let membersCache = [];
+let paymentsCache = [];
+let expensesCache = [];
+
+const $ = id => document.getElementById(id);
+const money = n => "₹" + Number(n || 0).toLocaleString("en-IN");
+const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+
+function setStatus(message, error=false) {
+ $("adminStatus").textContent = message;
+ $("adminStatus").className = "status " + (error ? "error" : "ok");
+}
+
+function isAdmin(user) {
+ return !!user && user.uid === ADMIN_UID;
+}
+
+function setupMonths() {
+ $("paymentMonth").innerHTML = monthNames.map((name, i) => {
+  const value = `${currentYear}-${String(i+1).padStart(2,"0")}`;
+  return `<option value="${value}">${name} ${currentYear}</option>`;
+ }).join("");
+ $("paymentMonth").value = `${currentYear}-${String(new Date().getMonth()+1).padStart(2,"0")}`;
+ $("expenseDate").value = new Date().toISOString().slice(0,10);
 }
 
 function renderMembers() {
-  const search = document.getElementById("search").value.toLowerCase();
-  const filter = document.getElementById("filter").value;
+ const term = $("search").value.trim().toLowerCase();
+ const filter = $("filter").value;
+ const visible = membersCache.filter(m => {
+  const paidMonths = Array.isArray(m.paidMonths) ? m.paidMonths : [];
+  const yearMonths = paidMonths.filter(v => String(v).startsWith(currentYear + "-"));
+  const complete = new Set(yearMonths).size === 12;
+  return String(m.name || "").toLowerCase().includes(term) &&
+   (filter === "all" || (filter === "complete" && complete) || (filter === "pending" && !complete));
+ });
 
-  const visible = members.filter(member => {
-    const complete = member.months === 12 && member.paid >= 2400;
-    const matchesName = member.name.toLowerCase().includes(search);
-    const matchesStatus = filter === "all" ||
-      (filter === "complete" && complete) ||
-      (filter === "pending" && !complete);
-    return matchesName && matchesStatus;
-  });
+ $("members").innerHTML = visible.length ? visible.map(m => {
+  const paidMonths = Array.isArray(m.paidMonths) ? m.paidMonths : [];
+  const yearMonths = [...new Set(paidMonths.filter(v => String(v).startsWith(currentYear + "-")))];
+  const complete = yearMonths.length === 12;
+  return `<tr><td><strong>${escapeHtml(m.name)}</strong></td>
+   <td>${yearMonths.length}/12</td><td>${money(yearMonths.length*200)}</td>
+   <td><span class="pill ${complete ? "complete" : "pending"}">${complete ? "🟢 GREEN LIGHT" : "🟡 IN PROGRESS"}</span></td></tr>`;
+ }).join("") : '<tr><td colspan="4">No members found.</td></tr>';
 
-  tbody.innerHTML = visible.map(member => {
-    const complete = member.months === 12 && member.paid >= 2400;
-    return `<tr>
-      <td><strong>${member.name}</strong></td>
-      <td>${member.months}/12</td>
-      <td>${rupees(member.paid)}</td>
-      <td><span class="pill ${complete ? "complete" : "pending"}">
-        ${complete ? "🟢 GREEN LIGHT" : "🟡 IN PROGRESS"}
-      </span></td>
-    </tr>`;
-  }).join("");
-
-  if (visible.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4">No members found.</td></tr>';
-  }
+ $("paymentMember").innerHTML = '<option value="">Select member</option>' +
+  membersCache.map(m => `<option value="${escapeHtml(m.id)}">${escapeHtml(m.name)}</option>`).join("");
 }
 
-const collection = members.reduce((sum, member) => sum + member.paid, 0);
-document.getElementById("collection").textContent = rupees(collection);
-document.getElementById("expenses").textContent = rupees(sampleExpenses);
-document.getElementById("balance").textContent = rupees(collection - sampleExpenses);
+function renderPayments() {
+ const sorted = [...paymentsCache].sort((a,b) => String(b.month || "").localeCompare(String(a.month || "")));
+ $("paymentRows").innerHTML = sorted.length ? sorted.slice(0,50).map(p => {
+  const member = membersCache.find(m => m.id === p.memberId);
+  return `<tr><td>${escapeHtml(member?.name || p.memberName || "Member")}</td>
+   <td>${escapeHtml(p.month || "")}</td><td>${money(p.amount)}</td>
+   <td><span class="pill complete">${p.verified ? "VERIFIED" : "PENDING"}</span></td></tr>`;
+ }).join("") : '<tr><td colspan="4">No payment records yet.</td></tr>';
+}
 
-document.getElementById("search").addEventListener("input", renderMembers);
-document.getElementById("filter").addEventListener("change", renderMembers);
-renderMembers();
+function renderExpenses() {
+ const total = expensesCache.reduce((sum,e) => sum + Number(e.amount || 0), 0);
+ const collectionTotal = paymentsCache.filter(p => p.verified === true)
+  .reduce((sum,p) => sum + Number(p.amount || 0), 0);
+ $("collection").textContent = money(collectionTotal);
+ $("expenses").textContent = money(total);
+ $("balance").textContent = money(collectionTotal-total);
+
+ const sorted = [...expensesCache].sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
+ $("expenseRows").innerHTML = sorted.length ? sorted.slice(0,50).map(e =>
+  `<tr><td>${escapeHtml(e.description)}</td><td>${escapeHtml(e.date || "")}</td><td>${money(e.amount)}</td></tr>`
+ ).join("") : '<tr><td colspan="3">No expenses recorded.</td></tr>';
+}
+
+async function loadData() {
+ $("members").innerHTML = '<tr><td colspan="4">Loading records...</td></tr>';
+ try {
+  const [memberSnap, paymentSnap, expenseSnap] = await Promise.all([
+   getDocs(collection(db,"members")),
+   getDocs(collection(db,"payments")),
+   getDocs(collection(db,"expenses"))
+  ]);
+  membersCache = memberSnap.docs.map(d => ({id:d.id,...d.data()}));
+  paymentsCache = paymentSnap.docs.map(d => ({id:d.id,...d.data()}));
+  expensesCache = expenseSnap.docs.map(d => ({id:d.id,...d.data()}));
+  renderMembers();
+  renderPayments();
+  renderExpenses();
+ } catch (err) {
+  console.error(err);
+  $("members").innerHTML = '<tr><td colspan="4">Could not load records. Check Firestore Rules and internet connection.</td></tr>';
+ }
+}
+
+$("loginForm").addEventListener("submit", async e => {
+ e.preventDefault();
+ try {
+  const result = await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
+  if (result.user.uid !== ADMIN_UID) {
+   await signOut(auth);
+   setStatus("This account is not authorised as the committee admin.",true);
+  }
+ } catch (err) {
+  setStatus("Login failed. Check the email/password and Firebase Authentication settings.",true);
+  console.error(err);
+ }
+});
+
+$("logoutBtn").addEventListener("click", () => signOut(auth));
+
+onAuthStateChanged(auth, async user => {
+ const admin = isAdmin(user);
+ $("loginArea").classList.toggle("hidden",admin);
+ $("adminArea").classList.toggle("hidden",!admin);
+ if (admin) {
+  $("adminIdentity").textContent = "Logged in as authorised admin: " + user.email;
+  setStatus("Admin login successful.");
+ } else if (user) {
+  await signOut(auth);
+ }
+ await loadData();
+});
+
+$("memberForm").addEventListener("submit", async e => {
+ e.preventDefault();
+ if (!isAdmin(auth.currentUser)) return;
+ const name = $("memberName").value.trim();
+ if (!name) return;
+ try {
+  await addDoc(collection(db,"members"), {
+   name, paidMonths: [], createdAt: serverTimestamp()
+  });
+  $("memberName").value = "";
+  setStatus("Member added successfully.");
+  await loadData();
+ } catch (err) {
+  setStatus("Could not add member. Check Firestore Rules.",true);
+  console.error(err);
+ }
+});
+
+$("paymentForm").addEventListener("submit", async e => {
+ e.preventDefault();
+ if (!isAdmin(auth.currentUser)) return;
+ const memberId = $("paymentMember").value;
+ const month = $("paymentMonth").value;
+ const note = $("paymentNote").value.trim();
+ if (!memberId || !month) return setStatus("Select a member and month first.",true);
+
+ const memberRef = doc(db,"members",memberId);
+ const paymentRef = doc(collection(db,"payments"));
+ try {
+  await runTransaction(db, async transaction => {
+   const snap = await transaction.get(memberRef);
+   if (!snap.exists()) throw new Error("Member not found.");
+   const data = snap.data();
+   const paidMonths = Array.isArray(data.paidMonths) ? data.paidMonths : [];
+   if (paidMonths.includes(month)) throw new Error("This member already has a payment for that month.");
+   transaction.update(memberRef,{
+    paidMonths:[...paidMonths,month],
+    updatedAt:serverTimestamp()
+   });
+   transaction.set(paymentRef,{
+    memberId, memberName:data.name, month, amount:200,
+    verified:true, note, createdAt:serverTimestamp(),
+    verifiedBy:auth.currentUser.uid
+   });
+  });
+  $("paymentNote").value = "";
+  setStatus("₹200 payment verified and saved.");
+  await loadData();
+ } catch (err) {
+  setStatus(err.message || "Payment save failed. Check Firestore Rules.",true);
+  console.error(err);
+ }
+});
+
+$("expenseForm").addEventListener("submit", async e => {
+ e.preventDefault();
+ if (!isAdmin(auth.currentUser)) return;
+ const description = $("expenseDescription").value.trim();
+ const amount = Number($("expenseAmount").value);
+ const date = $("expenseDate").value;
+ if (!description || !Number.isFinite(amount) || amount <= 0 || !date) {
+  return setStatus("Enter a valid description, amount and date.",true);
+ }
+ try {
+  await addDoc(collection(db,"expenses"),{
+   description, amount, date, createdAt:serverTimestamp(),
+   createdBy:auth.currentUser.uid
+  });
+  $("expenseDescription").value = "";
+  $("expenseAmount").value = "";
+  setStatus("Expense saved successfully.");
+  await loadData();
+ } catch (err) {
+  setStatus("Could not save expense. Check Firestore Rules.",true);
+  console.error(err);
+ }
+});
+
+$("search").addEventListener("input",renderMembers);
+$("filter").addEventListener("change",renderMembers);
+$("refreshBtn").addEventListener("click",loadData);
+setupMonths();
 </script>
-
 </body>
 </html>
