@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maa Mahalakshmi Puja Committee</title>
+<style>
+:root {
+  --orange: #f58220;
+  --dark: #171717;
+  --green: #168447;
+  --muted: #6b7280;
+  --bg: #f5f6f8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: #202124;
+}
+header {
+  background: var(--dark);
+  color: white;
+  padding: 28px 20px;
+  border-bottom: 4px solid var(--orange);
+}
+.header-inner, main {
+  max-width: 1100px;
+  margin: auto;
+}
+.brand {
+  color: #ffab55;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h1 { font-size: clamp(23px, 4vw, 36px); margin: 12px 0; }
+header p { color: #ddd; margin-bottom: 0; line-height: 1.6; }
+main { padding: 24px 16px 40px; }
+.section-title { margin: 26px 0 14px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 12px #00000006;
+}
+.card-label { color: var(--muted); font-size: 13px; }
+.card-value { font-size: 27px; font-weight: bold; margin-top: 10px; }
+.orange { color: var(--orange); }
+.green { color: var(--green); }
+.note {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 13px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 18px 0;
+}
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+input, select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+}
+input { flex: 1; min-width: 180px; }
+.table-wrap {
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+table { border-collapse: collapse; width: 100%; min-width: 620px; }
+th, td {
+  padding: 15px 13px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+th { background: #fafafa; color: #555; }
+tr:last-child td { border-bottom: 0; }
+.pill {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.complete { background: #dcfce7; color: #166534; }
+.pending { background: #fef3c7; color: #92400e; }
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+  padding: 22px;
+}
+.small { font-size: 12px; color: var(--muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">IBRISINGH • ODISHA</div>
+    <h1>🛕 Maa Mahalakshmi Puja Committee</h1>
+    <p>Unity • Devotion • Transparency</p>
+    <p>Member Contributions & Puja Accounts</p>
+  </div>
+</header>
+
+<main>
+  <div class="note">
+    <strong>DEMO WEBSITE</strong><br>
+    All names and figures below are sample data for testing.
+    Official accounts must be updated and verified by the committee treasurer.
+  </div>
+
+  <h2 class="section-title">📊 Contribution Overview</h2>
+
+  <section class="cards">
+    <div class="card">
+      <div class="card-label">Monthly Contribution</div>
+      <div class="card-value orange">₹200</div>
+      <div class="small">Per member / month</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Verified Collection</div>
+      <div class="card-value" id="collection">₹0</div>
+      <div class="small">Sample records only</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Puja Expenses</div>
+      <div class="card-value" id="expenses">₹3,500</div>
+      <div class="small">Sample expense figure</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Remaining Balance</div>
+      <div class="card-value green" id="balance">₹0</div>
+      <div class="small">Collection minus expenses</div>
+    </div>
+  </section>
+
+  <h2 class="section-title">👥 Member Contribution Status</h2>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search member name...">
+    <select id="filter">
+      <option value="all">All Members</option>
+      <option value="complete">🟢 Year Completed</option>
+      <option value="pending">🟡 In Progress</option>
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Member Name</th>
+          <th>Paid Months</th>
+          <th>Verified Amount</th>
+          <th>Annual Status</th>
+        </tr>
+      </thead>
+      <tbody id="members"></tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">📋 Committee Rules</h2>
+  <div class="card">
+    <p>• Monthly contribution: <strong>₹200</strong></p>
+    <p>• Full-year contribution: <strong>₹2,400</strong></p>
+    <p>• 🟢 Green Light: all 12 months paid and verified.</p>
+    <p>• 🟡 In Progress: one or more months are pending.</p>
+    <p>• Payment screenshots require treasurer verification.</p>
+    <p class="small">Member names, payment receipts, expenses and balances
+    must be added to the official system only after verification.</p>
+  </div>
+</main>
+
+<footer>
+  Maa Mahalakshmi Puja Committee • Ibrisingh<br>
+  Demo version — not an official financial record
+</footer>
+
+<script>
+const members = [
+  { name: "Sample Member 1", months: 12, paid: 2400 },
+  { name: "Sample Member 2", months: 8, paid: 1600 },
+  { name: "Sample Member 3", months: 5, paid: 1000 }
+];
+
+const sampleExpenses = 3500;
+const tbody = document.getElementById("members");
+
+function rupees(amount) {
+  return "₹" + amount.toLocaleString("en-IN");
+}
+
+function renderMembers() {
+  const search = document.getElementById("search").value.toLowerCase();
+  const filter = document.getElementById("filter").value;
+
+  const visible = members.filter(member => {
+    const complete = member.months === 12 && member.paid >= 2400;
+    const matchesName = member.name.toLowerCase().includes(search);
+    const matchesStatus = filter === "all" ||
+      (filter === "complete" && complete) ||
+      (filter === "pending" && !complete);
+    return matchesName && matchesStatus;
+  });
+
+  tbody.innerHTML = visible.map(member => {
+    const complete = member.months === 12 && member.paid >= 2400;
+    return `<tr>
+      <td><strong>${member.name}</strong></td>
+      <td>${member.months}/12</td>
+      <td>${rupees(member.paid)}</td>
+      <td><span class="pill ${complete ? "complete" : "pending"}">
+        ${complete ? "🟢 GREEN LIGHT" : "🟡 IN PROGRESS"}
+      </span></td>
+    </tr>`;
+  }).join("");
+
+  if (visible.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4">No members found.</td></tr>';
+  }
+}
+
+const collection = members.reduce((sum, member) => sum + member.paid, 0);
+document.getElementById("collection").textContent = rupees(collection);
+document.getElementById("expenses").textContent = rupees(sampleExpenses);
+document.getElementById("balance").textContent = rupees(collection - sampleExpenses);
+
+document.getElementById("search").addEventListener("input", renderMembers);
+document.getElementById("filter").addEventListener("change", renderMembers);
+renderMembers();
+</script>
+
+</body>
+</html>
