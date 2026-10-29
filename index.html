@@ -1,25 +1,25 @@
 
 <!DOCTYPE html>
-<html lang="or">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080808">
-  <title>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି - ଇବ୍ରିସିଂହ</title>
+  <title>Maa Mahalakshmi Puja Committee - Ibrisingha</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Oriya:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --black: #080808;
-      --black2: #11100d;
+      --panel: #11100d;
       --gold: #d4af37;
       --gold-light: #ffe7a0;
       --gold-dark: #8e6b18;
       --white: #fffaf0;
-      --muted: #b5ad9b;
+      --muted: #aaa394;
       --border: rgba(212, 175, 55, 0.25);
     }
 
@@ -29,34 +29,23 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--black);
       color: var(--white);
-      font-family: "Noto Sans Oriya", sans-serif;
+      font-family: "Inter", sans-serif;
       min-height: 100vh;
     }
 
-    button, input {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
 
     .top-line {
       height: 3px;
       background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold-dark),
-        var(--gold-light),
-        var(--gold),
-        transparent
+        90deg, transparent, var(--gold-dark),
+        var(--gold-light), var(--gold), transparent
       );
     }
 
@@ -65,16 +54,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100px;
+      min-height: 105px;
       padding: 20px 65px;
-      border-bottom: 1px solid var(--border);
       background: #0b0a08;
+      border-bottom: 1px solid var(--border);
     }
 
     .menu-button {
       position: absolute;
       left: 22px;
-      top: 25px;
+      top: 29px;
       width: 43px;
       height: 43px;
       display: flex;
@@ -95,30 +84,29 @@
       border-radius: 2px;
     }
 
-    .brand {
-      text-align: center;
-    }
+    .brand { text-align: center; }
 
     .brand-small {
       color: var(--gold);
       font-family: "Cinzel", serif;
       font-size: 10px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       margin-bottom: 8px;
     }
 
     .brand h1 {
       color: var(--gold-light);
-      font-size: clamp(19px, 4vw, 30px);
-      line-height: 1.7;
+      font-family: "Noto Sans Oriya", sans-serif;
+      font-size: clamp(19px, 4vw, 29px);
+      line-height: 1.8;
       font-weight: 700;
     }
 
     .brand p {
       color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 3px;
-      margin-top: 2px;
+      font-family: "Noto Sans Oriya", sans-serif;
+      font-size: 14px;
+      margin-top: 1px;
     }
 
     .menu-panel {
@@ -126,8 +114,8 @@
       position: absolute;
       z-index: 20;
       left: 16px;
-      top: 77px;
-      width: 205px;
+      top: 80px;
+      width: 210px;
       padding: 15px;
       background: #15120c;
       border: 1px solid var(--gold-dark);
@@ -135,20 +123,19 @@
       box-shadow: 0 12px 35px #000;
     }
 
-    .menu-panel.open {
-      display: block;
-    }
+    .menu-panel.open { display: block; }
 
     .menu-heading {
       color: var(--gold);
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: 2px;
       margin-bottom: 12px;
     }
 
     .menu-link {
       display: block;
       width: 100%;
-      padding: 11px;
+      padding: 12px;
       border: 1px solid var(--border);
       border-radius: 8px;
       background: transparent;
@@ -157,38 +144,16 @@
       font-size: 13px;
     }
 
-    .menu-link:hover {
-      background: #292113;
-    }
+    .menu-link:hover { background: #292113; }
 
     .hero {
       position: relative;
       overflow: hidden;
       text-align: center;
-      padding: 60px 20px 45px;
-      background:
-        radial-gradient(ellipse at 50% 35%, #30240d 0%, #151109 35%, #080808 75%);
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 1px solid rgba(212, 175, 55, 0.12);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      top: 20px;
-      left: -110px;
-    }
-
-    .hero::after {
-      bottom: -100px;
-      right: -80px;
+      padding: 65px 20px 50px;
+      background: radial-gradient(
+        ellipse at 50% 35%, #30240d 0%, #151109 35%, #080808 75%
+      );
     }
 
     .ornament {
@@ -208,17 +173,18 @@
     .hero h2 {
       max-width: 780px;
       margin: 0 auto 18px;
-      font-size: clamp(25px, 5vw, 43px);
-      line-height: 1.8;
       color: var(--gold-light);
+      font-family: "Cinzel", serif;
+      font-size: clamp(25px, 5vw, 43px);
+      line-height: 1.5;
     }
 
     .hero-description {
-      max-width: 540px;
+      max-width: 550px;
       margin: 0 auto;
       color: var(--muted);
       font-size: 14px;
-      line-height: 2;
+      line-height: 1.9;
     }
 
     .gold-divider {
@@ -240,7 +206,7 @@
 
     .section {
       max-width: 1100px;
-      padding: 25px 20px 50px;
+      padding: 30px 20px 50px;
       margin: auto;
     }
 
@@ -249,9 +215,7 @@
       margin-bottom: 28px;
     }
 
-    .section-heading .eyebrow {
-      margin-bottom: 10px;
-    }
+    .section-heading .eyebrow { margin-bottom: 10px; }
 
     .section-heading h3 {
       color: var(--gold-light);
@@ -288,7 +252,7 @@
     .stat-label {
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     .stat-value {
@@ -301,7 +265,7 @@
 
     .member-section {
       max-width: 900px;
-      margin: 0 auto;
+      margin: auto;
       padding: 10px 20px 65px;
     }
 
@@ -321,9 +285,7 @@
       outline: none;
     }
 
-    .search-wrap input:focus {
-      border-color: var(--gold);
-    }
+    .search-wrap input:focus { border-color: var(--gold); }
 
     .search-icon {
       position: absolute;
@@ -347,7 +309,7 @@
       border: 1px dashed var(--border);
       border-radius: 10px;
       font-size: 13px;
-      line-height: 2;
+      line-height: 1.8;
     }
 
     .member-card {
@@ -357,12 +319,9 @@
       border-radius: 10px;
       color: var(--white);
       text-align: left;
-      transition: border-color 0.2s;
     }
 
-    .member-card:hover {
-      border-color: var(--gold);
-    }
+    .member-card:hover { border-color: var(--gold); }
 
     .member-card strong {
       display: block;
@@ -406,9 +365,7 @@
       justify-content: center;
     }
 
-    .modal-backdrop.open {
-      display: flex;
-    }
+    .modal-backdrop.open { display: flex; }
 
     .modal {
       width: 100%;
@@ -463,38 +420,18 @@
         padding: 18px 10px;
       }
 
-      .header {
-        min-height: 90px;
-        padding: 15px 55px;
-      }
+      .header { min-height: 95px; padding: 15px 55px; }
 
-      .menu-button {
-        left: 12px;
-        top: 23px;
-      }
+      .menu-button { left: 12px; top: 26px; }
 
-      .brand-small {
-        font-size: 8px;
-        letter-spacing: 2px;
-      }
+      .brand-small { font-size: 8px; letter-spacing: 1px; }
 
-      .brand p {
-        font-size: 11px;
-      }
-
-      .hero {
-        padding-top: 45px;
-      }
+      .hero { padding-top: 45px; }
     }
 
     @media (max-width: 420px) {
-      .member-list {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-description {
-        font-size: 13px;
-      }
+      .member-list { grid-template-columns: 1fr; }
+      .hero-description { font-size: 13px; }
     }
   </style>
 </head>
@@ -526,11 +463,15 @@
     <section class="hero">
       <div class="ornament">❖</div>
       <div class="eyebrow">DEVOTION · UNITY · SERVICE</div>
-      <h2>ମା' ମହାଲକ୍ଷ୍ମୀଙ୍କ ଆଶୀର୍ବାଦରେ<br>ଆମ କମିଟି, ଆମ ଗର୍ବ</h2>
+
+      <h2>United in Faith,<br>Stronger as a Community</h2>
+
       <p class="hero-description">
-        ଆମ ପୂଜା କମିଟିର ସମସ୍ତ ସଦସ୍ୟ, ଚାନ୍ଦା ଆଦାୟ
-        ଓ ଖର୍ଚ୍ଚର ବିବରଣୀ ଏକ ସ୍ଥାନରେ।
+        Welcome to Maa Mahalakshmi Puja Committee, Ibrisingha.
+        View committee members, monthly donations, collection
+        records and expense details in one place.
       </p>
+
       <div class="gold-divider">✧</div>
       <div class="eyebrow">WELCOME TO OUR COMMITTEE</div>
     </section>
@@ -538,31 +479,31 @@
     <section class="section">
       <div class="section-heading">
         <div class="eyebrow">COMMITTEE ACCOUNTS</div>
-        <h3>ଆମ କମିଟିର ହିସାବ</h3>
+        <h3>Financial Overview</h3>
       </div>
 
       <div class="stats">
         <div class="stat-card">
           <div class="stat-icon">₹</div>
-          <div class="stat-label">ସର୍ବନିମ୍ନ ମାସିକ ଚାନ୍ଦା</div>
+          <div class="stat-label">Minimum Monthly Donation</div>
           <div class="stat-value">₹200</div>
         </div>
 
         <div class="stat-card">
           <div class="stat-icon">◈</div>
-          <div class="stat-label">ମୋଟ ଚାନ୍ଦା ଆଦାୟ</div>
+          <div class="stat-label">Total Collection</div>
           <div class="stat-value" id="totalCollection">₹0</div>
         </div>
 
         <div class="stat-card">
           <div class="stat-icon">▤</div>
-          <div class="stat-label">ମୋଟ ଖର୍ଚ୍ଚ</div>
+          <div class="stat-label">Total Expenses</div>
           <div class="stat-value" id="totalExpenses">₹0</div>
         </div>
 
         <div class="stat-card">
           <div class="stat-icon">◇</div>
-          <div class="stat-label">ବାକି ରାଶି</div>
+          <div class="stat-label">Remaining Balance</div>
           <div class="stat-value" id="balance">₹0</div>
         </div>
       </div>
@@ -571,28 +512,28 @@
     <section class="member-section">
       <div class="section-heading">
         <div class="eyebrow">OUR MEMBERS</div>
-        <h3>ସଦସ୍ୟ ତାଲିକା</h3>
+        <h3>Committee Members</h3>
       </div>
 
       <div class="search-wrap">
         <span class="search-icon">⌕</span>
         <input type="search" id="memberSearch"
-          placeholder="ସଦସ୍ୟଙ୍କ ନାମ ଖୋଜନ୍ତୁ..."
+          placeholder="Search members by name..."
           aria-label="Search members">
       </div>
 
       <div class="member-list" id="memberList">
         <div class="empty-state">
-          ସଦସ୍ୟଙ୍କ ବିବରଣୀ ଏଠାରେ ଦେଖାଯିବ।<br>
-          Admin Login ଓ Firebase Setup ପରେ Member Add କରିପାରିବ।
+          Member records will appear here.<br>
+          Admin can add members after the database is connected.
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <strong>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି — ଇବ୍ରିସିଂହ</strong>
-    <p>ଭକ୍ତି • ଏକତା • ସେବା</p>
+    <strong>Maa Mahalakshmi Puja Committee — Ibrisingha</strong>
+    <p>Devotion • Unity • Service</p>
     <p>© <span id="currentYear"></span> Maa Mahalakshmi Puja Committee</p>
   </footer>
 
@@ -600,7 +541,7 @@
     <div class="modal">
       <button class="close-modal" id="closeMemberModal"
         aria-label="Close">&times;</button>
-      <h3 id="memberModalTitle">ସଦସ୍ୟଙ୍କ ବିବରଣୀ</h3>
+      <h3 id="memberModalTitle">Member Details</h3>
       <div id="memberModalContent"></div>
     </div>
   </div>
@@ -629,18 +570,18 @@
     });
 
     document.getElementById("adminButton").addEventListener("click", () => {
-      alert("Admin Login Firebase Authentication ସହିତ ପରବର୍ତ୍ତୀ Step ରେ Connect କରାଯିବ।");
+      alert("Admin Login will be connected to Firebase Authentication in the next step.");
       menuPanel.classList.remove("open");
       menuButton.setAttribute("aria-expanded", "false");
     });
 
     memberSearch.addEventListener("input", () => {
-      const query = memberSearch.value.trim().toLocaleLowerCase();
+      const query = memberSearch.value.trim().toLowerCase();
       const cards = memberList.querySelectorAll(".member-card");
       let visible = 0;
 
       cards.forEach((card) => {
-        const matches = card.dataset.name.toLocaleLowerCase().includes(query);
+        const matches = card.dataset.name.toLowerCase().includes(query);
         card.hidden = !matches;
         if (matches) visible++;
       });
@@ -651,7 +592,7 @@
       if (cards.length > 0 && visible === 0) {
         const empty = document.createElement("div");
         empty.className = "empty-state search-empty";
-        empty.textContent = "କୌଣସି ସଦସ୍ୟ ମିଳିଲେ ନାହିଁ।";
+        empty.textContent = "No members found.";
         memberList.appendChild(empty);
       }
     });
@@ -666,9 +607,9 @@
       }
     });
 
-    // ଏହା ବର୍ତ୍ତମାନ କେବଳ Home Page Design।
-    // Firebase, Admin Login, Member Data, Payments ଓ Expenses
-    // ପରବର୍ତ୍ତୀ Step ରେ ସୁରକ୍ଷିତ ଭାବରେ Connect କରାଯିବ।
+    // Home page design only.
+    // Firebase Authentication, member records, payments and expenses
+    // will be connected in the next steps.
   </script>
 </body>
 </html>
