@@ -2,614 +2,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <title>Maa Mahalakshmi Puja Committee - Ibrisingha</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Oriya:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black: #080808;
-      --panel: #11100d;
-      --gold: #d4af37;
-      --gold-light: #ffe7a0;
-      --gold-dark: #8e6b18;
-      --white: #fffaf0;
-      --muted: #aaa394;
-      --border: rgba(212, 175, 55, 0.25);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: "Inter", sans-serif;
-      min-height: 100vh;
-    }
-
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-
-    .top-line {
-      height: 3px;
-      background: linear-gradient(
-        90deg, transparent, var(--gold-dark),
-        var(--gold-light), var(--gold), transparent
-      );
-    }
-
-    .header {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 105px;
-      padding: 20px 65px;
-      background: #0b0a08;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .menu-button {
-      position: absolute;
-      left: 22px;
-      top: 29px;
-      width: 43px;
-      height: 43px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #14120d;
-      color: var(--gold);
-    }
-
-    .menu-button span {
-      width: 19px;
-      height: 2px;
-      background: currentColor;
-      border-radius: 2px;
-    }
-
-    .brand { text-align: center; }
-
-    .brand-small {
-      color: var(--gold);
-      font-family: "Cinzel", serif;
-      font-size: 10px;
-      letter-spacing: 3px;
-      margin-bottom: 8px;
-    }
-
-    .brand h1 {
-      color: var(--gold-light);
-      font-family: "Noto Sans Oriya", sans-serif;
-      font-size: clamp(19px, 4vw, 29px);
-      line-height: 1.8;
-      font-weight: 700;
-    }
-
-    .brand p {
-      color: var(--muted);
-      font-family: "Noto Sans Oriya", sans-serif;
-      font-size: 14px;
-      margin-top: 1px;
-    }
-
-    .menu-panel {
-      display: none;
-      position: absolute;
-      z-index: 20;
-      left: 16px;
-      top: 80px;
-      width: 210px;
-      padding: 15px;
-      background: #15120c;
-      border: 1px solid var(--gold-dark);
-      border-radius: 12px;
-      box-shadow: 0 12px 35px #000;
-    }
-
-    .menu-panel.open { display: block; }
-
-    .menu-heading {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    .menu-link {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--white);
-      text-align: left;
-      font-size: 13px;
-    }
-
-    .menu-link:hover { background: #292113; }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 65px 20px 50px;
-      background: radial-gradient(
-        ellipse at 50% 35%, #30240d 0%, #151109 35%, #080808 75%
-      );
-    }
-
-    .ornament {
-      color: var(--gold);
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-family: "Cinzel", serif;
-      font-size: 11px;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
-
-    .hero h2 {
-      max-width: 780px;
-      margin: 0 auto 18px;
-      color: var(--gold-light);
-      font-family: "Cinzel", serif;
-      font-size: clamp(25px, 5vw, 43px);
-      line-height: 1.5;
-    }
-
-    .hero-description {
-      max-width: 550px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .gold-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 28px auto;
-      color: var(--gold);
-    }
-
-    .gold-divider::before,
-    .gold-divider::after {
-      content: "";
-      width: 55px;
-      height: 1px;
-      background: var(--gold-dark);
-    }
-
-    .section {
-      max-width: 1100px;
-      padding: 30px 20px 50px;
-      margin: auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-heading .eyebrow { margin-bottom: 10px; }
-
-    .section-heading h3 {
-      color: var(--gold-light);
-      font-size: 23px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .stat-card {
-      min-height: 145px;
-      padding: 23px 15px;
-      background: linear-gradient(145deg, #19160f, #0e0d0a);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-    }
-
-    .stat-icon {
-      color: var(--gold);
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .stat-value {
-      margin-top: 9px;
-      color: var(--gold-light);
-      font-family: "Cinzel", serif;
-      font-size: clamp(20px, 3vw, 27px);
-      overflow-wrap: anywhere;
-    }
-
-    .member-section {
-      max-width: 900px;
-      margin: auto;
-      padding: 10px 20px 65px;
-    }
-
-    .search-wrap {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto 25px;
-    }
-
-    .search-wrap input {
-      width: 100%;
-      padding: 15px 18px 15px 45px;
-      background: #12110e;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--white);
-      outline: none;
-    }
-
-    .search-wrap input:focus { border-color: var(--gold); }
-
-    .search-icon {
-      position: absolute;
-      left: 16px;
-      top: 12px;
-      color: var(--gold);
-      font-size: 20px;
-    }
-
-    .member-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      padding: 25px;
-      text-align: center;
-      color: var(--muted);
-      border: 1px dashed var(--border);
-      border-radius: 10px;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .member-card {
-      padding: 16px;
-      background: #11100d;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--white);
-      text-align: left;
-    }
-
-    .member-card:hover { border-color: var(--gold); }
-
-    .member-card strong {
-      display: block;
-      color: var(--gold-light);
-      font-size: 15px;
-    }
-
-    .member-card span {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 7px;
-    }
-
-    .footer {
-      padding: 25px 20px;
-      text-align: center;
-      background: #0c0b09;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer strong {
-      color: var(--gold);
-      font-size: 13px;
-    }
-
-    .footer p {
-      color: var(--muted);
-      margin-top: 9px;
-      font-size: 11px;
-    }
-
-    .modal-backdrop {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.82);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-backdrop.open { display: flex; }
-
-    .modal {
-      width: 100%;
-      max-width: 460px;
-      max-height: 85vh;
-      overflow-y: auto;
-      padding: 25px;
-      background: #14120d;
-      border: 1px solid var(--gold-dark);
-      border-radius: 14px;
-    }
-
-    .modal h3 {
-      color: var(--gold-light);
-      margin-bottom: 18px;
-      font-size: 20px;
-    }
-
-    .close-modal {
-      float: right;
-      border: 0;
-      background: none;
-      color: var(--gold);
-      font-size: 25px;
-    }
-
-    .detail-row {
-      padding: 13px 0;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.8;
-    }
-
-    .detail-row small {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
-
-    .detail-row strong {
-      color: var(--gold-light);
-      overflow-wrap: anywhere;
-    }
-
-    @media (max-width: 760px) {
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .stat-card {
-        min-height: 130px;
-        padding: 18px 10px;
-      }
-
-      .header { min-height: 95px; padding: 15px 55px; }
-
-      .menu-button { left: 12px; top: 26px; }
-
-      .brand-small { font-size: 8px; letter-spacing: 1px; }
-
-      .hero { padding-top: 45px; }
-    }
-
-    @media (max-width: 420px) {
-      .member-list { grid-template-columns: 1fr; }
-      .hero-description { font-size: 13px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Maa Mahalakshmi Puja Committee</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090909;color:#f8f1df;font-family:Arial,sans-serif}
+header{padding:16px 52px;background:#11100c;border-bottom:1px solid #b99738;text-align:center;position:relative}
+.menu{position:absolute;left:12px;top:17px;background:none;border:1px solid #b99738;color:#e4c568;border-radius:6px;padding:7px 9px;font-size:19px}
+h1{font-size:18px;color:#f1d580;line-height:1.8}
+header p{font-size:12px;color:#d4af37}
+.menu-box{display:none;position:absolute;z-index:5;left:10px;top:58px;background:#17150f;border:1px solid #b99738;border-radius:7px;padding:10px}
+.menu-box.show{display:block}
+.menu-box button{background:none;color:#f1d580;border:0;padding:8px}
+.hero{text-align:center;padding:28px 16px;background:radial-gradient(ellipse,#30230d,#090909 75%)}
+.hero .symbol{font-size:25px;color:#d4af37}
+.hero h2{font-size:23px;color:#f1d580;margin:12px 0}
+.hero p{font-size:12px;color:#bdb5a3;line-height:1.7}
+section{padding:20px 14px}
+h3{text-align:center;color:#f1d580;font-size:17px;margin-bottom:15px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.card{padding:14px 9px;text-align:center;background:#14120d;border:1px solid #5e4b20;border-radius:8px;min-width:0}
+.card small{font-size:11px;color:#bdb5a3;line-height:1.5}
+.card strong{display:block;color:#f1d580;font-size:21px;margin-top:8px;overflow-wrap:anywhere}
+.search{width:100%;padding:12px;background:#15130e;color:white;border:1px solid #6f5923;border-radius:7px;margin-bottom:12px;font-size:14px}
+.member{display:block;width:100%;text-align:left;padding:13px;margin-bottom:8px;background:#14120d;border:1px solid #55441f;border-radius:7px;color:#f1d580;font-size:14px}
+.note{text-align:center;color:#aaa18e;font-size:12px;padding:14px;line-height:1.7}
+footer{text-align:center;border-top:1px solid #5e4b20;padding:17px 10px;color:#d4af37;font-size:11px}
+@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}main{max-width:700px;margin:auto}}
+</style>
 </head>
-
 <body>
-  <div class="top-line"></div>
+<header>
+<button class="menu" id="menuBtn" aria-label="Menu">☰</button>
+<div class="menu-box" id="menuBox"><button id="adminBtn">Admin Login</button></div>
+<h1>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି</h1>
+<p>ଇବ୍ରିସିଂହ</p>
+</header>
 
-  <header class="header">
-    <button class="menu-button" id="menuButton"
-      aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<main>
+<div class="hero">
+<div class="symbol">✦ ❖ ✦</div>
+<h2>Welcome to Our Committee</h2>
+<p>Devotion · Unity · Service</p>
+</div>
 
-    <div class="menu-panel" id="menuPanel">
-      <div class="menu-heading">ADMINISTRATION</div>
-      <button class="menu-link" id="adminButton">Admin Login</button>
-    </div>
+<section>
+<h3>Financial Overview</h3>
+<div class="stats">
+<div class="card"><small>Minimum Donation</small><strong>₹200</strong></div>
+<div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
+<div class="card"><small>Total Expenses</small><strong id="expenses">₹0</strong></div>
+<div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
+</div>
+</section>
 
-    <div class="brand">
-      <div class="brand-small">✦ MAHALAKSHMI PUJA COMMITTEE ✦</div>
-      <h1>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି</h1>
-      <p>ଇବ୍ରିସିଂହ</p>
-    </div>
-  </header>
+<section>
+<h3>Committee Members</h3>
+<input class="search" id="search" placeholder="Search member name..." type="search">
+<div id="members"><p class="note">Member records will appear here after Firebase setup.</p></div>
+</section>
+</main>
 
-  <main>
-    <section class="hero">
-      <div class="ornament">❖</div>
-      <div class="eyebrow">DEVOTION · UNITY · SERVICE</div>
+<footer>Maa Mahalakshmi Puja Committee · Ibrisingha</footer>
 
-      <h2>United in Faith,<br>Stronger as a Community</h2>
-
-      <p class="hero-description">
-        Welcome to Maa Mahalakshmi Puja Committee, Ibrisingha.
-        View committee members, monthly donations, collection
-        records and expense details in one place.
-      </p>
-
-      <div class="gold-divider">✧</div>
-      <div class="eyebrow">WELCOME TO OUR COMMITTEE</div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <div class="eyebrow">COMMITTEE ACCOUNTS</div>
-        <h3>Financial Overview</h3>
-      </div>
-
-      <div class="stats">
-        <div class="stat-card">
-          <div class="stat-icon">₹</div>
-          <div class="stat-label">Minimum Monthly Donation</div>
-          <div class="stat-value">₹200</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">◈</div>
-          <div class="stat-label">Total Collection</div>
-          <div class="stat-value" id="totalCollection">₹0</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">▤</div>
-          <div class="stat-label">Total Expenses</div>
-          <div class="stat-value" id="totalExpenses">₹0</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">◇</div>
-          <div class="stat-label">Remaining Balance</div>
-          <div class="stat-value" id="balance">₹0</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="member-section">
-      <div class="section-heading">
-        <div class="eyebrow">OUR MEMBERS</div>
-        <h3>Committee Members</h3>
-      </div>
-
-      <div class="search-wrap">
-        <span class="search-icon">⌕</span>
-        <input type="search" id="memberSearch"
-          placeholder="Search members by name..."
-          aria-label="Search members">
-      </div>
-
-      <div class="member-list" id="memberList">
-        <div class="empty-state">
-          Member records will appear here.<br>
-          Admin can add members after the database is connected.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <strong>Maa Mahalakshmi Puja Committee — Ibrisingha</strong>
-    <p>Devotion • Unity • Service</p>
-    <p>© <span id="currentYear"></span> Maa Mahalakshmi Puja Committee</p>
-  </footer>
-
-  <div class="modal-backdrop" id="memberModal">
-    <div class="modal">
-      <button class="close-modal" id="closeMemberModal"
-        aria-label="Close">&times;</button>
-      <h3 id="memberModalTitle">Member Details</h3>
-      <div id="memberModalContent"></div>
-    </div>
-  </div>
-
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const menuPanel = document.getElementById("menuPanel");
-    const memberSearch = document.getElementById("memberSearch");
-    const memberList = document.getElementById("memberList");
-    const memberModal = document.getElementById("memberModal");
-
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
-
-    menuButton.addEventListener("click", () => {
-      const isOpen = menuPanel.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    document.addEventListener("click", (event) => {
-      if (!menuPanel.contains(event.target) &&
-          !menuButton.contains(event.target)) {
-        menuPanel.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.getElementById("adminButton").addEventListener("click", () => {
-      alert("Admin Login will be connected to Firebase Authentication in the next step.");
-      menuPanel.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    });
-
-    memberSearch.addEventListener("input", () => {
-      const query = memberSearch.value.trim().toLowerCase();
-      const cards = memberList.querySelectorAll(".member-card");
-      let visible = 0;
-
-      cards.forEach((card) => {
-        const matches = card.dataset.name.toLowerCase().includes(query);
-        card.hidden = !matches;
-        if (matches) visible++;
-      });
-
-      const oldEmpty = memberList.querySelector(".search-empty");
-      if (oldEmpty) oldEmpty.remove();
-
-      if (cards.length > 0 && visible === 0) {
-        const empty = document.createElement("div");
-        empty.className = "empty-state search-empty";
-        empty.textContent = "No members found.";
-        memberList.appendChild(empty);
-      }
-    });
-
-    document.getElementById("closeMemberModal").addEventListener("click", () => {
-      memberModal.classList.remove("open");
-    });
-
-    memberModal.addEventListener("click", (event) => {
-      if (event.target === memberModal) {
-        memberModal.classList.remove("open");
-      }
-    });
-
-    // Home page design only.
-    // Firebase Authentication, member records, payments and expenses
-    // will be connected in the next steps.
-  </script>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const menuBox=document.getElementById('menuBox');
+menuBtn.onclick=()=>menuBox.classList.toggle('show');
+document.addEventListener('click',e=>{
+if(!menuBtn.contains(e.target)&&!menuBox.contains(e.target))menuBox.classList.remove('show');
+});
+document.getElementById('adminBtn').onclick=()=>{
+alert('Admin Login will be connected to Firebase in the next step.');
+};
+document.getElementById('search').addEventListener('input',function(){
+const q=this.value.trim().toLowerCase();
+document.querySelectorAll('.member').forEach(el=>{
+el.style.display=el.textContent.toLowerCase().includes(q)?'block':'none';
+});
+});
+</script>
 </body>
 </html>
