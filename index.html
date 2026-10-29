@@ -262,8 +262,21 @@ function listen(path, callback, sortField) {
   return onSnapshot(q, snap => callback(snap.docs.map(d => ({id:d.id,...d.data()}))),
     err => console.error(path, err));
 }
-function isAdmin() { return currentRole === "admin" || currentRole === "superAdmin"; }
-function isSuper() { return currentRole === "superAdmin"; }
+function isAdmin() {
+  return currentRole === "superAdmin";
+}
+
+function isPresident() {
+  return currentRole === "president";
+}
+
+function canManageMembersPayments() {
+  return isAdmin() || isPresident();
+}
+
+function isSuper() {
+  return currentRole === "superAdmin";
+}
 
 function showMoney() {
   const total = paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
