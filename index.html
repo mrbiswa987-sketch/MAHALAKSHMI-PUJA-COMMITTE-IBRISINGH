@@ -5,83 +5,514 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
-<title>Maa Mahalakshmi Puja Committee</title>
+<title>Maa Mahalakshmi Puja Committee - Ibrisingha</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#090909;color:#f8f1df;font-family:Arial,sans-serif}
-header{padding:16px 52px;background:#11100c;border-bottom:1px solid #b99738;text-align:center;position:relative}
-.menu{position:absolute;left:12px;top:17px;background:none;border:1px solid #b99738;color:#e4c568;border-radius:6px;padding:7px 9px;font-size:19px}
-h1{font-size:18px;color:#f1d580;line-height:1.8}
-header p{font-size:12px;color:#d4af37}
-.menu-box{display:none;position:absolute;z-index:5;left:10px;top:58px;background:#17150f;border:1px solid #b99738;border-radius:7px;padding:10px}
+:root {
+  --bg:#090909; --panel:#15130e; --gold:#d4af37;
+  --light:#f1d580; --text:#f8f1df; --muted:#bdb5a3;
+  --border:#5e4b20; --red:#c65353; --green:#62c58a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+header{background:#11100c;border-bottom:1px solid var(--gold);padding:16px;text-align:center;position:relative}
+h1{font-size:20px;color:var(--light);line-height:1.7;margin:0}
+header p{margin:0;color:var(--gold);font-size:13px}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.menu{position:absolute;left:12px;top:17px;background:#15130e;border:1px solid var(--gold);color:var(--light);padding:8px 11px;border-radius:6px}
+.menu-box{display:none;position:absolute;z-index:10;left:12px;top:58px;background:#17150f;border:1px solid var(--gold);border-radius:7px;padding:10px}
 .menu-box.show{display:block}
-.menu-box button{background:none;color:#f1d580;border:0;padding:8px}
-.hero{text-align:center;padding:28px 16px;background:radial-gradient(ellipse,#30230d,#090909 75%)}
-.hero .symbol{font-size:25px;color:#d4af37}
-.hero h2{font-size:23px;color:#f1d580;margin:12px 0}
-.hero p{font-size:12px;color:#bdb5a3;line-height:1.7}
+.menu-box button{display:block;background:none;border:0;color:var(--light);padding:10px}
+main{max-width:1000px;margin:auto}
+.hero{text-align:center;padding:30px 15px;background:radial-gradient(ellipse,#30230d,#090909 75%)}
+.symbol{font-size:28px;color:var(--gold)}
+.hero h2{color:var(--light);font-size:24px;margin:12px 0}
+.hero p{font-size:13px;color:var(--muted)}
 section{padding:20px 14px}
-h3{text-align:center;color:#f1d580;font-size:17px;margin-bottom:15px}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.card{padding:14px 9px;text-align:center;background:#14120d;border:1px solid #5e4b20;border-radius:8px;min-width:0}
-.card small{font-size:11px;color:#bdb5a3;line-height:1.5}
-.card strong{display:block;color:#f1d580;font-size:21px;margin-top:8px;overflow-wrap:anywhere}
-.search{width:100%;padding:12px;background:#15130e;color:white;border:1px solid #6f5923;border-radius:7px;margin-bottom:12px;font-size:14px}
-.member{display:block;width:100%;text-align:left;padding:13px;margin-bottom:8px;background:#14120d;border:1px solid #55441f;border-radius:7px;color:#f1d580;font-size:14px}
-.note{text-align:center;color:#aaa18e;font-size:12px;padding:14px;line-height:1.7}
-footer{text-align:center;border-top:1px solid #5e4b20;padding:17px 10px;color:#d4af37;font-size:11px}
-@media(min-width:600px){.stats{grid-template-columns:repeat(4,1fr)}main{max-width:700px;margin:auto}}
+h3{text-align:center;color:var(--light);font-size:18px;margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.card,.panel{padding:15px 12px;background:var(--panel);border:1px solid var(--border);border-radius:9px;min-width:0}
+.card{text-align:center}
+.card small{font-size:12px;color:var(--muted)}
+.card strong{display:block;color:var(--light);font-size:22px;margin-top:9px;overflow-wrap:anywhere}
+.search,.field{width:100%;padding:12px;margin:5px 0 12px;background:#0e0d0a;color:white;border:1px solid #6f5923;border-radius:6px}
+label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
+.btn{background:#d4af37;color:#161108;border:0;border-radius:6px;padding:11px 14px;font-weight:bold;margin:4px 2px}
+.btn.secondary{background:#282319;color:var(--light);border:1px solid var(--border)}
+.btn.danger{background:#702d2d;color:white}
+.btn:disabled{opacity:.5}
+.member{display:block;width:100%;text-align:left;padding:13px;margin:7px 0;background:var(--panel);border:1px solid var(--border);border-radius:7px;color:var(--light)}
+.member small{display:block;color:var(--muted);margin-top:5px}
+.note{text-align:center;color:var(--muted);font-size:12px;padding:14px;line-height:1.7}
+.notice{border:1px solid var(--gold);padding:15px;border-radius:8px;background:#17130a;line-height:1.7;white-space:pre-wrap}
+.gallery img{width:100%;max-height:350px;object-fit:contain;border-radius:8px}
+.row{display:grid;grid-template-columns:1fr;gap:12px}
+.listrow{border-bottom:1px solid #3b321e;padding:12px 0;line-height:1.7;overflow-wrap:anywhere}
+.small{font-size:12px;color:var(--muted)}
+.hidden{display:none!important}
+.status{font-size:13px;color:var(--green);white-space:pre-wrap}
+.error{color:#ff9696}
+footer{border-top:1px solid var(--border);text-align:center;padding:18px 10px;color:var(--gold);font-size:12px}
+hr{border:0;border-top:1px solid var(--border);margin:16px 0}
+@media(min-width:650px){
+ .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+ section{padding:24px}
+}
+@media print{
+ body{background:white;color:black}
+ header,.hero,#publicSections,#adminLogin,#adminPanel .no-print,footer{display:none!important}
+ #reportPrint{display:block!important}
+}
 </style>
 </head>
 <body>
+
 <header>
-<button class="menu" id="menuBtn" aria-label="Menu">☰</button>
-<div class="menu-box" id="menuBox"><button id="adminBtn">Admin Login</button></div>
-<h1>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି</h1>
-<p>ଇବ୍ରିସିଂହ</p>
+  <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
+  <div class="menu-box" id="menuBox">
+    <button id="loginOpen">Admin Login</button>
+    <button id="logoutBtn" class="hidden">Logout</button>
+  </div>
+  <h1>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି</h1>
+  <p>ଇବ୍ରିସିଂହ</p>
 </header>
 
-<main>
 <div class="hero">
-<div class="symbol">✦ ❖ ✦</div>
-<h2>Welcome to Our Committee</h2>
-<p>Devotion · Unity · Service</p>
+  <div class="symbol">✦ ❖ ✦</div>
+  <h2>Welcome to Our Committee</h2>
+  <p>Devotion · Unity · Service</p>
 </div>
 
-<section>
-<h3>Financial Overview</h3>
-<div class="stats">
-<div class="card"><small>Minimum Donation</small><strong>₹200</strong></div>
-<div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
-<div class="card"><small>Total Expenses</small><strong id="expenses">₹0</strong></div>
-<div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
+<main>
+<div id="publicSections">
+  <section id="noticeSection" class="hidden">
+    <h3>Important Notice</h3>
+    <div class="notice" id="publicNotice"></div>
+  </section>
+
+  <section id="gallerySection" class="hidden">
+    <h3>Photo Gallery</h3>
+    <div class="panel gallery" id="publicGallery"></div>
+  </section>
+
+  <section>
+    <h3>Financial Overview</h3>
+    <div class="stats">
+      <div class="card"><small>Minimum Donation</small><strong>₹200</strong></div>
+      <div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
+      <div class="card"><small>Total Expenses</small><strong id="expenses">₹0</strong></div>
+      <div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Committee Members</h3>
+    <input class="search" id="search" placeholder="Search member name..." type="search">
+    <div id="members"><p class="note">Loading members...</p></div>
+    <div id="memberDetails" class="panel hidden"></div>
+  </section>
 </div>
+
+<section id="adminLogin" class="hidden">
+  <h3>Admin Login</h3>
+  <div class="panel">
+    <label>Email</label>
+    <input id="loginEmail" class="field" type="email" autocomplete="username" placeholder="Admin email">
+    <label>Password</label>
+    <input id="loginPassword" class="field" type="password" autocomplete="current-password" placeholder="Password">
+    <button class="btn" id="loginBtn">Login</button>
+    <button class="btn secondary" id="cancelLogin">Cancel</button>
+    <p id="loginMessage" class="small"></p>
+  </div>
 </section>
 
-<section>
-<h3>Committee Members</h3>
-<input class="search" id="search" placeholder="Search member name..." type="search">
-<div id="members"><p class="note">Member records will appear here after Firebase setup.</p></div>
+<section id="adminPanel" class="hidden">
+  <h3>Admin Dashboard</h3>
+  <p class="note" id="roleLabel"></p>
+
+  <div class="panel">
+    <h3>Add Member</h3>
+    <label>Member name</label>
+    <input id="newMemberName" class="field" placeholder="Full name">
+    <label>Mobile number (Admin only)</label>
+    <input id="newMemberPhone" class="field" inputmode="tel" placeholder="Mobile number">
+    <button class="btn" id="addMemberBtn">Add Member</button>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <h3>Record Payment</h3>
+    <label>Member</label>
+    <select id="paymentMember" class="field"></select>
+    <label>Amount (₹)</label>
+    <input id="paymentAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <label>Month / Purpose</label>
+    <input id="paymentMonth" class="field" placeholder="e.g. January 2027 / Donation">
+    <label>Payment date</label>
+    <input id="paymentDate" class="field" type="date">
+    <button class="btn" id="addPaymentBtn">Save Payment</button>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <h3>Add Expense</h3>
+    <label>Expense description</label>
+    <input id="expenseTitle" class="field" placeholder="e.g. Puja decoration">
+    <label>Amount (₹)</label>
+    <input id="expenseAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <label>Expense date</label>
+    <input id="expenseDate" class="field" type="date">
+    <button class="btn" id="addExpenseBtn">Save Expense</button>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <h3>Financial Records</h3>
+    <div id="adminRecords"></div>
+    <button class="btn" id="printBtn">Print / Save PDF</button>
+  </div>
+
+  <div id="superPanel" class="hidden">
+    <div class="panel" style="margin-top:12px">
+      <h3>Super Admin — Website Settings</h3>
+      <label>Important notice</label>
+      <textarea id="noticeText" class="field" rows="3" placeholder="Write a public notice"></textarea>
+      <label><input type="checkbox" id="noticeEnabled"> Show notice on public website</label>
+      <hr>
+      <label>Photo URL (use a publicly accessible image URL)</label>
+      <input id="galleryUrl" class="field" type="url" placeholder="https://example.com/photo.jpg">
+      <label><input type="checkbox" id="galleryEnabled"> Show photo gallery</label>
+      <button class="btn" id="saveSettingsBtn">Save Website Settings</button>
+    </div>
+
+    <div class="panel" style="margin-top:12px">
+      <h3>Manage Limited Admin</h3>
+      <p class="small">Create the user's Email/Password account first in Firebase Authentication. Then enter that user's exact UID below. Never share passwords.</p>
+      <label>Authentication UID</label>
+      <input id="limitedUid" class="field" placeholder="Paste the user's UID">
+      <label>Admin email (label only)</label>
+      <input id="limitedEmail" class="field" type="email" placeholder="admin@example.com">
+      <button class="btn" id="grantAdminBtn">Grant Limited Admin Access</button>
+      <label>Remove Limited Admin — UID</label>
+      <input id="removeUid" class="field" placeholder="Paste the user's UID">
+      <button class="btn danger" id="removeAdminBtn">Remove Admin Access</button>
+    </div>
+  </div>
+  <p id="adminMessage" class="note"></p>
 </section>
+
+<div id="reportPrint" class="hidden"></div>
 </main>
 
 <footer>Maa Mahalakshmi Puja Committee · Ibrisingha</footer>
 
-<script>
-const menuBtn=document.getElementById('menuBtn');
-const menuBox=document.getElementById('menuBox');
-menuBtn.onclick=()=>menuBox.classList.toggle('show');
-document.addEventListener('click',e=>{
-if(!menuBtn.contains(e.target)&&!menuBox.contains(e.target))menuBox.classList.remove('show');
-});
-document.getElementById('adminBtn').onclick=()=>{
-alert('Admin Login will be connected to Firebase in the next step.');
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import {
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+import {
+  getFirestore, collection, doc, getDoc, getDocs, addDoc, setDoc,
+  deleteDoc, onSnapshot, query, orderBy, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAgkGWLgzHXtgeU9Y30qHjC_4S2RjDckRg",
+  authDomain: "mahalakshmi-puja-commitee.firebaseapp.com",
+  projectId: "mahalakshmi-puja-commitee",
+  storageBucket: "mahalakshmi-puja-commitee.firebasestorage.app",
+  messagingSenderId: "507771709379",
+  appId: "1:507771709379:web:d60bab7074a7171cd17f76",
+  measurementId: "G-ZZ3FBHFENW"
 };
-document.getElementById('search').addEventListener('input',function(){
-const q=this.value.trim().toLowerCase();
-document.querySelectorAll('.member').forEach(el=>{
-el.style.display=el.textContent.toLowerCase().includes(q)?'block':'none';
+
+const SUPER_ADMIN_UID = "vV3cLmmgW4e9XtXHRFp7ti2zTOF3";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const $ = id => document.getElementById(id);
+const money = n => "₹" + Number(n || 0).toLocaleString("en-IN");
+const safe = value => String(value ?? "").replace(/[&<>"']/g, ch => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[ch]));
+const today = new Date().toLocaleDateString("en-CA");
+$("paymentDate").value = today;
+$("expenseDate").value = today;
+
+let currentUser = null;
+let currentRole = "public";
+let memberData = [];
+let paymentData = [];
+let expenseData = [];
+let privateData = {};
+let settingsData = {};
+let unsubscribers = [];
+
+function message(text, error=false) {
+  $("adminMessage").textContent = text;
+  $("adminMessage").className = error ? "note error" : "note status";
+}
+function stopListeners() {
+  unsubscribers.forEach(fn => fn());
+  unsubscribers = [];
+}
+function listen(path, callback, sortField) {
+  const base = collection(db, path);
+  const q = sortField ? query(base, orderBy(sortField)) : base;
+  return onSnapshot(q, snap => callback(snap.docs.map(d => ({id:d.id,...d.data()}))),
+    err => console.error(path, err));
+}
+function isAdmin() { return currentRole === "admin" || currentRole === "superAdmin"; }
+function isSuper() { return currentRole === "superAdmin"; }
+
+function showMoney() {
+  const total = paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const costs = expenseData.reduce((s,e)=>s+Number(e.amount||0),0);
+  $("collection").textContent = money(total);
+  $("expenses").textContent = money(costs);
+  $("balance").textContent = money(total-costs);
+}
+function renderMembers() {
+  const q = $("search").value.trim().toLowerCase();
+  const list = memberData.filter(m => String(m.name||"").toLowerCase().includes(q))
+    .sort((a,b)=>String(a.name||"").localeCompare(String(b.name||"")));
+  $("members").innerHTML = list.length ? list.map(m =>
+    `<button class="member" data-member="${safe(m.id)}">${safe(m.name)}
+      <small>View member details and payment history</small></button>`
+  ).join("") : '<p class="note">No members found.</p>';
+  $("paymentMember").innerHTML = memberData.length
+    ? memberData.slice().sort((a,b)=>String(a.name).localeCompare(String(b.name)))
+      .map(m=>`<option value="${safe(m.id)}">${safe(m.name)}</option>`).join("")
+    : '<option value="">Add a member first</option>';
+}
+function renderRecords() {
+  const p = paymentData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  const e = expenseData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  $("adminRecords").innerHTML =
+    "<h4>Payments</h4>" +
+    (p.map(x=>`<div class="listrow">${safe(x.memberName)} · ${safe(x.month)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
+    ${isAdmin()?`<button class="btn danger" data-delete-payment="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No payments recorded.</p>') +
+    "<hr><h4>Expenses</h4>" +
+    (e.map(x=>`<div class="listrow">${safe(x.title)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
+    ${isAdmin()?`<button class="btn danger" data-delete-expense="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No expenses recorded.</p>');
+}
+async function renderMemberDetails(id) {
+  const m = memberData.find(x=>x.id===id);
+  if(!m) return;
+  const history = paymentData.filter(p=>p.memberId===id)
+    .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  let phone = "";
+  if(isAdmin()) {
+    try {
+      const snap = await getDoc(doc(db,"memberPrivate",id));
+      if(snap.exists()) phone = snap.data().phone || "";
+    } catch(e) { console.warn("Private contact unavailable",e); }
+  }
+  $("memberDetails").classList.remove("hidden");
+  $("memberDetails").innerHTML =
+    `<h3>${safe(m.name)}</h3>` +
+    (isAdmin() && phone ? `<p>Mobile: ${safe(phone)}</p>` : "") +
+    "<hr><b>Payment History</b>" +
+    (history.map(p=>`<div class="listrow">${safe(p.month)} · ${safe(p.date)} — ${money(p.amount)}</div>`).join("") || '<p class="note">No payment history yet.</p>');
+}
+function renderSettings() {
+  $("noticeSection").classList.toggle("hidden", !(settingsData.noticeEnabled && settingsData.noticeText));
+  $("publicNotice").textContent = settingsData.noticeText || "";
+  $("gallerySection").classList.toggle("hidden", !(settingsData.galleryEnabled && settingsData.galleryUrl));
+  $("publicGallery").innerHTML = settingsData.galleryUrl && settingsData.galleryEnabled
+    ? `<img src="${safe(settingsData.galleryUrl)}" alt="Committee gallery photo" referrerpolicy="no-referrer" onerror="this.alt='Image could not be loaded'">`
+    : "";
+}
+function fillSettingsForm() {
+  $("noticeText").value = settingsData.noticeText || "";
+  $("noticeEnabled").checked = !!settingsData.noticeEnabled;
+  $("galleryUrl").value = settingsData.galleryUrl || "";
+  $("galleryEnabled").checked = !!settingsData.galleryEnabled;
+}
+function renderRole() {
+  $("adminPanel").classList.toggle("hidden",!isAdmin());
+  $("superPanel").classList.toggle("hidden",!isSuper());
+  $("logoutBtn").classList.toggle("hidden",!currentUser);
+  $("loginOpen").classList.toggle("hidden",!!currentUser);
+  $("roleLabel").textContent = currentUser ? "Signed in: "+currentUser.email+" · Role: "+currentRole : "";
+}
+
+function startPublicListeners() {
+  stopListeners();
+  unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();}));
+  unsubscribers.push(listen("payments",d=>{paymentData=d;showMoney();renderRecords();}));
+  unsubscribers.push(listen("expenses",d=>{expenseData=d;showMoney();renderRecords();}));
+  unsubscribers.push(onSnapshot(doc(db,"settings","public"),snap=>{
+    settingsData = snap.exists() ? snap.data() : {};
+    renderSettings();
+    if(isSuper()) fillSettingsForm();
+  },err=>console.error("Settings",err)));
+}
+async function loadPrivateForAdmin() {
+  privateData = {};
+  try {
+    const snap = await getDocs(collection(db,"memberPrivate"));
+    snap.forEach(d=>privateData[d.id]=d.data());
+  } catch(e) { console.warn("Private contacts require Admin permission",e); }
+}
+
+$("menuBtn").onclick=()=> $("menuBox").classList.toggle("show");
+document.addEventListener("click",e=>{
+  if(!$("menuBtn").contains(e.target) && !$("menuBox").contains(e.target))
+    $("menuBox").classList.remove("show");
 });
+$("loginOpen").onclick=()=>{
+  $("adminLogin").classList.remove("hidden");
+  $("menuBox").classList.remove("show");
+};
+$("cancelLogin").onclick=()=> $("adminLogin").classList.add("hidden");
+$("logoutBtn").onclick=async()=>{
+  try { await signOut(auth); message("Logged out."); }
+  catch(e){message(e.message,true);}
+};
+$("loginBtn").onclick=async()=>{
+  $("loginMessage").textContent="Signing in...";
+  try {
+    await signInWithEmailAndPassword(auth,$("loginEmail").value.trim(),$("loginPassword").value);
+    $("adminLogin").classList.add("hidden");
+    $("loginPassword").value="";
+  } catch(e) {
+    $("loginMessage").textContent="Login failed. Check email/password and Firebase Authentication settings.";
+    $("loginMessage").className="small error";
+  }
+};
+$("search").addEventListener("input",renderMembers);
+$("members").addEventListener("click",e=>{
+  const b=e.target.closest("[data-member]");
+  if(b) renderMemberDetails(b.dataset.member);
+});
+
+$("addMemberBtn").onclick=async()=>{
+  if(!isAdmin()) return;
+  const name=$("newMemberName").value.trim();
+  const phone=$("newMemberPhone").value.trim();
+  if(!name) return message("Enter member name.",true);
+  try {
+    const ref=await addDoc(collection(db,"members"),{name,createdAt:serverTimestamp()});
+    if(phone) await setDoc(doc(db,"memberPrivate",ref.id),{phone});
+    $("newMemberName").value=""; $("newMemberPhone").value="";
+    message("Member added successfully.");
+  } catch(e){message("Could not add member. Check Firestore Rules. "+e.message,true);}
+};
+$("addPaymentBtn").onclick=async()=>{
+  if(!isAdmin()) return;
+  const id=$("paymentMember").value;
+  const m=memberData.find(x=>x.id===id);
+  const amount=Number($("paymentAmount").value);
+  const month=$("paymentMonth").value.trim();
+  const date=$("paymentDate").value;
+  if(!m || !Number.isFinite(amount) || amount<=0 || !month || !date)
+    return message("Enter member, valid amount, month/purpose and date.",true);
+  try {
+    await addDoc(collection(db,"payments"),{
+      memberId:id,memberName:m.name,amount,month,date,createdAt:serverTimestamp()
+    });
+    $("paymentAmount").value=""; $("paymentMonth").value="";
+    message("Payment saved.");
+  } catch(e){message("Could not save payment. "+e.message,true);}
+};
+$("addExpenseBtn").onclick=async()=>{
+  if(!isAdmin()) return;
+  const title=$("expenseTitle").value.trim();
+  const amount=Number($("expenseAmount").value);
+  const date=$("expenseDate").value;
+  if(!title || !Number.isFinite(amount) || amount<=0 || !date)
+    return message("Enter expense description, valid amount and date.",true);
+  try {
+    await addDoc(collection(db,"expenses"),{title,amount,date,createdAt:serverTimestamp()});
+    $("expenseTitle").value=""; $("expenseAmount").value="";
+    message("Expense saved.");
+  } catch(e){message("Could not save expense. "+e.message,true);}
+};
+$("adminRecords").addEventListener("click",async e=>{
+  const p=e.target.closest("[data-delete-payment]");
+  const x=e.target.closest("[data-delete-expense]");
+  if(!isAdmin()) return;
+  if(p && confirm("Delete this payment record?")) {
+    try { await deleteDoc(doc(db,"payments",p.dataset.deletePayment)); message("Payment deleted."); }
+    catch(err){message(err.message,true);}
+  }
+  if(x && confirm("Delete this expense record?")) {
+    try { await deleteDoc(doc(db,"expenses",x.dataset.deleteExpense)); message("Expense deleted."); }
+    catch(err){message(err.message,true);}
+  }
+});
+$("saveSettingsBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const url=$("galleryUrl").value.trim();
+  if(url && !/^https:\/\/.+/i.test(url)) return message("Use a valid HTTPS photo URL.",true);
+  try {
+    await setDoc(doc(db,"settings","public"),{
+      noticeText:$("noticeText").value.trim(),
+      noticeEnabled:$("noticeEnabled").checked,
+      galleryUrl:url,
+      galleryEnabled:$("galleryEnabled").checked,
+      updatedAt:serverTimestamp()
+    });
+    message("Website settings saved.");
+  } catch(e){message("Settings save failed. "+e.message,true);}
+};
+$("grantAdminBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const uid=$("limitedUid").value.trim();
+  const email=$("limitedEmail").value.trim();
+  if(!uid || !email) return message("Enter the account UID and email.",true);
+  if(uid===SUPER_ADMIN_UID) return message("Cannot replace the Super Admin account.",true);
+  try {
+    await setDoc(doc(db,"users",uid),{role:"admin",email});
+    $("limitedUid").value=""; $("limitedEmail").value="";
+    message("Limited Admin access granted.");
+  } catch(e){message("Could not grant access. "+e.message,true);}
+};
+$("removeAdminBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const uid=$("removeUid").value.trim();
+  if(!uid || uid===SUPER_ADMIN_UID) return message("Enter a valid Limited Admin UID.",true);
+  if(!confirm("Remove this user's Limited Admin access?")) return;
+  try {
+    await deleteDoc(doc(db,"users",uid));
+    $("removeUid").value="";
+    message("Limited Admin access removed.");
+  } catch(e){message("Could not remove access. "+e.message,true);}
+};
+$("printBtn").onclick=()=>{
+  if(!isAdmin()) return;
+  const total=paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const costs=expenseData.reduce((s,x)=>s+Number(x.amount||0),0);
+  $("reportPrint").innerHTML=
+    `<h1>Maa Mahalakshmi Puja Committee — Ibrisingha</h1>
+    <h2>Financial Report</h2><p>Generated: ${safe(new Date().toLocaleString())}</p>
+    <p>Total Collection: ${money(total)}</p><p>Total Expenses: ${money(costs)}</p>
+    <p>Balance: ${money(total-costs)}</p><hr><h3>Payments</h3>`+
+    paymentData.map(p=>`<p>${safe(p.memberName)} | ${safe(p.month)} | ${safe(p.date)} | ${money(p.amount)}</p>`).join("")+
+    "<hr><h3>Expenses</h3>"+
+    expenseData.map(x=>`<p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>`).join("");
+  $("reportPrint").classList.remove("hidden");
+  window.print();
+  $("reportPrint").classList.add("hidden");
+};
+
+onAuthStateChanged(auth,async user=>{
+  currentUser=user;
+  currentRole="public";
+  if(user) {
+    if(user.uid===SUPER_ADMIN_UID) currentRole="superAdmin";
+    else {
+      try {
+        const snap=await getDoc(doc(db,"users",user.uid));
+        if(snap.exists() && snap.data().role==="admin") currentRole="admin";
+      } catch(e) { console.warn("Role lookup failed",e); }
+    }
+  }
+  renderRole();
+  startPublicListeners();
+  if(isAdmin()) await loadPrivateForAdmin();
+  if(user && !isAdmin()) message("This account has no Admin permissions.",true);
 });
 </script>
 </body>
