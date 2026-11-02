@@ -1,86 +1,189 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="or">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
 <title>Maa Mahalakshmi Puja Committee - Ibrisingha</title>
-
-<!-- Maa Lakshmi favicon -->
 <link rel="icon" type="image/png" href="favicon.png">
 
-<!-- WhatsApp / Facebook link preview -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Maa Mahalakshmi Puja Committee - Ibrisingha">
 <meta property="og:description" content="Devotion, unity and service at Ibrisingha.">
 <meta property="og:image" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/og-image.jpg">
 <meta property="og:url" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Maa Mahalakshmi Puja Committee - Ibrisingha">
-<meta name="twitter:description" content="Devotion, unity and service at Ibrisingha.">
-<meta name="twitter:image" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/og-image.jpg">
 
 <style>
 :root {
-  --bg:#090909; --panel:#15130e; --gold:#d4af37;
-  --light:#f1d580; --text:#f8f1df; --muted:#bdb5a3;
-  --border:#5e4b20; --red:#c65353; --green:#62c58a;
+  --bg:#090909;
+  --panel:#15130e;
+  --gold:#d4af37;
+  --light:#f1d580;
+  --text:#f8f1df;
+  --muted:#bdb5a3;
+  --border:#5e4b20;
+  --red:#c65353;
+  --green:#62c58a;
+  --blue:#6fa9e8;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
-header{background:#11100c;border-bottom:1px solid var(--gold);padding:16px;text-align:center;position:relative}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,sans-serif
+}
+header{
+  background:#11100c;border-bottom:1px solid var(--gold);
+  padding:16px;text-align:center;position:relative
+}
 h1{font-size:20px;color:var(--light);line-height:1.7;margin:0}
 header p{margin:0;color:var(--gold);font-size:13px}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-.menu{position:absolute;left:12px;top:17px;background:#15130e;border:1px solid var(--gold);color:var(--light);padding:8px 11px;border-radius:6px}
-.menu-box{display:none;position:absolute;z-index:10;left:12px;top:58px;background:#17150f;border:1px solid var(--gold);border-radius:7px;padding:10px}
+.menu{
+  position:absolute;left:12px;top:17px;background:#15130e;
+  border:1px solid var(--gold);color:var(--light);
+  padding:8px 11px;border-radius:6px
+}
+.menu-box{
+  display:none;position:absolute;z-index:100;left:12px;top:58px;
+  background:#17150f;border:1px solid var(--gold);
+  border-radius:7px;padding:10px
+}
 .menu-box.show{display:block}
-.menu-box button{display:block;background:none;border:0;color:var(--light);padding:10px}
+.menu-box button{
+  display:block;background:none;border:0;
+  color:var(--light);padding:10px;width:100%;text-align:left
+}
 main{max-width:1000px;margin:auto}
-.hero{text-align:center;padding:30px 15px;background:radial-gradient(ellipse,#30230d,#090909 75%)}
+.hero{
+  text-align:center;padding:30px 15px;
+  background:radial-gradient(ellipse,#30230d,#090909 75%)
+}
 .symbol{font-size:28px;color:var(--gold)}
 .hero h2{color:var(--light);font-size:24px;margin:12px 0}
 .hero p{font-size:13px;color:var(--muted)}
 section{padding:20px 14px}
 h3{text-align:center;color:var(--light);font-size:18px;margin:0 0 16px}
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.card,.panel{padding:15px 12px;background:var(--panel);border:1px solid var(--border);border-radius:9px;min-width:0}
+.card,.panel{
+  padding:15px 12px;background:var(--panel);
+  border:1px solid var(--border);border-radius:9px;min-width:0
+}
 .card{text-align:center}
 .card small{font-size:12px;color:var(--muted)}
-.card strong{display:block;color:var(--light);font-size:22px;margin-top:9px;overflow-wrap:anywhere}
-.search,.field{width:100%;padding:12px;margin:5px 0 12px;background:#0e0d0a;color:white;border:1px solid #6f5923;border-radius:6px}
+.card strong{
+  display:block;color:var(--light);font-size:22px;
+  margin-top:9px;overflow-wrap:anywhere
+}
+.search,.field{
+  width:100%;padding:12px;margin:5px 0 12px;
+  background:#0e0d0a;color:white;border:1px solid #6f5923;
+  border-radius:6px
+}
 label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
-.btn{background:#d4af37;color:#161108;border:0;border-radius:6px;padding:11px 14px;font-weight:bold;margin:4px 2px}
+.btn{
+  background:#d4af37;color:#161108;border:0;border-radius:6px;
+  padding:11px 14px;font-weight:bold;margin:4px 2px
+}
 .btn.secondary{background:#282319;color:var(--light);border:1px solid var(--border)}
 .btn.danger{background:#702d2d;color:white}
 .btn:disabled{opacity:.5}
-.member{display:block;width:100%;text-align:left;padding:13px;margin:7px 0;background:var(--panel);border:1px solid var(--border);border-radius:7px;color:var(--light)}
+.member{
+  display:block;width:100%;text-align:left;padding:13px;margin:7px 0;
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:7px;color:var(--light)
+}
 .member small{display:block;color:var(--muted);margin-top:5px}
 .note{text-align:center;color:var(--muted);font-size:12px;padding:14px;line-height:1.7}
-.notice{border:1px solid var(--gold);padding:15px;border-radius:8px;background:#17130a;line-height:1.7;white-space:pre-wrap}
-.gallery img{width:100%;max-height:350px;object-fit:contain;border-radius:8px}
+.notice{
+  border:1px solid var(--gold);padding:15px;border-radius:8px;
+  background:#17130a;line-height:1.7;white-space:pre-wrap
+}
 .row{display:grid;grid-template-columns:1fr;gap:12px}
-.listrow{border-bottom:1px solid #3b321e;padding:12px 0;line-height:1.7;overflow-wrap:anywhere}
+.listrow{
+  border-bottom:1px solid #3b321e;padding:12px 0;
+  line-height:1.7;overflow-wrap:anywhere
+}
 .small{font-size:12px;color:var(--muted)}
 .hidden{display:none!important}
 .status{font-size:13px;color:var(--green);white-space:pre-wrap}
 .error{color:#ff9696}
-footer{border-top:1px solid var(--border);text-align:center;padding:18px 10px;color:var(--gold);font-size:12px}
+footer{
+  border-top:1px solid var(--border);text-align:center;
+  padding:18px 10px;color:var(--gold);font-size:12px
+}
 hr{border:0;border-top:1px solid var(--border);margin:16px 0}
+
+/* Photo slideshow */
+.gallery{
+  position:relative;overflow:hidden;
+  min-height:190px;background:#0e0d0a
+}
+.gallery img{
+  width:100%;height:300px;object-fit:contain;
+  border-radius:8px;display:block;
+  animation:photoFade 1.2s ease-in-out
+}
+@keyframes photoFade{
+  0%{opacity:0;transform:scale(1.025)}
+  100%{opacity:1;transform:scale(1)}
+}
+.gallery-controls{
+  display:flex;justify-content:center;align-items:center;
+  gap:15px;margin-top:12px
+}
+.gallery-controls button{
+  background:#282319;color:var(--light);
+  border:1px solid var(--border);border-radius:5px;
+  padding:7px 13px
+}
+.gallery-caption{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
+
+/* Year report */
+.report-title{text-align:center;color:var(--light);margin:10px 0}
+.report-table{
+  width:100%;border-collapse:collapse;font-size:13px;margin-top:12px
+}
+.report-table th,.report-table td{
+  border:1px solid #57451e;padding:9px 5px;text-align:center
+}
+.report-table th{background:#30230d;color:var(--light)}
+.report-table td{color:var(--text)}
+.paid{color:#62c58a;font-weight:bold}
+.partial{color:#f1bd57;font-weight:bold}
+.unpaid{color:#ff8585;font-weight:bold}
+.report-total{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;margin-top:14px
+}
+.report-total .card strong{font-size:19px}
+.report-actions{text-align:center;margin-top:14px}
+.year-select{max-width:180px}
 @media(min-width:650px){
- .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
- .row{grid-template-columns:repeat(2,minmax(0,1fr))}
- section{padding:24px}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section{padding:24px}
+}
+@media(max-width:420px){
+  .report-table{font-size:11px}
+  .report-table th,.report-table td{padding:7px 3px}
 }
 @media print{
- body{background:white;color:black}
- header,.hero,#publicSections,#adminLogin,#adminPanel .no-print,footer{display:none!important}
- #reportPrint{display:block!important}
+  body{background:white!important;color:black!important}
+  header,.hero,#publicSections,#adminLogin,
+  #adminPanel,.no-print,footer{display:none!important}
+  #reportPrint{display:block!important}
+  #reportPrint *{color:black!important}
+  #reportPrint h2,#reportPrint h3{text-align:center}
+  #reportPrint table{width:100%;border-collapse:collapse}
+  #reportPrint th,#reportPrint td{
+    border:1px solid black;padding:8px;text-align:center
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -100,7 +203,9 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 </div>
 
 <main>
+
 <div id="publicSections">
+
   <section id="noticeSection" class="hidden">
     <h3>Important Notice</h3>
     <div class="notice" id="publicNotice"></div>
@@ -108,13 +213,21 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 
   <section id="gallerySection" class="hidden">
     <h3>Photo Gallery</h3>
-    <div class="panel gallery" id="publicGallery"></div>
+    <div class="panel">
+      <div class="gallery" id="publicGallery"></div>
+      <div class="gallery-controls">
+        <button id="previousPhoto">❮</button>
+        <span id="photoCounter" class="small"></span>
+        <button id="nextPhoto">❯</button>
+      </div>
+      <p class="gallery-caption">Maa Mahalakshmi Puja Committee · Ibrisingha</p>
+    </div>
   </section>
 
   <section>
     <h3>Financial Overview</h3>
     <div class="stats">
-      <div class="card"><small>Minimum Donation</small><strong>₹200</strong></div>
+      <div class="card"><small>Minimum Monthly Donation</small><strong>₹200</strong></div>
       <div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
       <div class="card"><small>Total Expenses</small><strong id="expenses">₹0</strong></div>
       <div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
@@ -127,15 +240,18 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
     <div id="members"><p class="note">Loading members...</p></div>
     <div id="memberDetails" class="panel hidden"></div>
   </section>
+
 </div>
 
 <section id="adminLogin" class="hidden">
   <h3>Admin Login</h3>
   <div class="panel">
     <label>Email</label>
-    <input id="loginEmail" class="field" type="email" autocomplete="username" placeholder="Admin email">
+    <input id="loginEmail" class="field" type="email"
+      autocomplete="username" placeholder="Admin email">
     <label>Password</label>
-    <input id="loginPassword" class="field" type="password" autocomplete="current-password" placeholder="Password">
+    <input id="loginPassword" class="field" type="password"
+      autocomplete="current-password" placeholder="Password">
     <button class="btn" id="loginBtn">Login</button>
     <button class="btn secondary" id="cancelLogin">Cancel</button>
     <p id="loginMessage" class="small"></p>
@@ -151,7 +267,8 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
     <label>Member name</label>
     <input id="newMemberName" class="field" placeholder="Full name">
     <label>Mobile number (Admin only)</label>
-    <input id="newMemberPhone" class="field" inputmode="tel" placeholder="Mobile number">
+    <input id="newMemberPhone" class="field" inputmode="tel"
+      placeholder="Mobile number">
     <button class="btn" id="addMemberBtn">Add Member</button>
   </div>
 
@@ -159,10 +276,12 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
     <h3>Record Payment</h3>
     <label>Member</label>
     <select id="paymentMember" class="field"></select>
-    <label>Amount (₹)</label>
-    <input id="paymentAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <label>Amount (₹) — Minimum monthly contribution ₹200</label>
+    <input id="paymentAmount" class="field" type="number"
+      min="1" step="1" placeholder="Amount">
     <label>Month / Purpose</label>
-    <input id="paymentMonth" class="field" placeholder="e.g. January 2027 / Donation">
+    <input id="paymentMonth" class="field"
+      placeholder="e.g. January 2027 / Donation">
     <label>Payment date</label>
     <input id="paymentDate" class="field" type="date">
     <button class="btn" id="addPaymentBtn">Save Payment</button>
@@ -173,7 +292,8 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
     <label>Expense description</label>
     <input id="expenseTitle" class="field" placeholder="e.g. Puja decoration">
     <label>Amount (₹)</label>
-    <input id="expenseAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <input id="expenseAmount" class="field" type="number"
+      min="1" step="1" placeholder="Amount">
     <label>Expense date</label>
     <input id="expenseDate" class="field" type="date">
     <button class="btn" id="addExpenseBtn">Save Expense</button>
@@ -186,49 +306,77 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   </div>
 
   <div id="superPanel" class="hidden">
+
     <div class="panel" style="margin-top:12px">
       <h3>Super Admin — Website Settings</h3>
+
       <label>Important notice</label>
-      <textarea id="noticeText" class="field" rows="3" placeholder="Write a public notice"></textarea>
-      <label><input type="checkbox" id="noticeEnabled"> Show notice on public website</label>
+      <textarea id="noticeText" class="field" rows="3"
+        placeholder="Write a public notice"></textarea>
+
+      <label><input type="checkbox" id="noticeEnabled">
+        Show notice on public website</label>
+
       <hr>
-      <label>Photo URL (use a publicly accessible image URL)</label>
-      <input id="galleryUrl" class="field" type="url" placeholder="https://example.com/photo.jpg">
-      <label><input type="checkbox" id="galleryEnabled"> Show photo gallery</label>
+
+      <label>Photo URLs (one URL per line)</label>
+      <textarea id="galleryUrl" class="field" rows="4"
+        placeholder="https://example.com/photo1.jpg&#10;https://example.com/photo2.jpg"></textarea>
+
+      <label><input type="checkbox" id="galleryEnabled">
+        Show photo gallery</label>
+
       <button class="btn" id="saveSettingsBtn">Save Website Settings</button>
     </div>
 
     <div class="panel" style="margin-top:12px">
       <h3>Manage Limited Admin</h3>
-      <p class="small">Create the user's Email/Password account first in Firebase Authentication. Then enter that user's exact UID below. Never share passwords.</p>
+      <p class="small">
+        Create the user's Email/Password account first in Firebase
+        Authentication. Then enter that user's exact UID below.
+        Never share passwords.
+      </p>
+
       <label>Authentication UID</label>
       <input id="limitedUid" class="field" placeholder="Paste the user's UID">
+
       <label>Admin email (label only)</label>
-      <input id="limitedEmail" class="field" type="email" placeholder="admin@example.com">
+      <input id="limitedEmail" class="field" type="email"
+        placeholder="admin@example.com">
+
       <button class="btn" id="grantAdminBtn">Grant Limited Admin Access</button>
+
       <label>Remove Limited Admin — UID</label>
       <input id="removeUid" class="field" placeholder="Paste the user's UID">
+
       <button class="btn danger" id="removeAdminBtn">Remove Admin Access</button>
     </div>
   </div>
+
   <p id="adminMessage" class="note"></p>
 </section>
 
 <div id="reportPrint" class="hidden"></div>
+
 </main>
 
 <footer>Maa Mahalakshmi Puja Committee · Ibrisingha</footer>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
 import {
-  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut
+  getAuth, onAuthStateChanged,
+  signInWithEmailAndPassword, signOut
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
 import {
-  getFirestore, collection, doc, getDoc, getDocs, addDoc, setDoc,
-  deleteDoc, onSnapshot, query, orderBy, serverTimestamp
+  getFirestore, collection, doc, getDoc, getDocs,
+  addDoc, setDoc, deleteDoc, onSnapshot,
+  query, orderBy, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
+/* Firebase configuration — existing project preserved */
 const firebaseConfig = {
   apiKey: "AIzaSyAgkGWLgzHXtgeU9Y30qHjC_4S2RjDckRg",
   authDomain: "mahalakshmi-puja-commitee.firebaseapp.com",
@@ -240,306 +388,826 @@ const firebaseConfig = {
 };
 
 const SUPER_ADMIN_UID = "vV3cLmmgW4e9XtXHRFp7ti2zTOF3";
+const MINIMUM_MONTHLY = 200;
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 const $ = id => document.getElementById(id);
 const money = n => "₹" + Number(n || 0).toLocaleString("en-IN");
+
 const safe = value => String(value ?? "").replace(/[&<>"']/g, ch => ({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
 }[ch]));
+
 const today = new Date().toLocaleDateString("en-CA");
 $("paymentDate").value = today;
 $("expenseDate").value = today;
 
 let currentUser = null;
 let currentRole = "public";
+
 let memberData = [];
 let paymentData = [];
 let expenseData = [];
-let privateData = {};
 let settingsData = {};
 let unsubscribers = [];
 
-function message(text, error=false) {
+let galleryPhotos = [];
+let galleryIndex = 0;
+let galleryTimer = null;
+
+const months = [
+  "January","February","March","April","May","June",
+  "July","August","September","October","November","December"
+];
+
+function message(text,error=false) {
   $("adminMessage").textContent = text;
   $("adminMessage").className = error ? "note error" : "note status";
 }
-function stopListeners() {
-  unsubscribers.forEach(fn => fn());
-  unsubscribers = [];
-}
-function listen(path, callback, sortField) {
-  const base = collection(db, path);
-  const q = sortField ? query(base, orderBy(sortField)) : base;
-  return onSnapshot(q, snap => callback(snap.docs.map(d => ({id:d.id,...d.data()}))),
-    err => console.error(path, err));
-}
+
+/* Roles */
 function isAdmin() {
-  return currentRole === "superAdmin";
-}
-
-function isPresident() {
-  return currentRole === "president";
-}
-
-function canManageMembersPayments() {
-  return isAdmin() || isPresident();
+  return currentRole === "superAdmin" || currentRole === "admin";
 }
 
 function isSuper() {
   return currentRole === "superAdmin";
 }
 
+function stopListeners() {
+  unsubscribers.forEach(fn => fn());
+  unsubscribers = [];
+}
+
+function listen(path,callback,sortField) {
+  const base = collection(db,path);
+  const q = sortField ? query(base,orderBy(sortField)) : base;
+
+  return onSnapshot(q,
+    snap => callback(snap.docs.map(d=>({id:d.id,...d.data()}))),
+    err => {
+      console.error(path,err);
+      if(path==="members") $("members").innerHTML =
+        '<p class="note error">Could not load members. Check Firebase Rules.</p>';
+    }
+  );
+}
+
+/* Financial overview */
 function showMoney() {
   const total = paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
   const costs = expenseData.reduce((s,e)=>s+Number(e.amount||0),0);
+
   $("collection").textContent = money(total);
   $("expenses").textContent = money(costs);
   $("balance").textContent = money(total-costs);
 }
+
+/* Members */
 function renderMembers() {
   const q = $("search").value.trim().toLowerCase();
-  const list = memberData.filter(m => String(m.name||"").toLowerCase().includes(q))
+
+  const list = memberData
+    .filter(m=>String(m.name||"").toLowerCase().includes(q))
     .sort((a,b)=>String(a.name||"").localeCompare(String(b.name||"")));
-  $("members").innerHTML = list.length ? list.map(m =>
-    `<button class="member" data-member="${safe(m.id)}">${safe(m.name)}
-      <small>View member details and payment history</small></button>`
-  ).join("") : '<p class="note">No members found.</p>';
+
+  $("members").innerHTML = list.length
+    ? list.map(m=>`
+      <button class="member" data-member="${safe(m.id)}">
+        ${safe(m.name)}
+        <small>View full year report and payment history</small>
+      </button>
+    `).join("")
+    : '<p class="note">No members found.</p>';
+
   $("paymentMember").innerHTML = memberData.length
-    ? memberData.slice().sort((a,b)=>String(a.name).localeCompare(String(b.name)))
-      .map(m=>`<option value="${safe(m.id)}">${safe(m.name)}</option>`).join("")
+    ? memberData.slice()
+      .sort((a,b)=>String(a.name).localeCompare(String(b.name)))
+      .map(m=>`<option value="${safe(m.id)}">${safe(m.name)}</option>`)
+      .join("")
     : '<option value="">Add a member first</option>';
 }
-function renderRecords() {
-  const p = paymentData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
-  const e = expenseData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
-  $("adminRecords").innerHTML =
-    "<h4>Payments</h4>" +
-    (p.map(x=>`<div class="listrow">${safe(x.memberName)} · ${safe(x.month)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
-    ${isAdmin()?`<button class="btn danger" data-delete-payment="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No payments recorded.</p>') +
-    "<hr><h4>Expenses</h4>" +
-    (e.map(x=>`<div class="listrow">${safe(x.title)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
-    ${isAdmin()?`<button class="btn danger" data-delete-expense="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No expenses recorded.</p>');
+
+/*
+  Determine report month and year.
+  Prefer a month/year explicitly written in the Month/Purpose field.
+  If no month name is found, use the payment date.
+*/
+function getPaymentPeriod(p) {
+  const purpose = String(p.month||"");
+  const lower = purpose.toLowerCase();
+
+  const monthIndex = months.findIndex(m=>lower.includes(m.toLowerCase()));
+
+  let yearMatch = purpose.match(/\b(20\d{2})\b/);
+  let year = yearMatch ? Number(yearMatch[1]) : null;
+
+  if(monthIndex >= 0) {
+    if(!year && p.date) year = Number(String(p.date).slice(0,4));
+    return {month:monthIndex,year};
+  }
+
+  if(p.date && /^\d{4}-\d{2}-\d{2}/.test(p.date)) {
+    const parts = p.date.split("-");
+    return {month:Number(parts[1])-1,year:Number(parts[0])};
+  }
+
+  return null;
 }
-async function renderMemberDetails(id) {
+
+function availableYears(id) {
+  const years = new Set([new Date().getFullYear()]);
+
+  paymentData.filter(p=>p.memberId===id).forEach(p=>{
+    const period = getPaymentPeriod(p);
+    if(period && period.year) years.add(period.year);
+  });
+
+  return [...years].sort((a,b)=>b-a);
+}
+
+function monthlyReport(id,year) {
+  const result = months.map((name,index)=>({
+    name,
+    index,
+    total:0,
+    entries:[]
+  }));
+
+  paymentData
+    .filter(p=>p.memberId===id)
+    .forEach(p=>{
+      const period = getPaymentPeriod(p);
+
+      if(!period || period.year!==Number(year)) return;
+      if(period.month<0 || period.month>11) return;
+
+      result[period.month].total += Number(p.amount||0);
+      result[period.month].entries.push(p);
+    });
+
+  result.forEach(m=>{
+    if(m.total>=MINIMUM_MONTHLY) m.status="Paid";
+    else if(m.total>0) m.status="Partial";
+    else m.status="Unpaid";
+  });
+
+  return result;
+}
+
+function reportHTML(id,year,forPrint=false) {
+  const member = memberData.find(m=>m.id===id);
+  if(!member) return "";
+
+  const report = monthlyReport(id,year);
+
+  const total = report.reduce((s,m)=>s+m.total,0);
+  const paid = report.filter(m=>m.status==="Paid").length;
+  const partial = report.filter(m=>m.status==="Partial").length;
+  const unpaid = report.filter(m=>m.status==="Unpaid").length;
+
+  const rows = report.map(m=>`
+    <tr>
+      <td>${m.name}</td>
+      <td>${money(m.total)}</td>
+      <td class="${m.status.toLowerCase()}">${m.status}</td>
+      <td>
+        ${m.entries.map(p=>`
+          ${safe(p.date||"")} — ${money(p.amount)}
+          (${safe(p.month||"")})
+        `).join("<br>") || "—"}
+      </td>
+    </tr>
+  `).join("");
+
+  return `
+    <h2 class="report-title">Maa Mahalakshmi Puja Committee</h2>
+    <h3 class="report-title">Ibrisingha — Full Year Member Report</h3>
+
+    <div class="panel">
+      <p><b>Member Name:</b> ${safe(member.name)}</p>
+      <p><b>Report Year:</b> ${year}</p>
+      <p><b>Minimum Monthly Contribution:</b> ${money(MINIMUM_MONTHLY)}</p>
+
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Total Paid</th>
+            <th>Status</th>
+            <th>Payment Details</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+
+      <div class="report-total">
+        <div class="card">
+          <small>Total Yearly Payment</small>
+          <strong>${money(total)}</strong>
+        </div>
+        <div class="card">
+          <small>Paid Months</small>
+          <strong>${paid}</strong>
+        </div>
+        <div class="card">
+          <small>Partial Months</small>
+          <strong>${partial}</strong>
+        </div>
+        <div class="card">
+          <small>Unpaid Months</small>
+          <strong>${unpaid}</strong>
+        </div>
+      </div>
+
+      <p class="small">
+        Status rule: ₹200 or above = Paid;
+        above ₹0 but below ₹200 = Partial;
+        ₹0 = Unpaid.
+      </p>
+    </div>
+  `;
+}
+
+async function renderMemberDetails(id,year) {
   const m = memberData.find(x=>x.id===id);
   if(!m) return;
-  const history = paymentData.filter(p=>p.memberId===id)
-    .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+
+  const years = availableYears(id);
+  const selectedYear = Number(year || years[0]);
+
   let phone = "";
+
   if(isAdmin()) {
     try {
       const snap = await getDoc(doc(db,"memberPrivate",id));
       if(snap.exists()) phone = snap.data().phone || "";
-    } catch(e) { console.warn("Private contact unavailable",e); }
+    } catch(e) {
+      console.warn("Private contact unavailable",e);
+    }
   }
+
+  const report = reportHTML(id,selectedYear);
+
   $("memberDetails").classList.remove("hidden");
-  $("memberDetails").innerHTML =
-    `<h3>${safe(m.name)}</h3>` +
-    (isAdmin() && phone ? `<p>Mobile: ${safe(phone)}</p>` : "") +
-    "<hr><b>Payment History</b>" +
-    (history.map(p=>`<div class="listrow">${safe(p.month)} · ${safe(p.date)} — ${money(p.amount)}</div>`).join("") || '<p class="note">No payment history yet.</p>');
+
+  $("memberDetails").innerHTML = `
+    <h3>${safe(m.name)}</h3>
+    ${phone ? `<p>Mobile: ${safe(phone)}</p>` : ""}
+
+    <hr>
+    <h3>Full Year Report</h3>
+
+    <label>Select Report Year</label>
+    <select id="reportYear" class="field year-select">
+      ${years.map(y=>`
+        <option value="${y}" ${y===selectedYear?"selected":""}>${y}</option>
+      `).join("")}
+    </select>
+
+    <div id="yearReportContent">${report}</div>
+
+    <div class="report-actions no-print">
+      <button class="btn" id="printMemberReport">Print / Save PDF</button>
+    </div>
+  `;
+
+  $("reportYear").onchange = e=>{
+    renderMemberDetails(id,e.target.value);
+  };
+
+  $("printMemberReport").onclick = ()=>{
+    $("reportPrint").innerHTML = `
+      <h1>Maa Mahalakshmi Puja Committee</h1>
+      ${reportHTML(id,selectedYear,true)}
+      <p>Generated: ${safe(new Date().toLocaleString())}</p>
+    `;
+
+    $("reportPrint").classList.remove("hidden");
+    window.print();
+    $("reportPrint").classList.add("hidden");
+  };
 }
+
+/* Admin records */
+function renderRecords() {
+  const p = paymentData.slice()
+    .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+
+  const e = expenseData.slice()
+    .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+
+  $("adminRecords").innerHTML =
+    "<h4>Payments</h4>" +
+    (p.map(x=>`
+      <div class="listrow">
+        ${safe(x.memberName)} · ${safe(x.month)} · ${safe(x.date)}
+        — <b>${money(x.amount)}</b>
+        ${isAdmin()?`
+          <button class="btn danger" data-delete-payment="${safe(x.id)}">
+            Delete
+          </button>
+        `:""}
+      </div>
+    `).join("") || '<p class="small">No payments recorded.</p>') +
+
+    "<hr><h4>Expenses</h4>" +
+    (e.map(x=>`
+      <div class="listrow">
+        ${safe(x.title)} · ${safe(x.date)}
+        — <b>${money(x.amount)}</b>
+        ${isAdmin()?`
+          <button class="btn danger" data-delete-expense="${safe(x.id)}">
+            Delete
+          </button>
+        `:""}
+      </div>
+    `).join("") || '<p class="small">No expenses recorded.</p>');
+}
+
+/* Photo gallery */
+function getPhotoURLs() {
+  let urls = [];
+
+  if(Array.isArray(settingsData.galleryUrls)) {
+    urls = settingsData.galleryUrls;
+  } else if(settingsData.galleryUrl) {
+    urls = [settingsData.galleryUrl];
+  }
+
+  return urls.filter(url=>
+    typeof url==="string" && /^https:\/\/.+/i.test(url)
+  );
+}
+
+function stopGallery() {
+  if(galleryTimer) clearInterval(galleryTimer);
+  galleryTimer = null;
+}
+
+function showGalleryPhoto() {
+  if(!galleryPhotos.length) return;
+
+  const url = galleryPhotos[galleryIndex];
+
+  $("publicGallery").innerHTML = `
+    <img
+      id="galleryImage"
+      src="${safe(url)}"
+      alt="Committee gallery photo"
+      referrerpolicy="no-referrer"
+    >
+  `;
+
+  $("photoCounter").textContent =
+    `${galleryIndex+1} / ${galleryPhotos.length}`;
+
+  $("galleryImage").onerror = ()=>{
+    $("galleryImage").alt = "Image could not be loaded";
+  };
+}
+
 function renderSettings() {
-  $("noticeSection").classList.toggle("hidden", !(settingsData.noticeEnabled && settingsData.noticeText));
+  $("noticeSection").classList.toggle(
+    "hidden",
+    !(settingsData.noticeEnabled && settingsData.noticeText)
+  );
+
   $("publicNotice").textContent = settingsData.noticeText || "";
-  $("gallerySection").classList.toggle("hidden", !(settingsData.galleryEnabled && settingsData.galleryUrl));
-  $("publicGallery").innerHTML = settingsData.galleryUrl && settingsData.galleryEnabled
-    ? `<img src="${safe(settingsData.galleryUrl)}" alt="Committee gallery photo" referrerpolicy="no-referrer" onerror="this.alt='Image could not be loaded'">`
-    : "";
+
+  galleryPhotos = settingsData.galleryEnabled ? getPhotoURLs() : [];
+
+  $("gallerySection").classList.toggle("hidden",!galleryPhotos.length);
+
+  stopGallery();
+  galleryIndex = 0;
+
+  if(galleryPhotos.length) {
+    showGalleryPhoto();
+
+    if(galleryPhotos.length>1) {
+      galleryTimer = setInterval(()=>{
+        galleryIndex = (galleryIndex+1)%galleryPhotos.length;
+        showGalleryPhoto();
+      },5000);
+    }
+  } else {
+    $("publicGallery").innerHTML = "";
+    $("photoCounter").textContent = "";
+  }
 }
+
 function fillSettingsForm() {
   $("noticeText").value = settingsData.noticeText || "";
   $("noticeEnabled").checked = !!settingsData.noticeEnabled;
-  $("galleryUrl").value = settingsData.galleryUrl || "";
+
+  const urls = Array.isArray(settingsData.galleryUrls)
+    ? settingsData.galleryUrls
+    : (settingsData.galleryUrl ? [settingsData.galleryUrl] : []);
+
+  $("galleryUrl").value = urls.join("\n");
   $("galleryEnabled").checked = !!settingsData.galleryEnabled;
 }
+
+/* Roles and dashboard */
 function renderRole() {
   $("adminPanel").classList.toggle("hidden",!isAdmin());
   $("superPanel").classList.toggle("hidden",!isSuper());
+
   $("logoutBtn").classList.toggle("hidden",!currentUser);
   $("loginOpen").classList.toggle("hidden",!!currentUser);
-  $("roleLabel").textContent = currentUser ? "Signed in: "+currentUser.email+" · Role: "+currentRole : "";
+
+  $("roleLabel").textContent = currentUser
+    ? "Signed in: "+(currentUser.email||"Admin")+" · Role: "+currentRole
+    : "";
 }
 
+/* Firebase listeners */
 function startPublicListeners() {
   stopListeners();
-  unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();}));
-  unsubscribers.push(listen("payments",d=>{paymentData=d;showMoney();renderRecords();}));
-  unsubscribers.push(listen("expenses",d=>{expenseData=d;showMoney();renderRecords();}));
-  unsubscribers.push(onSnapshot(doc(db,"settings","public"),snap=>{
-    settingsData = snap.exists() ? snap.data() : {};
-    renderSettings();
-    if(isSuper()) fillSettingsForm();
-  },err=>console.error("Settings",err)));
-}
-async function loadPrivateForAdmin() {
-  privateData = {};
-  try {
-    const snap = await getDocs(collection(db,"memberPrivate"));
-    snap.forEach(d=>privateData[d.id]=d.data());
-  } catch(e) { console.warn("Private contacts require Admin permission",e); }
+
+  unsubscribers.push(
+    listen("members",d=>{
+      memberData=d;
+      renderMembers();
+    })
+  );
+
+  unsubscribers.push(
+    listen("payments",d=>{
+      paymentData=d;
+      showMoney();
+      renderRecords();
+
+      const details = $("memberDetails");
+      if(!details.classList.contains("hidden")) {
+        const selected = details.querySelector("#reportYear");
+        if(selected) {
+          const name = details.querySelector("h3");
+          const member = memberData.find(m=>m.name===name?.textContent);
+          if(member) renderMemberDetails(member.id,selected.value);
+        }
+      }
+    })
+  );
+
+  unsubscribers.push(
+    listen("expenses",d=>{
+      expenseData=d;
+      showMoney();
+      renderRecords();
+    })
+  );
+
+  unsubscribers.push(
+    onSnapshot(doc(db,"settings","public"),snap=>{
+      settingsData = snap.exists() ? snap.data() : {};
+      renderSettings();
+      if(isSuper()) fillSettingsForm();
+    },err=>console.error("Settings",err))
+  );
 }
 
-$("menuBtn").onclick=()=> $("menuBox").classList.toggle("show");
+async function loadPrivateForAdmin() {
+  try {
+    await getDocs(collection(db,"memberPrivate"));
+  } catch(e) {
+    console.warn("Private contacts require Admin permission",e);
+  }
+}
+
+/* Menu */
+$("menuBtn").onclick = ()=>{
+  $("menuBox").classList.toggle("show");
+};
+
 document.addEventListener("click",e=>{
-  if(!$("menuBtn").contains(e.target) && !$("menuBox").contains(e.target))
+  if(!$("menuBtn").contains(e.target) &&
+     !$("menuBox").contains(e.target)) {
     $("menuBox").classList.remove("show");
+  }
 });
-$("loginOpen").onclick=()=>{
+
+$("loginOpen").onclick = ()=>{
   $("adminLogin").classList.remove("hidden");
   $("menuBox").classList.remove("show");
 };
-$("cancelLogin").onclick=()=> $("adminLogin").classList.add("hidden");
-$("logoutBtn").onclick=async()=>{
-  try { await signOut(auth); message("Logged out."); }
-  catch(e){message(e.message,true);}
+
+$("cancelLogin").onclick = ()=>{
+  $("adminLogin").classList.add("hidden");
 };
-$("loginBtn").onclick=async()=>{
-  $("loginMessage").textContent="Signing in...";
+
+/* Login */
+$("loginBtn").onclick = async()=>{
+  $("loginMessage").textContent = "Signing in...";
+
   try {
-    await signInWithEmailAndPassword(auth,$("loginEmail").value.trim(),$("loginPassword").value);
+    await signInWithEmailAndPassword(
+      auth,
+      $("loginEmail").value.trim(),
+      $("loginPassword").value
+    );
+
     $("adminLogin").classList.add("hidden");
-    $("loginPassword").value="";
+    $("loginPassword").value = "";
   } catch(e) {
-    $("loginMessage").textContent="Login failed. Check email/password and Firebase Authentication settings.";
-    $("loginMessage").className="small error";
+    $("loginMessage").textContent =
+      "Login failed. Check email/password and Firebase Authentication settings.";
+    $("loginMessage").className = "small error";
   }
 };
+
+$("logoutBtn").onclick = async()=>{
+  try {
+    await signOut(auth);
+    message("Logged out.");
+  } catch(e) {
+    message(e.message,true);
+  }
+};
+
+/* Public member interaction */
 $("search").addEventListener("input",renderMembers);
+
 $("members").addEventListener("click",e=>{
-  const b=e.target.closest("[data-member]");
+  const b = e.target.closest("[data-member]");
   if(b) renderMemberDetails(b.dataset.member);
 });
 
-$("addMemberBtn").onclick=async()=>{
+/* Add member */
+$("addMemberBtn").onclick = async()=>{
   if(!isAdmin()) return;
-  const name=$("newMemberName").value.trim();
-  const phone=$("newMemberPhone").value.trim();
+
+  const name = $("newMemberName").value.trim();
+  const phone = $("newMemberPhone").value.trim();
+
   if(!name) return message("Enter member name.",true);
+
   try {
-    const ref=await addDoc(collection(db,"members"),{name,createdAt:serverTimestamp()});
-    if(phone) await setDoc(doc(db,"memberPrivate",ref.id),{phone});
-    $("newMemberName").value=""; $("newMemberPhone").value="";
+    const ref = await addDoc(collection(db,"members"),{
+      name,
+      createdAt:serverTimestamp()
+    });
+
+    if(phone) {
+      await setDoc(doc(db,"memberPrivate",ref.id),{phone});
+    }
+
+    $("newMemberName").value = "";
+    $("newMemberPhone").value = "";
+
     message("Member added successfully.");
-  } catch(e){message("Could not add member. Check Firestore Rules. "+e.message,true);}
+  } catch(e) {
+    message("Could not add member. Check Firestore Rules. "+e.message,true);
+  }
 };
-$("addPaymentBtn").onclick=async()=>{
+
+/* Add payment */
+$("addPaymentBtn").onclick = async()=>{
   if(!isAdmin()) return;
-  const id=$("paymentMember").value;
-  const m=memberData.find(x=>x.id===id);
-  const amount=Number($("paymentAmount").value);
-  const month=$("paymentMonth").value.trim();
-  const date=$("paymentDate").value;
-  if(!m || !Number.isFinite(amount) || amount<=0 || !month || !date)
+
+  const id = $("paymentMember").value;
+  const m = memberData.find(x=>x.id===id);
+  const amount = Number($("paymentAmount").value);
+  const month = $("paymentMonth").value.trim();
+  const date = $("paymentDate").value;
+
+  if(!m || !Number.isFinite(amount) || amount<=0 || !month || !date) {
     return message("Enter member, valid amount, month/purpose and date.",true);
+  }
+
   try {
     await addDoc(collection(db,"payments"),{
-      memberId:id,memberName:m.name,amount,month,date,createdAt:serverTimestamp()
+      memberId:id,
+      memberName:m.name,
+      amount,
+      month,
+      date,
+      createdAt:serverTimestamp()
     });
-    $("paymentAmount").value=""; $("paymentMonth").value="";
-    message("Payment saved.");
-  } catch(e){message("Could not save payment. "+e.message,true);}
-};
-$("addExpenseBtn").onclick=async()=>{
-  if(!isAdmin()) return;
-  const title=$("expenseTitle").value.trim();
-  const amount=Number($("expenseAmount").value);
-  const date=$("expenseDate").value;
-  if(!title || !Number.isFinite(amount) || amount<=0 || !date)
-    return message("Enter expense description, valid amount and date.",true);
-  try {
-    await addDoc(collection(db,"expenses"),{title,amount,date,createdAt:serverTimestamp()});
-    $("expenseTitle").value=""; $("expenseAmount").value="";
-    message("Expense saved.");
-  } catch(e){message("Could not save expense. "+e.message,true);}
-};
-$("adminRecords").addEventListener("click",async e=>{
-  const p=e.target.closest("[data-delete-payment]");
-  const x=e.target.closest("[data-delete-expense]");
-  if(!isAdmin()) return;
-  if(p && confirm("Delete this payment record?")) {
-    try { await deleteDoc(doc(db,"payments",p.dataset.deletePayment)); message("Payment deleted."); }
-    catch(err){message(err.message,true);}
+
+    $("paymentAmount").value = "";
+    $("paymentMonth").value = "";
+
+    message("Payment saved successfully.");
+  } catch(e) {
+    message("Could not save payment. "+e.message,true);
   }
+};
+
+/* Add expense */
+$("addExpenseBtn").onclick = async()=>{
+  if(!isAdmin()) return;
+
+  const title = $("expenseTitle").value.trim();
+  const amount = Number($("expenseAmount").value);
+  const date = $("expenseDate").value;
+
+  if(!title || !Number.isFinite(amount) || amount<=0 || !date) {
+    return message("Enter expense description, valid amount and date.",true);
+  }
+
+  try {
+    await addDoc(collection(db,"expenses"),{
+      title,amount,date,createdAt:serverTimestamp()
+    });
+
+    $("expenseTitle").value = "";
+    $("expenseAmount").value = "";
+
+    message("Expense saved.");
+  } catch(e) {
+    message("Could not save expense. "+e.message,true);
+  }
+};
+
+/* Delete financial records */
+$("adminRecords").addEventListener("click",async e=>{
+  const p = e.target.closest("[data-delete-payment]");
+  const x = e.target.closest("[data-delete-expense]");
+
+  if(!isAdmin()) return;
+
+  if(p && confirm("Delete this payment record?")) {
+    try {
+      await deleteDoc(doc(db,"payments",p.dataset.deletePayment));
+      message("Payment deleted.");
+    } catch(err) {
+      message(err.message,true);
+    }
+  }
+
   if(x && confirm("Delete this expense record?")) {
-    try { await deleteDoc(doc(db,"expenses",x.dataset.deleteExpense)); message("Expense deleted."); }
-    catch(err){message(err.message,true);}
+    try {
+      await deleteDoc(doc(db,"expenses",x.dataset.deleteExpense));
+      message("Expense deleted.");
+    } catch(err) {
+      message(err.message,true);
+    }
   }
 });
-$("saveSettingsBtn").onclick=async()=>{
+
+/* Gallery manual controls */
+$("previousPhoto").onclick = ()=>{
+  if(!galleryPhotos.length) return;
+  galleryIndex = (galleryIndex-1+galleryPhotos.length)%galleryPhotos.length;
+  showGalleryPhoto();
+};
+
+$("nextPhoto").onclick = ()=>{
+  if(!galleryPhotos.length) return;
+  galleryIndex = (galleryIndex+1)%galleryPhotos.length;
+  showGalleryPhoto();
+};
+
+/* Save website settings */
+$("saveSettingsBtn").onclick = async()=>{
   if(!isSuper()) return;
-  const url=$("galleryUrl").value.trim();
-  if(url && !/^https:\/\/.+/i.test(url)) return message("Use a valid HTTPS photo URL.",true);
+
+  const urls = $("galleryUrl").value
+    .split(/[\n,]+/)
+    .map(x=>x.trim())
+    .filter(Boolean);
+
+  if(urls.some(url=>!/^https:\/\/.+/i.test(url))) {
+    return message("Every photo URL must start with https://",true);
+  }
+
   try {
     await setDoc(doc(db,"settings","public"),{
       noticeText:$("noticeText").value.trim(),
       noticeEnabled:$("noticeEnabled").checked,
-      galleryUrl:url,
+      galleryUrls:urls,
+      galleryUrl:urls[0] || "",
       galleryEnabled:$("galleryEnabled").checked,
       updatedAt:serverTimestamp()
     });
+
     message("Website settings saved.");
-  } catch(e){message("Settings save failed. "+e.message,true);}
+  } catch(e) {
+    message("Settings save failed. "+e.message,true);
+  }
 };
-$("grantAdminBtn").onclick=async()=>{
+
+/* Grant limited admin */
+$("grantAdminBtn").onclick = async()=>{
   if(!isSuper()) return;
-  const uid=$("limitedUid").value.trim();
-  const email=$("limitedEmail").value.trim();
-  if(!uid || !email) return message("Enter the account UID and email.",true);
-  if(uid===SUPER_ADMIN_UID) return message("Cannot replace the Super Admin account.",true);
+
+  const uid = $("limitedUid").value.trim();
+  const email = $("limitedEmail").value.trim();
+
+  if(!uid || !email) {
+    return message("Enter the account UID and email.",true);
+  }
+
+  if(uid===SUPER_ADMIN_UID) {
+    return message("Cannot replace the Super Admin account.",true);
+  }
+
   try {
-    await setDoc(doc(db,"users",uid),{role:"admin",email});
-    $("limitedUid").value=""; $("limitedEmail").value="";
+    await setDoc(doc(db,"users",uid),{
+      role:"admin",
+      email
+    });
+
+    $("limitedUid").value = "";
+    $("limitedEmail").value = "";
+
     message("Limited Admin access granted.");
-  } catch(e){message("Could not grant access. "+e.message,true);}
+  } catch(e) {
+    message("Could not grant access. "+e.message,true);
+  }
 };
-$("removeAdminBtn").onclick=async()=>{
+
+/* Remove limited admin */
+$("removeAdminBtn").onclick = async()=>{
   if(!isSuper()) return;
-  const uid=$("removeUid").value.trim();
-  if(!uid || uid===SUPER_ADMIN_UID) return message("Enter a valid Limited Admin UID.",true);
+
+  const uid = $("removeUid").value.trim();
+
+  if(!uid || uid===SUPER_ADMIN_UID) {
+    return message("Enter a valid Limited Admin UID.",true);
+  }
+
   if(!confirm("Remove this user's Limited Admin access?")) return;
+
   try {
     await deleteDoc(doc(db,"users",uid));
-    $("removeUid").value="";
+    $("removeUid").value = "";
     message("Limited Admin access removed.");
-  } catch(e){message("Could not remove access. "+e.message,true);}
+  } catch(e) {
+    message("Could not remove access. "+e.message,true);
+  }
 };
-$("printBtn").onclick=()=>{
+
+/* Financial report */
+$("printBtn").onclick = ()=>{
   if(!isAdmin()) return;
-  const total=paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
-  const costs=expenseData.reduce((s,x)=>s+Number(x.amount||0),0);
-  $("reportPrint").innerHTML=
-    `<h1>Maa Mahalakshmi Puja Committee — Ibrisingha</h1>
-    <h2>Financial Report</h2><p>Generated: ${safe(new Date().toLocaleString())}</p>
-    <p>Total Collection: ${money(total)}</p><p>Total Expenses: ${money(costs)}</p>
-    <p>Balance: ${money(total-costs)}</p><hr><h3>Payments</h3>`+
-    paymentData.map(p=>`<p>${safe(p.memberName)} | ${safe(p.month)} | ${safe(p.date)} | ${money(p.amount)}</p>`).join("")+
-    "<hr><h3>Expenses</h3>"+
-    expenseData.map(x=>`<p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>`).join("");
+
+  const total = paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const costs = expenseData.reduce((s,x)=>s+Number(x.amount||0),0);
+
+  $("reportPrint").innerHTML = `
+    <h1>Maa Mahalakshmi Puja Committee — Ibrisingha</h1>
+    <h2>Financial Report</h2>
+    <p>Generated: ${safe(new Date().toLocaleString())}</p>
+    <p>Total Collection: ${money(total)}</p>
+    <p>Total Expenses: ${money(costs)}</p>
+    <p>Balance: ${money(total-costs)}</p>
+    <hr>
+    <h3>Payments</h3>
+    ${paymentData.map(p=>`
+      <p>${safe(p.memberName)} | ${safe(p.month)} |
+      ${safe(p.date)} | ${money(p.amount)}</p>
+    `).join("")}
+    <hr>
+    <h3>Expenses</h3>
+    ${expenseData.map(x=>`
+      <p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>
+    `).join("")}
+  `;
+
   $("reportPrint").classList.remove("hidden");
   window.print();
   $("reportPrint").classList.add("hidden");
 };
 
+/* Authentication state */
 onAuthStateChanged(auth,async user=>{
-  currentUser=user;
-  currentRole="public";
+  currentUser = user;
+  currentRole = "public";
+
   if(user) {
-    if(user.uid===SUPER_ADMIN_UID) currentRole="superAdmin";
-    else {
+    if(user.uid===SUPER_ADMIN_UID) {
+      currentRole = "superAdmin";
+    } else {
       try {
-        const snap=await getDoc(doc(db,"users",user.uid));
-        if(snap.exists() && snap.data().role==="admin") currentRole="admin";
-      } catch(e) { console.warn("Role lookup failed",e); }
+        const snap = await getDoc(doc(db,"users",user.uid));
+
+        if(snap.exists() && snap.data().role==="admin") {
+          currentRole = "admin";
+        }
+      } catch(e) {
+        console.warn("Role lookup failed",e);
+      }
     }
   }
+
   renderRole();
   startPublicListeners();
+
   if(isAdmin()) await loadPrivateForAdmin();
-  if(user && !isAdmin()) message("This account has no Admin permissions.",true);
+
+  if(user && !isAdmin()) {
+    message("This account has no Admin permissions.",true);
+  }
 });
 </script>
 </body>
