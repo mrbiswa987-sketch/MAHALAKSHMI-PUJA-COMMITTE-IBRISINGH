@@ -5,340 +5,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
-<title>Maa Mahalakshmi Puja Committee - Ibrisingh</title>
+<title>Maa Mahalakshmi Puja Committee - Ibrisingha</title>
+
+<!-- Maa Lakshmi favicon -->
 <link rel="icon" type="image/png" href="favicon.png">
-<meta property="og:title" content="Maa Mahalakshmi Puja Committee - Ibrisingh">
-<meta property="og:description" content="Devotion, unity and service at Ibrisingh.">
+
+<!-- WhatsApp / Facebook link preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maa Mahalakshmi Puja Committee - Ibrisingha">
+<meta property="og:description" content="Devotion, unity and service at Ibrisingha.">
 <meta property="og:image" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/og-image.jpg">
+<meta property="og:url" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maa Mahalakshmi Puja Committee - Ibrisingha">
+<meta name="twitter:description" content="Devotion, unity and service at Ibrisingha.">
+<meta name="twitter:image" content="https://mrbiswa987-sketch.github.io/MAHALAKSHMI-PUJA-COMMITTE-IBRISINGH/og-image.jpg">
 
 <style>
-:root{
-  --bg:#080808;
-  --panel:#11110e;
-  --gold:#d4af37;
-  --light:#ffe9a6;
-  --text:#f8f1df;
-  --muted:#bdb5a3;
-  --green:#62ffad;
-  --red:#ff6565;
-  --neon:0 0 7px #d4af37,0 0 17px #d4af3755;
+:root {
+  --bg:#090909; --panel:#15130e; --gold:#d4af37;
+  --light:#f1d580; --text:#f8f1df; --muted:#bdb5a3;
+  --border:#5e4b20; --red:#c65353; --green:#62c58a;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Arial,sans-serif;font-size:13px;
-}
-body.modal-open{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
+header{background:#11100c;border-bottom:1px solid var(--gold);padding:16px;text-align:center;position:relative}
+h1{font-size:20px;color:var(--light);line-height:1.7;margin:0}
+header p{margin:0;color:var(--gold);font-size:13px}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-
-/* FIXED HEADER */
-header{
-  position:sticky;top:0;z-index:100;
-  text-align:center;padding:10px 12px;
-  background:#11100c;
-  border-bottom:1px solid var(--gold);
-  box-shadow:0 2px 15px #d4af3730;
-}
-header h1{
-  font-size:17px;color:var(--light);
-  margin:3px 0;line-height:1.5;
-}
-header p{margin:0;color:var(--gold);font-size:11px}
-
-.menu{
-  position:absolute;left:12px;top:13px;
-  background:#15130e;border:1px solid var(--gold);
-  color:var(--light);padding:7px 11px;
-  border-radius:6px;box-shadow:var(--neon);
-}
-.menu-box{
-  display:none;position:absolute;z-index:200;
-  left:12px;top:55px;min-width:170px;
-  background:#17150f;border:1px solid var(--gold);
-  border-radius:8px;padding:8px;
-  box-shadow:var(--neon);
-}
+.menu{position:absolute;left:12px;top:17px;background:#15130e;border:1px solid var(--gold);color:var(--light);padding:8px 11px;border-radius:6px}
+.menu-box{display:none;position:absolute;z-index:10;left:12px;top:58px;background:#17150f;border:1px solid var(--gold);border-radius:7px;padding:10px}
 .menu-box.show{display:block}
-.menu-box button{
-  display:block;width:100%;text-align:left;
-  background:none;border:0;color:var(--light);
-  padding:11px;border-radius:5px;
-}
-.menu-box button:hover{background:#30230d}
-
-/* PUBLIC HERO */
-.hero{
-  text-align:center;padding:30px 14px;
-  background:radial-gradient(ellipse,#30230d,#090909 75%);
-}
-.hero .symbol{font-size:22px;color:var(--gold)}
-.hero h2{font-size:19px;color:var(--light);line-height:1.7}
-.hero h3{font-size:15px;color:var(--light)}
-.hero p{
-  max-width:700px;margin:12px auto;
-  color:#e0d5bb;font-size:12px;line-height:1.9;
-}
-.hero .jai{color:var(--light);font-weight:bold;font-size:16px}
-
-main{max-width:1100px;margin:auto}
-section{padding:17px 13px}
-.section-title{
-  text-align:center;color:var(--light);
-  font-size:15px;margin:0 0 14px;
-}
-.stats{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:9px;
-}
-
-/* NEON BOXES */
-.card,.panel{
-  padding:13px 10px;background:var(--panel);
-  border:1px solid #8b702c;border-radius:9px;
-  box-shadow:0 0 5px #d4af3740,inset 0 0 8px #d4af3710;
-  min-width:0;
-}
+.menu-box button{display:block;background:none;border:0;color:var(--light);padding:10px}
+main{max-width:1000px;margin:auto}
+.hero{text-align:center;padding:30px 15px;background:radial-gradient(ellipse,#30230d,#090909 75%)}
+.symbol{font-size:28px;color:var(--gold)}
+.hero h2{color:var(--light);font-size:24px;margin:12px 0}
+.hero p{font-size:13px;color:var(--muted)}
+section{padding:20px 14px}
+h3{text-align:center;color:var(--light);font-size:18px;margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.card,.panel{padding:15px 12px;background:var(--panel);border:1px solid var(--border);border-radius:9px;min-width:0}
 .card{text-align:center}
-.card small{font-size:10px;color:var(--muted)}
-.card strong{
-  display:block;color:var(--light);
-  font-size:19px;margin-top:8px;
-}
-.click-card{cursor:pointer;transition:.2s}
-.click-card:hover{box-shadow:var(--neon);transform:translateY(-2px)}
-
-.search,.field{
-  width:100%;padding:10px;margin:5px 0 11px;
-  background:#090909;color:white;
-  border:1px solid #806626;border-radius:6px;
-  box-shadow:inset 0 0 5px #d4af3715;
-}
-label{display:block;color:var(--muted);font-size:11px;margin-top:7px}
-.btn{
-  background:#d4af37;color:#161108;border:0;
-  border-radius:6px;padding:10px 13px;
-  font-weight:bold;margin:4px 2px;
-  box-shadow:0 0 8px #d4af3750;
-}
-.btn.secondary{
-  background:#282319;color:var(--light);
-  border:1px solid var(--gold);
-}
+.card small{font-size:12px;color:var(--muted)}
+.card strong{display:block;color:var(--light);font-size:22px;margin-top:9px;overflow-wrap:anywhere}
+.search,.field{width:100%;padding:12px;margin:5px 0 12px;background:#0e0d0a;color:white;border:1px solid #6f5923;border-radius:6px}
+label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
+.btn{background:#d4af37;color:#161108;border:0;border-radius:6px;padding:11px 14px;font-weight:bold;margin:4px 2px}
+.btn.secondary{background:#282319;color:var(--light);border:1px solid var(--border)}
 .btn.danger{background:#702d2d;color:white}
-.hidden{display:none!important}
-.small{font-size:10px;color:var(--muted)}
-.note{
-  text-align:center;color:var(--muted);
-  font-size:11px;padding:12px;line-height:1.7;
-}
-.error{color:#ff9696}
-.status{color:var(--green)}
-.member{
-  display:block;width:100%;text-align:left;
-  padding:12px;margin:7px 0;background:var(--panel);
-  border:1px solid var(--border,#5e4b20);
-  border-radius:7px;color:var(--light);
-  box-shadow:0 0 5px #d4af3720;
-}
+.btn:disabled{opacity:.5}
+.member{display:block;width:100%;text-align:left;padding:13px;margin:7px 0;background:var(--panel);border:1px solid var(--border);border-radius:7px;color:var(--light)}
 .member small{display:block;color:var(--muted);margin-top:5px}
-.notice{
-  border:1px solid var(--gold);padding:13px;
-  border-radius:8px;background:#17130a;
-  line-height:1.7;white-space:pre-wrap;
-  box-shadow:var(--neon);
-}
-footer{
-  border-top:1px solid #5e4b20;text-align:center;
-  padding:17px;color:var(--gold);font-size:11px;
-}
+.note{text-align:center;color:var(--muted);font-size:12px;padding:14px;line-height:1.7}
+.notice{border:1px solid var(--gold);padding:15px;border-radius:8px;background:#17130a;line-height:1.7;white-space:pre-wrap}
+.gallery img{width:100%;max-height:350px;object-fit:contain;border-radius:8px}
+.row{display:grid;grid-template-columns:1fr;gap:12px}
+.listrow{border-bottom:1px solid #3b321e;padding:12px 0;line-height:1.7;overflow-wrap:anywhere}
+.small{font-size:12px;color:var(--muted)}
+.hidden{display:none!important}
+/* Centered login dialog and dashboard layout */
+#adminLogin{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:18px}
+#adminLogin.hidden{display:none!important}
+#adminLogin .login-card{width:min(100%,430px);max-height:90vh;overflow:auto;box-shadow:0 20px 70px #000;border:1px solid var(--gold)}
+#adminPanel{padding-top:10px}
+.dashboard-layout{display:grid;grid-template-columns:1fr;gap:14px}
+.dashboard-nav{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;background:#090909;padding:8px 0;z-index:5}
+.dashboard-nav button{flex:1;min-width:120px}
+.click-card{cursor:pointer}
+.click-card:focus{outline:2px solid var(--gold);outline-offset:2px}
+.modal{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.86);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal.hidden{display:none!important}
+.modal-box{width:min(100%,650px);max-height:88vh;overflow:auto;background:#15130e;border:1px solid var(--gold);border-radius:12px;padding:18px;box-shadow:0 20px 70px #000}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.modal-head h3{margin:0;text-align:left}
+.close-btn{background:#282319;color:var(--light);border:1px solid var(--border);border-radius:7px;padding:8px 12px}
+@media(min-width:850px){.dashboard-layout{grid-template-columns:220px minmax(0,1fr)}.dashboard-nav{display:flex;flex-direction:column;align-self:start}}
+@media(max-width:600px){header{padding:14px 55px}h1{font-size:17px}.hero{padding:24px 12px}section{padding:16px 10px}.card strong{font-size:19px}}
 
-/* ADMIN LAYOUT */
-.admin-layout{
-  display:none;min-height:calc(100vh - 65px);
-}
-.admin-layout.active{display:flex}
-.sidebar{
-  width:225px;flex-shrink:0;
-  background:#11100c;border-right:1px solid var(--gold);
-  padding:14px 10px;
-  min-height:calc(100vh - 65px);
-  box-shadow:3px 0 15px #d4af3715;
-}
-.sidebar h3{
-  text-align:center;color:var(--light);
-  font-size:14px;margin:5px 0 16px;
-}
-.sidebar button{
-  display:block;width:100%;text-align:left;
-  background:#17150f;color:var(--light);
-  border:1px solid #57451e;border-radius:6px;
-  padding:11px 10px;margin:6px 0;
-  font-size:12px;box-shadow:0 0 5px #d4af3718;
-}
-.sidebar button:hover{
-  border-color:var(--gold);
-  box-shadow:var(--neon);background:#28200e;
-}
-.sidebar .logout{color:#ff8585}
-.admin-main{
-  flex:1;min-width:0;padding:20px;
-}
-.admin-main h2{
-  text-align:center;color:var(--light);
-  font-size:18px;
-}
-.admin-welcome{text-align:center;color:var(--muted);font-size:12px}
-.admin-stats{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;margin-top:20px;
-}
-.admin-stat{
-  padding:17px 10px;text-align:center;
-  border:1px solid var(--gold);border-radius:9px;
-  background:#11110e;box-shadow:var(--neon);
-}
-.admin-stat small{color:var(--muted);font-size:11px}
-.admin-stat strong{
-  display:block;color:var(--light);
-  font-size:21px;margin-top:8px;
-}
-
-/* POPUP */
-.modal-backdrop{
-  display:none;position:fixed;inset:0;z-index:1000;
-  background:#000c;backdrop-filter:blur(5px);
-  padding:12px;align-items:center;justify-content:center;
-}
-.modal-backdrop.open{display:flex}
-.modal-box{
-  width:min(720px,100%);max-height:90vh;
-  overflow:auto;background:#17150f;
-  border:1px solid var(--gold);border-radius:11px;
-  box-shadow:0 0 12px #d4af37,0 0 35px #d4af3755;
-  animation:popupIn .2s ease;
-}
-.modal-box.wide{width:min(950px,100%)}
-@keyframes popupIn{
-  from{opacity:0;transform:scale(.96) translateY(10px)}
-  to{opacity:1;transform:scale(1) translateY(0)}
-}
-.modal-head{
-  position:sticky;top:0;z-index:5;
-  background:#211b0e;border-bottom:1px solid var(--gold);
-  padding:12px 15px;display:flex;
-  justify-content:space-between;align-items:center;
-}
-.modal-head h2{font-size:15px;color:var(--light);margin:0}
-.modal-close{
-  background:#382d17;color:#f5dfad;
-  border:1px solid var(--gold);border-radius:6px;
-  font-size:20px;width:32px;height:32px;
-  box-shadow:var(--neon);
-}
-.modal-content{padding:15px}
-.modal-content h3{
-  text-align:center;color:var(--light);font-size:14px;
-}
-.modal-content .panel{margin-bottom:10px}
-.dashboard-actions{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:9px;
-}
-.dashboard-action{
-  background:#211b0e;color:var(--light);
-  border:1px solid var(--gold);border-radius:8px;
-  padding:15px 8px;text-align:center;
-  font-size:12px;box-shadow:var(--neon);
-}
-.dashboard-action:hover{background:#30230d}
-
-/* REPORT TABLE */
-.report-table{
-  width:100%;border-collapse:collapse;
-  font-size:11px;margin-top:10px;
-}
-.report-table th,.report-table td{
-  border:1px solid #57451e;padding:8px 4px;text-align:center;
-}
-.report-table th{background:#30230d;color:var(--light)}
-.report-table td{color:var(--text)}
-.paid{color:#62c58a;font-weight:bold}
-.partial{color:#f1bd57;font-weight:bold}
-.unpaid{color:#ff8585;font-weight:bold}
-.listrow{
-  border-bottom:1px solid #3b321e;
-  padding:10px 0;line-height:1.7;
-  overflow-wrap:anywhere;
-}
-.report-total{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:8px;margin-top:12px;
-}
-.report-actions{text-align:center;margin-top:12px}
-.year-select{max-width:150px}
-.gallery{position:relative;overflow:hidden;min-height:170px;background:#0e0d0a}
-.gallery img{
-  width:100%;height:270px;object-fit:contain;
-  border-radius:8px;display:block;
-}
-.gallery-controls{
-  display:flex;justify-content:center;
-  align-items:center;gap:12px;margin-top:10px;
-}
-.gallery-controls button{
-  background:#282319;color:var(--light);
-  border:1px solid var(--gold);border-radius:5px;padding:7px 12px;
-}
-.gallery-caption{text-align:center;color:var(--muted);font-size:10px;margin-top:7px}
-hr{border:0;border-top:1px solid #57451e;margin:14px 0}
-.empty{text-align:center;color:var(--muted);padding:15px}
-
+.status{font-size:13px;color:var(--green);white-space:pre-wrap}
+.error{color:#ff9696}
+footer{border-top:1px solid var(--border);text-align:center;padding:18px 10px;color:var(--gold);font-size:12px}
+hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 @media(min-width:650px){
-  .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .admin-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
-}
-@media(max-width:650px){
-  .admin-layout.active{display:block}
-  .sidebar{
-    width:100%;min-height:auto;
-    border-right:0;border-bottom:1px solid var(--gold);
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:5px;padding:9px;
-  }
-  .sidebar h3{grid-column:1/-1;margin:4px}
-  .sidebar button{margin:0;padding:10px 7px;font-size:11px}
-  .admin-main{padding:12px}
-}
-@media(max-width:380px){
-  header h1{font-size:14px}
-  .hero h2{font-size:16px}
-  .modal-backdrop{padding:6px}
-  .modal-box{max-height:95vh}
-  .modal-content{padding:10px}
-  .report-table{font-size:10px}
+ .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .row{grid-template-columns:repeat(2,minmax(0,1fr))}
+ section{padding:24px}
 }
 @media print{
-  body{background:white!important;color:black!important}
-  body *{visibility:hidden!important}
-  #reportPrint,#reportPrint *{visibility:visible!important}
-  #reportPrint{
-    display:block!important;position:absolute;left:0;top:0;
-    width:100%;background:white!important;color:black!important;
-    padding:15px;
-  }
-  #reportPrint h1,#reportPrint h2,#reportPrint h3{text-align:center;color:black!important}
-  #reportPrint table{width:100%;border-collapse:collapse}
-  #reportPrint th,#reportPrint td{
-    border:1px solid black;padding:8px;color:black!important;
-    text-align:center;
-  }
-  #reportPrint p{color:black!important}
+ body{background:white;color:black}
+ header,.hero,#publicSections,#adminLogin,#adminPanel .no-print,footer{display:none!important}
+ #reportPrint{display:block!important}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -347,146 +108,162 @@ hr{border:0;border-top:1px solid #57451e;margin:14px 0}
     <button id="loginOpen">Admin Login</button>
     <button id="logoutBtn" class="hidden">Logout</button>
   </div>
-
-  <div style="height:42px;display:flex;justify-content:center;align-items:center">
-    <img src="Radiant%20Lakshmi%20Goddess%20Temple%20Altar.png"
-      alt="Maa Mahalakshmi"
-      style="height:40px;width:40px;object-fit:cover;border-radius:50%;
-      border:1px solid #d4af37;box-shadow:0 0 12px #d4af37;
-      animation:eyeBlink 5s infinite">
-  </div>
   <h1>ମା' ମହାଲକ୍ଷ୍ମୀ ପୂଜା କମିଟି</h1>
   <p>ଇବ୍ରିସିଂହ</p>
 </header>
 
 <div class="hero">
   <div class="symbol">✦ ❖ ✦</div>
-  <h2>🙏 ମା' ମହାଲକ୍ଷ୍ମୀଙ୍କ ପବିତ୍ର ଚରଣରେ ସ୍ୱାଗତ 🙏</h2>
-  <h3>Maa Mahalakshmi Puja Committee, Ibrisingh</h3>
-  <p>ଭକ୍ତି, ଏକତା ଓ ସହଯୋଗର ଏକ ପବିତ୍ର ବନ୍ଧନ। ଆସନ୍ତୁ, ମା'ଙ୍କ ଆଶୀର୍ବାଦରେ ଆମ ପରମ୍ପରା ଓ ସଂସ୍କୃତିକୁ ଆଗକୁ ବଢ଼ାଇବା।</p>
-  <div class="jai">ଜୟ ମା' ମହାଲକ୍ଷ୍ମୀ 🙏</div>
+  <h2>Welcome to Our Committee</h2>
+  <p>Devotion · Unity · Service</p>
 </div>
 
 <main>
-  <div id="publicSections">
-    <section id="noticeSection" class="hidden">
-      <h3 class="section-title">Important Notice</h3>
-      <div class="notice" id="publicNotice"></div>
-    </section>
+<div id="publicSections">
+  <section id="noticeSection" class="hidden">
+    <h3>Important Notice</h3>
+    <div class="notice" id="publicNotice"></div>
+  </section>
 
-    <section id="gallerySection" class="hidden">
-      <h3 class="section-title">Photo Gallery</h3>
-      <div class="panel">
-        <div class="gallery" id="publicGallery"></div>
-        <div class="gallery-controls">
-          <button id="previousPhoto">❮</button>
-          <span id="photoCounter" class="small"></span>
-          <button id="nextPhoto">❯</button>
-        </div>
-        <p class="gallery-caption">Maa Mahalakshmi Puja Committee · Ibrisingh</p>
-      </div>
-    </section>
+  <section id="gallerySection" class="hidden">
+    <h3>Photo Gallery</h3>
+    <div class="panel gallery" id="publicGallery"></div>
+  </section>
 
-    <section>
-      <h3 class="section-title">Financial Overview</h3>
-      <div class="stats">
-        <div class="card"><small>Minimum Monthly Donation</small><strong>₹200</strong></div>
-        <div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
-        <button class="card click-card" id="expensesCard">
-          <small>Total Expenses · View Report</small>
-          <strong id="expenses">₹0</strong>
-        </button>
-        <div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
-      </div>
-    </section>
+  <section>
+    <h3>Financial Overview</h3>
+    <div class="stats">
+      <div class="card"><small>Minimum Donation</small><strong>₹200</strong></div>
+      <div class="card"><small>Total Collection</small><strong id="collection">₹0</strong></div>
+      <div class="card click-card" id="expenseCard" role="button" tabindex="0" aria-label="Open expense report"><small>Total Expenses · View report</small><strong id="expenses">₹0</strong></div>
+      <div class="card"><small>Balance</small><strong id="balance">₹0</strong></div>
+    </div>
+  </section>
 
-    <section>
-      <h3 class="section-title">Committee Members</h3>
-      <input class="search" id="search" placeholder="Search member name..." type="search">
-      <div id="members"><p class="note">Loading members...</p></div>
-    </section>
+  <section>
+    <h3>Committee Members</h3>
+    <input class="search" id="search" placeholder="Search member name..." type="search">
+    <div id="members"><p class="note">Loading members...</p></div>
+    <div id="memberDetails" class="panel hidden"></div>
+  </section>
+</div>
+
+<section id="adminLogin" class="hidden">
+  <h3>Admin Login</h3>
+  <div class="panel">
+    <label>Admin Email or Member ID</label>
+    <input id="loginEmail" class="field" type="text" autocomplete="username" placeholder="Admin email / Member ID">
+    <label>Password</label>
+    <input id="loginPassword" class="field" type="password" autocomplete="current-password" placeholder="Password">
+    <button class="btn" id="loginBtn">Login</button>
+    <p class="small">Members: enter your Member ID and password. Admins: enter your Firebase email and password.</p>
+    <button class="btn secondary" id="cancelLogin">Cancel</button>
+    <p id="loginMessage" class="small"></p>
+  </div>
+</section>
+
+<section id="adminPanel" class="hidden">
+  <h3>Admin Dashboard</h3>
+  <p class="note" id="roleLabel"></p>
+
+  <div class="panel">
+    <h3>Add Member</h3>
+    <label>Member name</label>
+    <input id="newMemberName" class="field" placeholder="Full name" autocomplete="name">
+    <label>Member ID (unique login ID)</label>
+    <input id="newMemberId" class="field" placeholder="e.g. MMP001" autocomplete="off">
+    <p class="small">Member ID is used with the password for Member Login. Create the matching Firebase Authentication account using the ID login format explained in the setup notes.</p>
+    <label>Mobile number (Admin only)</label>
+    <input id="newMemberPhone" class="field" inputmode="tel" placeholder="Mobile number">
+    <button class="btn" id="addMemberBtn">Add Member</button>
   </div>
 
-  <!-- Admin Dashboard: sidebar appears only after successful login -->
-  <div class="admin-layout" id="adminLayout">
-    <aside class="sidebar">
-      <h3>ADMIN PANEL</h3>
-      <button data-action="dashboard">▦ Dashboard</button>
-      <button data-action="addMember">＋ Add Member</button>
-      <button data-action="members">♙ Members List</button>
-      <button data-action="addPayment">₹ Add Payment</button>
-      <button data-action="addExpense">− Add Expense</button>
-      <button data-action="reports">▤ Financial Reports</button>
-      <button data-action="settings" class="super-only hidden">⚙ Website Settings</button>
-      <button data-action="admins" class="super-only hidden">♟ Manage Admins</button>
-      <button data-action="logout" class="logout">↪ Logout</button>
-    </aside>
+  <div class="panel" style="margin-top:12px">
+    <h3>Record Payment</h3>
+    <label>Member</label>
+    <select id="paymentMember" class="field"></select>
+    <label>Amount (₹)</label>
+    <input id="paymentAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <label>Month / Purpose</label>
+    <input id="paymentMonth" class="field" placeholder="e.g. January 2027 / Donation">
+    <label>Payment date</label>
+    <input id="paymentDate" class="field" type="date">
+    <button class="btn" id="addPaymentBtn">Save Payment</button>
+  </div>
 
-    <div class="admin-main">
-      <h2>Admin Dashboard</h2>
-      <p class="admin-welcome" id="adminWelcome">Welcome</p>
-      <div class="admin-stats">
-        <div class="admin-stat"><small>Total Members</small><strong id="adminMemberCount">0</strong></div>
-        <div class="admin-stat"><small>Total Collection</small><strong id="adminCollection">₹0</strong></div>
-        <div class="admin-stat"><small>Total Expenses</small><strong id="adminExpenses">₹0</strong></div>
-        <div class="admin-stat"><small>Available Balance</small><strong id="adminBalance">₹0</strong></div>
-      </div>
-      <p class="note">Select an option from the left menu. Each action opens in a separate popup.</p>
+  <div class="panel" style="margin-top:12px">
+    <h3>Add Expense</h3>
+    <label>Expense description</label>
+    <input id="expenseTitle" class="field" placeholder="e.g. Puja decoration">
+    <label>Amount (₹)</label>
+    <input id="expenseAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
+    <label>Expense date</label>
+    <input id="expenseDate" class="field" type="date">
+    <button class="btn" id="addExpenseBtn">Save Expense</button>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <h3>Financial Records</h3>
+    <div id="adminRecords"></div>
+    <button class="btn" id="printBtn">Print / Save PDF</button>
+  </div>
+
+  <div id="superPanel" class="hidden">
+    <div class="panel" style="margin-top:12px">
+      <h3>Super Admin — Website Settings</h3>
+      <label>Important notice</label>
+      <textarea id="noticeText" class="field" rows="3" placeholder="Write a public notice"></textarea>
+      <label><input type="checkbox" id="noticeEnabled"> Show notice on public website</label>
+      <hr>
+      <label>Photo URL (use a publicly accessible image URL)</label>
+      <input id="galleryUrl" class="field" type="url" placeholder="https://example.com/photo.jpg">
+      <label><input type="checkbox" id="galleryEnabled"> Show photo gallery</label>
+      <button class="btn" id="saveSettingsBtn">Save Website Settings</button>
+    </div>
+
+    <div class="panel" style="margin-top:12px">
+      <h3>Manage Limited Admin</h3>
+      <p class="small">Create the user's Email/Password account first in Firebase Authentication. Then enter that user's exact UID below. Never share passwords.</p>
+      <label>Authentication UID</label>
+      <input id="limitedUid" class="field" placeholder="Paste the user's UID">
+      <label>Account email (label only)</label>
+      <input id="limitedEmail" class="field" type="email" placeholder="admin@example.com">
+      <label>Role</label>
+      <select id="limitedRole" class="field"><option value="admin">Limited Admin</option><option value="president">President</option></select>
+      <button class="btn" id="grantAdminBtn">Grant Access</button>
+      <label>Remove Limited Admin — UID</label>
+      <input id="removeUid" class="field" placeholder="Paste the user's UID">
+      <button class="btn danger" id="removeAdminBtn">Remove Admin Access</button>
     </div>
   </div>
+  <p id="adminMessage" class="note"></p>
+</section>
+
+<div id="reportPrint" class="hidden"></div>
 </main>
 
-<footer>Maa Mahalakshmi Puja Committee · Ibrisingh</footer>
-
-<!-- One reusable popup for all options -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal-box" id="modalBox" role="dialog" aria-modal="true">
-    <div class="modal-head">
-      <h2 id="modalTitle">Details</h2>
-      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    </div>
-    <div class="modal-content" id="modalContent"></div>
+<div id="expenseModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="expenseModalTitle">
+  <div class="modal-box">
+    <div class="modal-head"><h3 id="expenseModalTitle">Expense Report</h3><button class="close-btn" id="closeExpenseModal">Close ✕</button></div>
+    <div id="expenseReportContent"></div>
+    <button class="btn" id="expensePrintBtn">Print / Save Expense PDF</button>
   </div>
 </div>
 
-<div id="reportPrint" class="hidden"></div>
-
-<!-- Part 2 will add Firebase imports, authentication and database logic. -->
-</body>
-</html>
+<footer>Maa Mahalakshmi Puja Committee · Ibrisingha</footer>
 
 <script type="module">
-import { initializeApp }
-  from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
+  getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-
 import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  addDoc,
-  setDoc,
-  deleteDoc,
-  onSnapshot,
-  query,
-  orderBy,
-  serverTimestamp
+  getFirestore, collection, doc, getDoc, getDocs, addDoc, setDoc,
+  deleteDoc, onSnapshot, query, orderBy, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-/* =====================================
-   1. FIREBASE CONFIGURATION
-===================================== */
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAgkWGLgzHXtgeU9Y30qHjC_4S2RjDckRg",
+  apiKey: "AIzaSyAgkGWLgzHXtgeU9Y30qHjC_4S2RjDckRg",
   authDomain: "mahalakshmi-puja-commitee.firebaseapp.com",
   projectId: "mahalakshmi-puja-commitee",
   storageBucket: "mahalakshmi-puja-commitee.firebasestorage.app",
@@ -496,2330 +273,362 @@ const firebaseConfig = {
 };
 
 const SUPER_ADMIN_UID = "vV3cLmmgW4e9XtXHRFp7ti2zTOF3";
-const MINIMUM_MONTHLY = 200;
-const FIRST_PAYMENT_YEAR = 2027;
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-/* =====================================
-   2. GLOBAL DATA
-===================================== */
+const $ = id => document.getElementById(id);
+const money = n => "₹" + Number(n || 0).toLocaleString("en-IN");
+const safe = value => String(value ?? "").replace(/[&<>"']/g, ch => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[ch]));
+const today = new Date().toLocaleDateString("en-CA");
+$("paymentDate").value = today;
+$("expenseDate").value = today;
 
 let currentUser = null;
-let currentRole = "";
-let currentUserData = {};
-
-let membersData = [];
-let paymentsData = [];
-let expensesData = [];
-let privateMembersData = {};
+let currentRole = "public";
+let memberData = [];
+let paymentData = [];
+let expenseData = [];
+let privateData = {};
 let settingsData = {};
+let unsubscribers = [];
 
-let memberPage = 1;
-const MEMBERS_PER_PAGE = 20;
-
-let unsubscribeFunctions = [];
-let galleryIndex = 0;
-let galleryTimer = null;
-
-/* =====================================
-   3. BASIC HELPERS
-===================================== */
-
-const $ = id => document.getElementById(id);
-
-function money(value) {
-  return "₹" + Number(value || 0).toLocaleString("en-IN", {
-    maximumFractionDigits: 2
-  });
+function message(text, error=false) {
+  $("adminMessage").textContent = text;
+  $("adminMessage").className = error ? "note error" : "note status";
 }
-
-function safeText(value) {
-  return String(value ?? "").replace(/[&<>"']/g, char => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[char]);
-}
-
-function showMessage(message, isError = false) {
-  openModal("Message", `
-    <div class="panel" style="text-align:center">
-      <p class="${isError ? "error" : "status"}">${safeText(message)}</p>
-      <button class="btn" id="messageOk">OK</button>
-    </div>
-  `);
-
-  $("messageOk").onclick = closeModal;
-}
-
-function openModal(title, html, wide = false) {
-  $("modalTitle").textContent = title;
-  $("modalContent").innerHTML = html;
-  $("modalBox").classList.toggle("wide", wide);
-  $("modalBackdrop").classList.add("open");
-  document.body.classList.add("modal-open");
-}
-
-function closeModal() {
-  $("modalBackdrop").classList.remove("open");
-  document.body.classList.remove("modal-open");
-}
-
-$("modalClose").addEventListener("click", closeModal);
-
-$("modalBackdrop").addEventListener("click", event => {
-  if (event.target === $("modalBackdrop")) closeModal();
-});
-
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeModal();
-});
-
-function isAdmin() {
-  return !!currentUser &&
-    ["superadmin", "president", "admin"].includes(currentRole);
-}
-
-function isSuper() {
-  return !!currentUser && currentRole === "superadmin";
-}
-
-/* =====================================
-   4. HEADER MENU
-===================================== */
-
-$("menuBtn").addEventListener("click", () => {
-  $("menuBox").classList.toggle("show");
-});
-
-document.addEventListener("click", event => {
-  if (
-    !$("menuBox").contains(event.target) &&
-    !$("menuBtn").contains(event.target)
-  ) {
-    $("menuBox").classList.remove("show");
-  }
-});
-
-$("loginOpen").addEventListener("click", () => {
-  $("menuBox").classList.remove("show");
-  openLogin();
-});
-
-$("logoutBtn").addEventListener("click", async () => {
-  $("menuBox").classList.remove("show");
-  await logoutAdmin();
-});
-
-/* =====================================
-   5. ADMIN LOGIN POPUP
-===================================== */
-
-function openLogin() {
-  if (isAdmin()) {
-    openDashboard();
-    return;
-  }
-
-  openModal("Admin Login", `
-    <form id="loginForm">
-      <label>Admin Email</label>
-      <input class="field" id="loginEmail"
-        type="email" placeholder="Enter admin email" required>
-
-      <label>Password</label>
-      <input class="field" id="loginPassword"
-        type="password" placeholder="Enter password" required>
-
-      <button class="btn" type="submit" style="width:100%">
-        Login
-      </button>
-
-      <p class="small" id="loginStatus"></p>
-    </form>
-  `);
-
-  $("loginForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    const email = $("loginEmail").value.trim();
-    const password = $("loginPassword").value;
-
-    $("loginStatus").textContent = "Checking login...";
-
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      $("loginStatus").textContent = "Login successful.";
-    } catch (error) {
-      console.error("Login error:", error);
-      $("loginStatus").textContent =
-        "Login failed. Check email, password and Firebase settings.";
-      $("loginStatus").className = "small error";
-    }
-  });
-}
-
-/* =====================================
-   6. ROLE VERIFICATION
-===================================== */
-
-async function loadUserRole(user) {
-  if (user.uid === SUPER_ADMIN_UID) {
-    currentRole = "superadmin";
-    currentUserData = {
-      email: user.email || "",
-      role: "superadmin"
-    };
-    return true;
-  }
-
-  try {
-    const userRef = doc(db, "users", user.uid);
-    const userSnap = await getDoc(userRef);
-
-    if (!userSnap.exists()) {
-      currentRole = "";
-      currentUserData = {};
-      return false;
-    }
-
-    currentUserData = userSnap.data() || {};
-    currentRole = String(currentUserData.role || "").toLowerCase();
-
-    return ["superadmin", "president", "admin"].includes(currentRole);
-
-  } catch (error) {
-    console.error("Role verification error:", error);
-    currentRole = "";
-    return false;
-  }
-}
-
-/* =====================================
-   7. AUTH STATE LISTENER
-===================================== */
-
-onAuthStateChanged(auth, async user => {
-  currentUser = user;
-
-  if (!user) {
-    currentRole = "";
-    currentUserData = {};
-    stopListeners();
-    showLoggedOutView();
-    return;
-  }
-
-  const validRole = await loadUserRole(user);
-
-  if (!validRole) {
-    alert("This account does not have admin permission.");
-    await signOut(auth);
-    return;
-  }
-
-  showLoggedInView();
-  startListeners();
-
-  closeModal();
-  $("menuBox").classList.remove("show");
-
-  $("adminWelcome").textContent =
-    "Welcome · " + (user.email || "Administrator");
-
-  openDashboard();
-});
-
-/* =====================================
-   8. LOGIN / LOGOUT DISPLAY
-===================================== */
-
-function showLoggedInView() {
-  $("adminLayout").classList.add("active");
-
-  $("loginOpen").classList.add("hidden");
-  $("logoutBtn").classList.remove("hidden");
-
-  document.querySelectorAll(".super-only").forEach(element => {
-    element.classList.toggle("hidden", !isSuper());
-  });
-
-  $("publicSections").classList.remove("hidden");
-}
-
-function showLoggedOutView() {
-  $("adminLayout").classList.remove("active");
-
-  $("loginOpen").classList.remove("hidden");
-  $("logoutBtn").classList.add("hidden");
-
-  document.querySelectorAll(".super-only").forEach(element => {
-    element.classList.add("hidden");
-  });
-
-  $("publicSections").classList.remove("hidden");
-}
-
-async function logoutAdmin() {
-  try {
-    closeModal();
-    await signOut(auth);
-    showMessage("You have been logged out.");
-  } catch (error) {
-    console.error(error);
-    showMessage("Logout failed. Please try again.", true);
-  }
-}
-
-/* =====================================
-   9. FIRESTORE REALTIME LISTENERS
-===================================== */
-
 function stopListeners() {
-  unsubscribeFunctions.forEach(unsubscribe => {
-    try { unsubscribe(); } catch (error) {
-      console.error(error);
-    }
-  });
-
-  unsubscribeFunctions = [];
+  unsubscribers.forEach(fn => fn());
+  unsubscribers = [];
+}
+function listen(path, callback, sortField) {
+  const base = collection(db, path);
+  const q = sortField ? query(base, orderBy(sortField)) : base;
+  return onSnapshot(q, snap => callback(snap.docs.map(d => ({id:d.id,...d.data()}))),
+    err => console.error(path, err));
+}
+function isSuper() {
+  return currentRole === "superAdmin";
+}
+function isAdmin() {
+  return currentRole === "superAdmin" || currentRole === "admin" || currentRole === "president";
+}
+function isPresident() {
+  return currentRole === "president";
+}
+function canManageMembersPayments() {
+  return isAdmin();
 }
 
-function listen(collectionName, callback) {
-  const unsubscribe = onSnapshot(
-    collection(db, collectionName),
-    snapshot => {
-      callback(snapshot.docs.map(item => ({
-        id: item.id,
-        ...item.data()
-      })));
-    },
-    error => {
-      console.error(collectionName + " listener:", error);
-    }
-  );
-
-  unsubscribeFunctions.push(unsubscribe);
+function showMoney() {
+  const total = paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const costs = expenseData.reduce((s,e)=>s+Number(e.amount||0),0);
+  $("collection").textContent = money(total);
+  $("expenses").textContent = money(costs);
+  $("balance").textContent = money(total-costs);
 }
-
-function startListeners() {
-  stopListeners();
-
-  listen("members", data => {
-    membersData = data.sort((a, b) =>
-      String(a.name || "").localeCompare(
-        String(b.name || ""), "en", { sensitivity: "base" }
-      )
-    );
-
-    memberPage = 1;
-    renderMembers();
-    updateDashboardStats();
-  });
-
-  listen("payments", data => {
-    paymentsData = data;
-    updateFinancialOverview();
-    updateDashboardStats();
-  });
-
-  listen("expenses", data => {
-    expensesData = data;
-    updateFinancialOverview();
-    updateDashboardStats();
-  });
-
-  listen("settings", data => {
-    const publicSettings = data.find(item => item.id === "public");
-    settingsData = publicSettings || {};
-    renderPublicSettings();
-  });
-
-  if (isAdmin()) {
-    listen("memberPrivate", data => {
-      privateMembersData = {};
-
-      data.forEach(item => {
-        privateMembersData[item.id] = item;
-      });
-
-      renderMembers();
-    });
-  }
-}
-
-/* =====================================
-   10. FINANCIAL OVERVIEW
-===================================== */
-
-function totalCollection() {
-  return paymentsData.reduce((sum, item) =>
-    sum + Number(item.amount || 0), 0
-  );
-}
-
-function totalExpenses() {
-  return expensesData.reduce((sum, item) =>
-    sum + Number(item.amount || 0), 0
-  );
-}
-
-function updateFinancialOverview() {
-  const collectionTotal = totalCollection();
-  const expenseTotal = totalExpenses();
-  const balance = collectionTotal - expenseTotal;
-
-  $("collection").textContent = money(collectionTotal);
-  $("expenses").textContent = money(expenseTotal);
-  $("balance").textContent = money(balance);
-
-  updateDashboardStats();
-}
-
-function updateDashboardStats() {
-  $("adminMemberCount").textContent = membersData.length;
-  $("adminCollection").textContent = money(totalCollection());
-  $("adminExpenses").textContent = money(totalExpenses());
-  $("adminBalance").textContent =
-    money(totalCollection() - totalExpenses());
-}
-
-/* =====================================
-   11. PUBLIC SETTINGS
-===================================== */
-
-function renderPublicSettings() {
-  const notice = settingsData.notice || {};
-  const gallery = settingsData.gallery || {};
-
-  if (notice.enabled && notice.text) {
-    $("noticeSection").classList.remove("hidden");
-    $("publicNotice").textContent = notice.text;
-  } else {
-    $("noticeSection").classList.add("hidden");
-  }
-
-  const photos = Array.isArray(gallery.photos)
-    ? gallery.photos.filter(url => typeof url === "string" && url.trim())
-    : [];
-
-  if (gallery.enabled && photos.length) {
-    $("gallerySection").classList.remove("hidden");
-    galleryIndex = 0;
-    renderGallery();
-  } else {
-    $("gallerySection").classList.add("hidden");
-    if (galleryTimer) clearInterval(galleryTimer);
-  }
-}
-
-/* =====================================
-   12. GALLERY
-===================================== */
-
-function renderGallery() {
-  const photos = settingsData.gallery?.photos || [];
-
-  if (!photos.length) return;
-
-  galleryIndex = Math.max(0, Math.min(galleryIndex, photos.length - 1));
-
-  $("publicGallery").innerHTML = `
-    <img src="${safeText(photos[galleryIndex])}"
-      alt="Maa Mahalakshmi Puja Gallery"
-      onerror="this.alt='Image could not be loaded'">
-  `;
-
-  $("photoCounter").textContent =
-    `${galleryIndex + 1} / ${photos.length}`;
-
-  if (galleryTimer) clearInterval(galleryTimer);
-
-  if (photos.length > 1) {
-    galleryTimer = setInterval(() => {
-      galleryIndex = (galleryIndex + 1) % photos.length;
-      renderGallery();
-    }, 5000);
-  }
-}
-
-$("previousPhoto").addEventListener("click", () => {
-  const photos = settingsData.gallery?.photos || [];
-  if (!photos.length) return;
-  galleryIndex = (galleryIndex - 1 + photos.length) % photos.length;
-  renderGallery();
-});
-
-$("nextPhoto").addEventListener("click", () => {
-  const photos = settingsData.gallery?.photos || [];
-  if (!photos.length) return;
-  galleryIndex = (galleryIndex + 1) % photos.length;
-  renderGallery();
-});
-
-/* =====================================
-   13. MEMBER LIST + SEARCH
-===================================== */
-
 function renderMembers() {
-  const search = ($("search").value || "").trim().toLowerCase();
-
-  const filtered = membersData.filter(member =>
-    String(member.name || "").toLowerCase().includes(search) ||
-    String(member.memberCode || "").toLowerCase().includes(search)
-  );
-
-  const visible = filtered.slice(0, memberPage * MEMBERS_PER_PAGE);
-
-  if (!visible.length) {
-    $("members").innerHTML =
-      `<p class="empty">No members found.</p>`;
-    return;
+  const q = $("search").value.trim().toLowerCase();
+  const list = memberData.filter(m => String(m.name||"").toLowerCase().includes(q))
+    .sort((a,b)=>String(a.name||"").localeCompare(String(b.name||"")));
+  $("members").innerHTML = list.length ? list.map(m =>
+    `<button class="member" data-member="${safe(m.id)}">${safe(m.name)}
+      <small>View member details and payment history</small></button>`
+  ).join("") : '<p class="note">No members found.</p>';
+  $("paymentMember").innerHTML = memberData.length
+    ? memberData.slice().sort((a,b)=>String(a.name||"").localeCompare(String(b.name||"")))
+      .map(m=>`<option value="${safe(m.id)}">${safe(m.name)}</option>`).join("")
+    : '<option value="">Add a member first</option>';
+}
+function renderRecords() {
+  const p = paymentData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  const e = expenseData.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  $("adminRecords").innerHTML =
+    "<h4>Payments</h4>" +
+    (p.map(x=>`<div class="listrow">${safe(x.memberName)} · ${safe(x.month)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
+    ${isSuper()?`<button class="btn danger" data-delete-payment="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No payments recorded.</p>') +
+    "<hr><h4>Expenses</h4>" +
+    (e.map(x=>`<div class="listrow">${safe(x.title)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
+    ${isSuper()?`<button class="btn danger" data-delete-expense="${safe(x.id)}">Delete</button>`:""}</div>`).join("") || '<p class="small">No expenses recorded.</p>');
+}
+async function renderMemberDetails(id) {
+  const m = memberData.find(x=>x.id===id);
+  if(!m) return;
+  const history = paymentData.filter(p=>p.memberId===id)
+    .sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  let phone = "";
+  if(isAdmin()) {
+    try {
+      const snap = await getDoc(doc(db,"memberPrivate",id));
+      if(snap.exists()) phone = snap.data().phone || "";
+    } catch(e) { console.warn("Private contact unavailable",e); }
   }
+  $("memberDetails").classList.remove("hidden");
+  $("memberDetails").innerHTML =
+    `<h3>${safe(m.name)}</h3>` +
+    (m.memberId ? `<p class="small">Member ID: ${safe(m.memberId)}</p>` : "") +
+    (isAdmin() && phone ? `<p>Mobile: ${safe(phone)}</p>` : "") +
+    "<hr><b>Payment History</b>" +
+    (history.map(p=>`<div class="listrow">${safe(p.month)} · ${safe(p.date)} — ${money(p.amount)}</div>`).join("") || '<p class="note">No payment history yet.</p>');
+}
+function renderSettings() {
+  $("noticeSection").classList.toggle("hidden", !(settingsData.noticeEnabled && settingsData.noticeText));
+  $("publicNotice").textContent = settingsData.noticeText || "";
+  $("gallerySection").classList.toggle("hidden", !(settingsData.galleryEnabled && settingsData.galleryUrl));
+  $("publicGallery").innerHTML = settingsData.galleryUrl && settingsData.galleryEnabled
+    ? `<img src="${safe(settingsData.galleryUrl)}" alt="Committee gallery photo" referrerpolicy="no-referrer" onerror="this.alt='Image could not be loaded'">`
+    : "";
+}
+function fillSettingsForm() {
+  $("noticeText").value = settingsData.noticeText || "";
+  $("noticeEnabled").checked = !!settingsData.noticeEnabled;
+  $("galleryUrl").value = settingsData.galleryUrl || "";
+  $("galleryEnabled").checked = !!settingsData.galleryEnabled;
+}
+function renderRole() {
+  $("adminPanel").classList.toggle("hidden",!isAdmin());
+  $("superPanel").classList.toggle("hidden",!isSuper());
+  $("logoutBtn").classList.toggle("hidden",!currentUser);
+  $("loginOpen").classList.toggle("hidden",!!currentUser);
+  $("roleLabel").textContent = currentUser ? "Signed in: "+(currentUser.email||currentUser.uid)+" · Role: "+currentRole : "";
+}
 
-  $("members").innerHTML = visible.map(member => {
-    const privateData = privateMembersData[member.id] || {};
+function startPublicListeners() {
+  stopListeners();
+  unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();}));
+  unsubscribers.push(listen("payments",d=>{paymentData=d;showMoney();renderRecords();}));
+  unsubscribers.push(listen("expenses",d=>{expenseData=d;showMoney();renderRecords();}));
+  unsubscribers.push(onSnapshot(doc(db,"settings","public"),snap=>{
+    settingsData = snap.exists() ? snap.data() : {};
+    renderSettings();
+    if(isSuper()) fillSettingsForm();
+  },err=>console.error("Settings",err)));
+}
+async function loadPrivateForAdmin() {
+  privateData = {};
+  try {
+    const snap = await getDocs(collection(db,"memberPrivate"));
+    snap.forEach(d=>privateData[d.id]=d.data());
+  } catch(e) { console.warn("Private contacts require Admin permission",e); }
+}
 
-    return `
-      <button class="member" data-member-id="${safeText(member.id)}">
-        <strong>${safeText(member.name || "Unnamed Member")}</strong>
-        <small>
-          Member ID: ${safeText(member.memberCode || "Not assigned")}
-          ${isAdmin() && privateData.phone
-            ? " · Mobile: " + safeText(privateData.phone)
-            : ""}
-        </small>
-      </button>
-    `;
-  }).join("");
+// Member accounts use a synthetic Firebase Auth email derived from their Member ID.
+// Never store member passwords in Firestore.
+function authIdentifier(value) {
+  const raw = String(value||"").trim();
+  if(raw.includes("@")) return raw.toLowerCase();
+  const id = raw.toUpperCase().replace(/[^A-Z0-9_-]/g,"");
+  return id ? `${id.toLowerCase()}@members.mahalakshmi-committee.com` : "";
+}
 
-  if (visible.length < filtered.length) {
-    $("members").insertAdjacentHTML("beforeend", `
-      <p class="note">Scroll down to load more members...</p>
-    `);
+$("menuBtn").onclick=()=> $("menuBox").classList.toggle("show");
+document.addEventListener("click",e=>{
+  if(!$("menuBtn").contains(e.target) && !$("menuBox").contains(e.target))
+    $("menuBox").classList.remove("show");
+});
+$("loginOpen").onclick=()=>{
+  $("adminLogin").classList.remove("hidden");
+  $("menuBox").classList.remove("show");
+};
+$("cancelLogin").onclick=()=> { $("adminLogin").classList.add("hidden"); $("loginMessage").textContent=""; };
+$("adminLogin").addEventListener("click",e=>{if(e.target===$("adminLogin")) $("adminLogin").classList.add("hidden");});
+$("logoutBtn").onclick=async()=>{
+  try { await signOut(auth); message("Logged out."); }
+  catch(e){message(e.message,true);}
+};
+$("loginBtn").onclick=async()=>{
+  $("loginMessage").textContent="Signing in...";
+  try {
+    const identifier = authIdentifier($("loginEmail").value);
+    if(!identifier) throw new Error("Enter Admin email or Member ID.");
+    await signInWithEmailAndPassword(auth,identifier,$("loginPassword").value);
+    $("adminLogin").classList.add("hidden");
+    $("loginPassword").value="";
+  } catch(e) {
+    $("loginMessage").textContent="Login failed. Check your ID/email, password, and Firebase Authentication account setup.";
+    $("loginMessage").className="small error";
   }
+};
+$("search").addEventListener("input",renderMembers);
+$("members").addEventListener("click",e=>{
+  const b=e.target.closest("[data-member]");
+  if(b) renderMemberDetails(b.dataset.member);
+});
 
-  $("members").querySelectorAll("[data-member-id]").forEach(button => {
-    button.addEventListener("click", () => {
-      const member = membersData.find(item =>
-        item.id === button.dataset.memberId
-      );
-
-      if (member) openMemberDetails(member);
+$("addMemberBtn").onclick=async()=>{
+  if(!canManageMembersPayments()) return;
+  const name=$("newMemberName").value.trim();
+  const memberId=$("newMemberId").value.trim().toUpperCase();
+  const phone=$("newMemberPhone").value.trim();
+  if(!name || !memberId) return message("Enter member name and Member ID.",true);
+  if(!/^[A-Z0-9_-]{3,24}$/.test(memberId)) return message("Member ID must be 3–24 characters: letters, numbers, _ or -.",true);
+  if(memberData.some(m=>String(m.memberId||"").toUpperCase()===memberId)) return message("This Member ID is already assigned.",true);
+  try {
+    const ref=await addDoc(collection(db,"members"),{name,memberId,createdAt:serverTimestamp()});
+    if(phone) await setDoc(doc(db,"memberPrivate",ref.id),{phone});
+    $("newMemberName").value=""; $("newMemberId").value=""; $("newMemberPhone").value="";
+    message("Member added successfully.");
+  } catch(e){message("Could not add member. Check Firestore Rules. "+e.message,true);}
+};
+$("addPaymentBtn").onclick=async()=>{
+  if(!canManageMembersPayments()) return;
+  const id=$("paymentMember").value;
+  const m=memberData.find(x=>x.id===id);
+  const amount=Number($("paymentAmount").value);
+  const month=$("paymentMonth").value.trim();
+  const date=$("paymentDate").value;
+  if(!m || !Number.isFinite(amount) || amount<=0 || !month || !date)
+    return message("Enter member, valid amount, month/purpose and date.",true);
+  try {
+    await addDoc(collection(db,"payments"),{
+      memberId:id,memberName:m.name,amount,month,date,createdAt:serverTimestamp()
     });
-  });
-}
-
-$("search").addEventListener("input", () => {
-  memberPage = 1;
-  renderMembers();
-});
-
-window.addEventListener("scroll", () => {
-  const nearBottom =
-    window.innerHeight + window.scrollY >=
-    document.documentElement.scrollHeight - 250;
-
-  if (nearBottom && $("publicSections").offsetParent !== null) {
-    const search = ($("search").value || "").trim().toLowerCase();
-
-    const filteredCount = membersData.filter(member =>
-      String(member.name || "").toLowerCase().includes(search) ||
-      String(member.memberCode || "").toLowerCase().includes(search)
-    ).length;
-
-    if (memberPage * MEMBERS_PER_PAGE < filteredCount) {
-      memberPage++;
-      renderMembers();
-    }
+    $("paymentAmount").value=""; $("paymentMonth").value="";
+    message("Payment saved.");
+  } catch(e){message("Could not save payment. "+e.message,true);}
+};
+$("addExpenseBtn").onclick=async()=>{
+  if(!canManageMembersPayments()) return;
+  const title=$("expenseTitle").value.trim();
+  const amount=Number($("expenseAmount").value);
+  const date=$("expenseDate").value;
+  if(!title || !Number.isFinite(amount) || amount<=0 || !date)
+    return message("Enter expense description, valid amount and date.",true);
+  try {
+    await addDoc(collection(db,"expenses"),{title,amount,date,createdAt:serverTimestamp()});
+    $("expenseTitle").value=""; $("expenseAmount").value="";
+    message("Expense saved.");
+  } catch(e){message("Could not save expense. "+e.message,true);}
+};
+$("adminRecords").addEventListener("click",async e=>{
+  const p=e.target.closest("[data-delete-payment]");
+  const x=e.target.closest("[data-delete-expense]");
+  if(!isSuper()) return;
+  if(p && confirm("Delete this payment record?")) {
+    try { await deleteDoc(doc(db,"payments",p.dataset.deletePayment)); message("Payment deleted."); }
+    catch(err){message(err.message,true);}
+  }
+  if(x && confirm("Delete this expense record?")) {
+    try { await deleteDoc(doc(db,"expenses",x.dataset.deleteExpense)); message("Expense deleted."); }
+    catch(err){message(err.message,true);}
   }
 });
-
-/* =====================================
-   14. PLACEHOLDER FUNCTIONS
-   Part 3 will implement:
-   - openDashboard()
-   - openMemberDetails()
-   - payment reports
-   - expense reports
-===================================== */
-
-function openDashboard() {
-  openModal("Admin Dashboard", `
-    <div class="panel">
-      <h3>Welcome to Admin Panel</h3>
-      <p class="note">Use the left sidebar to open each admin action.</p>
-      <div class="dashboard-actions">
-        <button class="dashboard-action" data-dashboard-action="addMember">＋ Add Member</button>
-        <button class="dashboard-action" data-dashboard-action="addPayment">₹ Add Payment</button>
-        <button class="dashboard-action" data-dashboard-action="addExpense">− Add Expense</button>
-        <button class="dashboard-action" data-dashboard-action="reports">▤ Reports</button>
-      </div>
-    </div>
-  `);
-
-  $("modalContent").querySelectorAll("[data-dashboard-action]").forEach(button => {
-    button.addEventListener("click", () => {
-      closeModal();
-      const action = button.dataset.dashboardAction;
-      if (action === "addMember") openAddMember();
-      if (action === "addPayment") openAddPayment();
-      if (action === "addExpense") openAddExpense();
-      if (action === "reports") openFinancialRecords();
+$("saveSettingsBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const url=$("galleryUrl").value.trim();
+  if(url && !/^https:\/\/.+/i.test(url)) return message("Use a valid HTTPS photo URL.",true);
+  try {
+    await setDoc(doc(db,"settings","public"),{
+      noticeText:$("noticeText").value.trim(),
+      noticeEnabled:$("noticeEnabled").checked,
+      galleryUrl:url,
+      galleryEnabled:$("galleryEnabled").checked,
+      updatedAt:serverTimestamp()
     });
-  });
+    message("Website settings saved.");
+  } catch(e){message("Settings save failed. "+e.message,true);}
+};
+$("grantAdminBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const uid=$("limitedUid").value.trim();
+  const email=$("limitedEmail").value.trim();
+  if(!uid || !email) return message("Enter the account UID and email.",true);
+  if(uid===SUPER_ADMIN_UID) return message("Cannot replace the Super Admin account.",true);
+  try {
+    const role=$("limitedRole").value;
+    await setDoc(doc(db,"users",uid),{role,email,updatedAt:serverTimestamp()});
+    $("limitedUid").value=""; $("limitedEmail").value="";
+    message(role+" access granted.");
+  } catch(e){message("Could not grant access. "+e.message,true);}
+};
+$("removeAdminBtn").onclick=async()=>{
+  if(!isSuper()) return;
+  const uid=$("removeUid").value.trim();
+  if(!uid || uid===SUPER_ADMIN_UID) return message("Enter a valid Limited Admin UID.",true);
+  if(!confirm("Remove this user's Limited Admin access?")) return;
+  try {
+    await deleteDoc(doc(db,"users",uid));
+    $("removeUid").value="";
+    message("Limited Admin access removed.");
+  } catch(e){message("Could not remove access. "+e.message,true);}
+};
+$("printBtn").onclick=()=>{
+  if(!canManageMembersPayments()) return;
+  const total=paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const costs=expenseData.reduce((s,x)=>s+Number(x.amount||0),0);
+  $("reportPrint").innerHTML=
+    `<h1>Maa Mahalakshmi Puja Committee — Ibrisingha</h1>
+    <h2>Financial Report</h2><p>Generated: ${safe(new Date().toLocaleString())}</p>
+    <p>Total Collection: ${money(total)}</p><p>Total Expenses: ${money(costs)}</p>
+    <p>Balance: ${money(total-costs)}</p><hr><h3>Payments</h3>`+
+    paymentData.map(p=>`<p>${safe(p.memberName)} | ${safe(p.month)} | ${safe(p.date)} | ${money(p.amount)}</p>`).join("")+
+    "<hr><h3>Expenses</h3>"+
+    expenseData.map(x=>`<p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>`).join("");
+  $("reportPrint").classList.remove("hidden");
+  window.print();
+  $("reportPrint").classList.add("hidden");
+};
+
+function renderExpenseReport() {
+  const rows=expenseData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
+  const total=rows.reduce((sum,x)=>sum+Number(x.amount||0),0);
+  $("expenseReportContent").innerHTML=`<p><b>Total Expenses: ${money(total)}</b></p>`+
+    (rows.map(x=>`<div class="listrow">${safe(x.title)} · ${safe(x.date)} — <b>${money(x.amount)}</b></div>`).join("") || '<p class="note">No expenses recorded yet.</p>');
 }
+function openExpenseReport(){renderExpenseReport();$("expenseModal").classList.remove("hidden");}
+$("expenseCard").onclick=openExpenseReport;
+$("expenseCard").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openExpenseReport();}};
+$("closeExpenseModal").onclick=()=>$("expenseModal").classList.add("hidden");
+$("expenseModal").onclick=e=>{if(e.target===$("expenseModal")) $("expenseModal").classList.add("hidden");};
+$("expensePrintBtn").onclick=()=>{
+  const old=$("reportPrint").innerHTML;
+  renderExpenseReport();
+  const rows=expenseData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
+  const total=rows.reduce((sum,x)=>sum+Number(x.amount||0),0);
+  $("reportPrint").innerHTML=`<h1>Maa Mahalakshmi Puja Committee — Ibrisingha</h1><h2>Expense Report</h2><p>Generated: ${safe(new Date().toLocaleString("en-IN"))}</p><h3>Total: ${money(total)}</h3>`+rows.map(x=>`<p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>`).join("");
+  $("reportPrint").classList.remove("hidden");window.print();$("reportPrint").classList.add("hidden");$("reportPrint").innerHTML=old;
+};
 
-function openMemberDetails(member) {
-  openModal("Member Details", `
-    <div class="panel">
-      <h3>${safeText(member.name || "")}</h3>
-      <p>Member ID: ${safeText(member.memberCode || "Not assigned")}</p>
-      <p>Member details and year-wise payment report will be shown here in Part 3.</p>
-    </div>
-  `);
-}
-
-/* Part 3 will replace these temporary placeholders. */
-function openAddMember() {
-  showMessage("Add Member form will be added in Part 3.");
-}
-
-function openAddPayment() {
-  showMessage("Add Payment form will be added in Part 3.");
-}
-
-function openAddExpense() {
-  showMessage("Add Expense form will be added in Part 3.");
-}
-
-function openFinancialRecords() {
-  showMessage("Financial Reports will be added in Part 3.");
-}
-
-/* =====================================
-   15. SIDEBAR ACTIONS
-===================================== */
-
-document.querySelectorAll(".sidebar [data-action]").forEach(button => {
-  button.addEventListener("click", () => {
-    const action = button.dataset.action;
-
-    if (action === "logout") {
-      logoutAdmin();
-      return;
+onAuthStateChanged(auth,async user=>{
+  currentUser=user;
+  currentRole="public";
+  if(user) {
+    if(user.uid===SUPER_ADMIN_UID) currentRole="superAdmin";
+    else {
+      try {
+        const snap=await getDoc(doc(db,"users",user.uid));
+        if(snap.exists()) {
+          const role=String(snap.data().role||"");
+          if(["admin","president","member"].includes(role)) currentRole=role;
+        }
+      } catch(e) { console.warn("Role lookup failed",e); }
     }
-
-    if (!isAdmin()) {
-      showMessage("Admin permission required.", true);
-      return;
-    }
-
-    if (action === "dashboard") openDashboard();
-    if (action === "addMember") openAddMember();
-    if (action === "members") {
-      closeModal();
-      $("search").scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-    if (action === "addPayment") openAddPayment();
-    if (action === "addExpense") openAddExpense();
-    if (action === "reports") openFinancialRecords();
-
-    if (action === "settings") {
-      if (isSuper()) openWebsiteSettings();
-    }
-
-    if (action === "admins") {
-      if (isSuper()) openManageAdmins();
-    }
-  });
+  }
+  renderRole();
+  if(user) $("adminLogin").classList.add("hidden");
+  startPublicListeners();
+  if(isAdmin()) await loadPrivateForAdmin();
+  if(user && currentRole==="public") message("This account has no committee role assigned. Contact the Super Admin.",true);
+  if(user && currentRole==="member") message("Member login successful. You can view committee members and payment histories.");
 });
-
-/* Part 4 will implement these Super Admin screens. */
-function openWebsiteSettings() {
-  showMessage("Website Settings will be added in Part 4.");
-}
-
-function openManageAdmins() {
-  showMessage("Manage Admins will be added in Part 4.");
-}
-
-/* =====================================
-   16. EXPENSE REPORT BUTTON
-===================================== */
-
-$("expensesCard").addEventListener("click", () => {
-  openExpenseReport();
-});
-
-function openExpenseReport() {
-  openFinancialRecords();
-}
-
-/* =====================================
-   17. STARTUP
-===================================== */
-
-console.log("Maa Mahalakshmi Puja Committee website initialized.");
-console.log("Firebase project:", firebaseConfig.projectId);
-
 </script>
+<!--
+SETUP NOTES — READ BEFORE DEPLOYING
+1) Firebase Authentication > Sign-in method: enable Email/Password.
+2) Admins sign in with their real Firebase Auth email/password.
+3) Member login ID uses this Firebase Auth email alias:
+   MEMBERID@members.mahalakshmi-committee.com (lowercase member ID).
+   Example: MMP001 -> mmp001@members.mahalakshmi-committee.com
+   Create that Auth account in Firebase Console and give the password securely to the member.
+   A static GitHub Pages website cannot safely create Firebase Auth users or assign passwords.
+4) After creating a member's Auth account, create users/{AUTH_UID} in Firestore with:
+   { role: "member", memberId: "MMP001" }
+5) Create users/{UID} for staff with role "admin" or "president". The configured
+   SUPER_ADMIN_UID is automatically treated as superAdmin.
+6) Apply the matching Firestore Security Rules supplied in the separate rules text file.
+7) Never put member passwords in Firestore, HTML, or GitHub.
+-->
 </body>
 </html>
-
-/* =====================================
-   PART 3 — MEMBER MANAGEMENT
-===================================== */
-
-/* 1. GENERATE UNIQUE MEMBER ID */
-
-async function generateMemberCode() {
-  const snapshot = await getDocs(collection(db, "members"));
-
-  let highest = 0;
-
-  snapshot.forEach(item => {
-    const code = String(item.data().memberCode || "");
-    const match = code.match(/^ML(\d+)$/i);
-
-    if (match) {
-      highest = Math.max(highest, Number(match[1]));
-    }
-  });
-
-  return "ML" + String(highest + 1).padStart(3, "0");
-}
-
-/* 2. ADD MEMBER POPUP */
-
-async function openAddMember() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  openModal("Add New Member", `
-    <form id="addMemberForm">
-
-      <div class="panel">
-        <h3>Member Information</h3>
-
-        <label>Member ID</label>
-        <input class="field" id="newMemberCode"
-          readonly placeholder="Generating Member ID...">
-
-        <label>Full Name *</label>
-        <input class="field" id="newMemberName"
-          required maxlength="100" placeholder="Enter full name">
-
-        <label>Father / Husband Name</label>
-        <input class="field" id="newMemberFather"
-          maxlength="100" placeholder="Enter father / husband name">
-
-        <label>Mobile Number *</label>
-        <input class="field" id="newMemberPhone"
-          type="tel" inputmode="numeric"
-          pattern="[0-9]{10}" maxlength="10"
-          required placeholder="10 digit mobile number">
-
-        <label>Alternate Mobile Number</label>
-        <input class="field" id="newMemberAltPhone"
-          type="tel" inputmode="numeric"
-          pattern="[0-9]{10}" maxlength="10"
-          placeholder="Optional">
-
-        <label>Address</label>
-        <textarea class="field" id="newMemberAddress"
-          rows="3" maxlength="300"
-          placeholder="Enter full address"></textarea>
-
-        <label>Joining Date *</label>
-        <input class="field" id="newMemberJoiningDate"
-          type="date" required>
-
-        <p class="small">
-          Member ID will be generated automatically.
-        </p>
-      </div>
-
-      <button class="btn" id="saveMemberBtn"
-        type="submit" style="width:100%">
-        Save Member
-      </button>
-
-      <p class="small" id="addMemberStatus"></p>
-    </form>
-  `);
-
-  const today = new Date().toISOString().slice(0, 10);
-  $("newMemberJoiningDate").value = today;
-
-  try {
-    $("newMemberCode").value = await generateMemberCode();
-  } catch (error) {
-    console.error(error);
-    $("newMemberCode").value = "Could not generate";
-    $("addMemberStatus").textContent =
-      "Unable to generate ID. Check Firestore permissions.";
-    $("addMemberStatus").className = "small error";
-    return;
-  }
-
-  $("addMemberForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    if (!isAdmin()) {
-      showMessage("Admin permission required.", true);
-      return;
-    }
-
-    const name = $("newMemberName").value.trim();
-    const fatherName = $("newMemberFather").value.trim();
-    const phone = $("newMemberPhone").value.trim();
-    const alternatePhone = $("newMemberAltPhone").value.trim();
-    const address = $("newMemberAddress").value.trim();
-    const joiningDate = $("newMemberJoiningDate").value;
-    const memberCode = $("newMemberCode").value.trim();
-
-    if (!name || !phone || !joiningDate || !/^ML\d{3,}$/.test(memberCode)) {
-      $("addMemberStatus").textContent =
-        "Please complete all required fields.";
-      $("addMemberStatus").className = "small error";
-      return;
-    }
-
-    if (!/^\d{10}$/.test(phone)) {
-      $("addMemberStatus").textContent =
-        "Enter a valid 10 digit mobile number.";
-      $("addMemberStatus").className = "small error";
-      return;
-    }
-
-    if (alternatePhone && !/^\d{10}$/.test(alternatePhone)) {
-      $("addMemberStatus").textContent =
-        "Alternate mobile number must be 10 digits.";
-      $("addMemberStatus").className = "small error";
-      return;
-    }
-
-    const saveButton = $("saveMemberBtn");
-    saveButton.disabled = true;
-    saveButton.textContent = "Saving...";
-
-    try {
-      /* Verify ID is not already used. */
-      const duplicateQuery = await getDocs(collection(db, "members"));
-
-      const duplicate = duplicateQuery.docs.some(item =>
-        String(item.data().memberCode || "").toUpperCase() ===
-        memberCode.toUpperCase()
-      );
-
-      if (duplicate) {
-        throw new Error("This Member ID already exists. Please reopen Add Member.");
-      }
-
-      /* Save public member information. */
-      const memberRef = await addDoc(collection(db, "members"), {
-        name,
-        memberCode,
-        fatherName,
-        address,
-        joiningDate,
-        createdAt: serverTimestamp(),
-        createdBy: currentUser.uid
-      });
-
-      /* Save private contact details separately.
-         Merge preserves existing fields. */
-      await setDoc(
-        doc(db, "memberPrivate", memberRef.id),
-        {
-          phone,
-          alternatePhone,
-          updatedAt: serverTimestamp()
-        },
-        { merge: true }
-      );
-
-      closeModal();
-      showMessage(
-        `Member added successfully!\nMember ID: ${memberCode}`
-      );
-
-    } catch (error) {
-      console.error("Add member error:", error);
-
-      $("addMemberStatus").textContent =
-        error.message || "Unable to save member.";
-
-      $("addMemberStatus").className = "small error";
-      saveButton.disabled = false;
-      saveButton.textContent = "Save Member";
-    }
-  });
-}
-
-/* 3. GET MEMBER PRIVATE INFORMATION */
-
-function getPrivateMember(memberId) {
-  return privateMembersData[memberId] || {};
-}
-
-/* 4. MEMBER DETAILS + YEAR REPORT */
-
-function openMemberDetails(member) {
-  const privateData = getPrivateMember(member.id);
-
-  const phoneHTML = isAdmin()
-    ? `
-      <p><b>Mobile:</b> ${safeText(privateData.phone || "Not available")}</p>
-      <p><b>Alternate Mobile:</b> ${safeText(privateData.alternatePhone || "Not available")}</p>
-    `
-    : "";
-
-  const years = [];
-
-  for (let year = FIRST_PAYMENT_YEAR;
-       year <= new Date().getFullYear() + 1;
-       year++) {
-    years.push(year);
-  }
-
-  openModal("Member Details", `
-    <div class="panel">
-      <h3>${safeText(member.name || "")}</h3>
-
-      <p><b>Member ID:</b> ${safeText(member.memberCode || "Not assigned")}</p>
-      <p><b>Father / Husband:</b> ${safeText(member.fatherName || "Not available")}</p>
-      ${phoneHTML}
-      <p><b>Address:</b> ${safeText(member.address || "Not available")}</p>
-      <p><b>Joining Date:</b> ${safeText(member.joiningDate || "Not available")}</p>
-    </div>
-
-    <div class="panel">
-      <h3>Payment History</h3>
-
-      <label>Select Year</label>
-      <select class="field year-select" id="memberReportYear">
-        ${years.map(year =>
-          `<option value="${year}" ${year === 2027 ? "selected" : ""}>${year}</option>`
-        ).join("")}
-      </select>
-
-      <div id="memberYearReport"></div>
-    </div>
-  `);
-
-  $("memberReportYear").addEventListener("change", () => {
-    renderMemberYearReport(member, Number($("memberReportYear").value));
-  });
-
-  renderMemberYearReport(member, 2027);
-}
-
-/* 5. PAYMENT MONTH / YEAR READER */
-
-function getPaymentPeriod(payment) {
-  if (Number(payment.year) && Number(payment.monthIndex) >= 0) {
-    return {
-      year: Number(payment.year),
-      monthIndex: Number(payment.monthIndex)
-    };
-  }
-
-  const monthText = String(payment.month || "");
-  const parsed = new Date(monthText + " 1");
-
-  if (!isNaN(parsed.getTime())) {
-    return {
-      year: parsed.getFullYear(),
-      monthIndex: parsed.getMonth()
-    };
-  }
-
-  const date = new Date(payment.date || "");
-
-  if (!isNaN(date.getTime())) {
-    return {
-      year: date.getFullYear(),
-      monthIndex: date.getMonth()
-    };
-  }
-
-  return null;
-}
-
-/* 6. MEMBER YEAR REPORT */
-
-function renderMemberYearReport(member, year) {
-  const months = [
-    "January", "February", "March", "April",
-    "May", "June", "July", "August",
-    "September", "October", "November", "December"
-  ];
-
-  let total = 0;
-
-  const rows = months.map((month, index) => {
-    const matching = paymentsData.filter(payment => {
-      const period = getPaymentPeriod(payment);
-
-      if (!period) return false;
-
-      return (
-        (payment.memberId === member.id ||
-         payment.memberCode === member.memberCode) &&
-        period.year === year &&
-        period.monthIndex === index
-      );
-    });
-
-    const paid = matching.reduce((sum, payment) =>
-      sum + Number(payment.amount || 0), 0
-    );
-
-    total += paid;
-
-    const status = paid >= MINIMUM_MONTHLY
-      ? `<span class="paid">Paid</span>`
-      : paid > 0
-        ? `<span class="partial">Partial</span>`
-        : `<span class="unpaid">Unpaid</span>`;
-
-    return `
-      <tr>
-        <td>${month}</td>
-        <td>${money(paid)}</td>
-        <td>${status}</td>
-      </tr>
-    `;
-  }).join("");
-
-  $("memberYearReport").innerHTML = `
-    <table class="report-table">
-      <thead>
-        <tr>
-          <th>Month</th>
-          <th>Amount</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-      <tfoot>
-        <tr>
-          <th>Total</th>
-          <th colspan="2">${money(total)}</th>
-        </tr>
-      </tfoot>
-    </table>
-    <p class="small">
-      Minimum monthly donation: ${money(MINIMUM_MONTHLY)}
-    </p>
-  `;
-}
-
-/* 7. MEMBER LIST REFRESH */
-
-function refreshMemberList() {
-  memberPage = 1;
-  renderMembers();
-}
-
-
-/* ==========================================
-   PART 4 — PAYMENT & EXPENSE MANAGEMENT
-========================================== */
-
-/* 1. MONTHS */
-
-const PAYMENT_MONTHS = [
-  "January", "February", "March", "April",
-  "May", "June", "July", "August",
-  "September", "October", "November", "December"
-];
-
-/* 2. PAYMENT YEAR OPTIONS */
-
-function getPaymentYears() {
-  const currentYear = new Date().getFullYear();
-  const lastYear = Math.max(currentYear + 1, 2027);
-
-  let years = [];
-
-  for (let year = 2027; year <= lastYear; year++) {
-    years.push(year);
-  }
-
-  return years;
-}
-
-/* 3. ADD PAYMENT POPUP */
-
-function openAddPayment() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  if (!membersData.length) {
-    showMessage("Please add a member first.", true);
-    return;
-  }
-
-  openModal("Record Member Payment", `
-    <form id="paymentForm">
-
-      <div class="panel">
-        <h3>Select Member</h3>
-
-        <label>Search Member</label>
-        <input class="field" id="paymentMemberSearch"
-          placeholder="Search by name or Member ID">
-
-        <label>Member *</label>
-        <select class="field" id="paymentMember" required>
-          <option value="">Select Member</option>
-          ${membersData.map(member => `
-            <option value="${safeText(member.id)}">
-              ${safeText(member.memberCode || "No ID")} -
-              ${safeText(member.name || "")}
-            </option>
-          `).join("")}
-        </select>
-
-        <div id="paymentMemberDetails" class="notice">
-          Select a member to see details.
-        </div>
-      </div>
-
-      <div class="panel">
-        <h3>Payment Information</h3>
-
-        <label>Amount (₹) *</label>
-        <input class="field" id="paymentAmount"
-          type="number" min="1" step="0.01"
-          placeholder="Enter amount" required>
-
-        <label>Payment Month *</label>
-        <select class="field" id="paymentMonth" required>
-          <option value="">Select Month</option>
-          ${PAYMENT_MONTHS.map((month, index) => `
-            <option value="${index}">${month}</option>
-          `).join("")}
-        </select>
-
-        <label>Payment Year *</label>
-        <select class="field" id="paymentYear" required>
-          ${getPaymentYears().map(year => `
-            <option value="${year}" ${year === 2027 ? "selected" : ""}>
-              ${year}
-            </option>
-          `).join("")}
-        </select>
-
-        <label>Payment Date *</label>
-        <input class="field" id="paymentDate"
-          type="date" required>
-
-        <label>Payment Mode *</label>
-        <select class="field" id="paymentMode" required>
-          <option value="">Select Payment Mode</option>
-          <option value="Cash">Cash</option>
-          <option value="UPI">UPI</option>
-          <option value="Bank Transfer">Bank Transfer</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <label>UTR / Transaction Number</label>
-        <input class="field" id="paymentUTR"
-          maxlength="100"
-          placeholder="Optional transaction reference">
-
-        <label>Note</label>
-        <textarea class="field" id="paymentNote"
-          rows="2" maxlength="300"
-          placeholder="Optional payment note"></textarea>
-      </div>
-
-      <button class="btn" id="savePaymentBtn"
-        type="submit" style="width:100%">
-        Save Payment
-      </button>
-
-      <p class="small" id="paymentStatus"></p>
-    </form>
-  `);
-
-  $("paymentDate").value = new Date().toISOString().slice(0, 10);
-
-  const search = $("paymentMemberSearch");
-  const select = $("paymentMember");
-
-  search.addEventListener("input", () => {
-    const term = search.value.trim().toLowerCase();
-
-    const filtered = membersData.filter(member =>
-      String(member.name || "").toLowerCase().includes(term) ||
-      String(member.memberCode || "").toLowerCase().includes(term)
-    );
-
-    select.innerHTML = `
-      <option value="">Select Member</option>
-      ${filtered.map(member => `
-        <option value="${safeText(member.id)}">
-          ${safeText(member.memberCode || "No ID")} -
-          ${safeText(member.name || "")}
-        </option>
-      `).join("")}
-    `;
-
-    $("paymentMemberDetails").textContent =
-      "Select a member to see details.";
-  });
-
-  select.addEventListener("change", () => {
-    const member = membersData.find(item => item.id === select.value);
-
-    if (!member) {
-      $("paymentMemberDetails").textContent =
-        "Select a member to see details.";
-      return;
-    }
-
-    const privateData = getPrivateMember(member.id);
-
-    $("paymentMemberDetails").innerHTML = `
-      <b>${safeText(member.name || "")}</b>
-      <br>Member ID: ${safeText(member.memberCode || "Not assigned")}
-      <br>Father / Husband: ${safeText(member.fatherName || "Not available")}
-      <br>Mobile: ${safeText(privateData.phone || "Not available")}
-      <br>Address: ${safeText(member.address || "Not available")}
-    `;
-  });
-
-  $("paymentForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    if (!isAdmin()) {
-      showMessage("Admin permission required.", true);
-      return;
-    }
-
-    const member = membersData.find(item =>
-      item.id === $("paymentMember").value
-    );
-
-    if (!member) {
-      $("paymentStatus").textContent = "Please select a member.";
-      $("paymentStatus").className = "small error";
-      return;
-    }
-
-    const amount = Number($("paymentAmount").value);
-    const monthIndex = Number($("paymentMonth").value);
-    const year = Number($("paymentYear").value);
-    const paymentDate = $("paymentDate").value;
-    const mode = $("paymentMode").value;
-    const utr = $("paymentUTR").value.trim();
-    const note = $("paymentNote").value.trim();
-
-    if (!Number.isFinite(amount) || amount <= 0) {
-      $("paymentStatus").textContent = "Enter a valid payment amount.";
-      $("paymentStatus").className = "small error";
-      return;
-    }
-
-    if (
-      !Number.isInteger(monthIndex) ||
-      monthIndex < 0 || monthIndex > 11 ||
-      !Number.isInteger(year) || year < 2027 ||
-      !paymentDate || !mode
-    ) {
-      $("paymentStatus").textContent = "Please check payment details.";
-      $("paymentStatus").className = "small error";
-      return;
-    }
-
-    const saveButton = $("savePaymentBtn");
-    saveButton.disabled = true;
-    saveButton.textContent = "Saving...";
-
-    try {
-      await addDoc(collection(db, "payments"), {
-        memberId: member.id,
-        memberCode: member.memberCode || "",
-        memberName: member.name || "",
-        amount,
-        month: PAYMENT_MONTHS[monthIndex],
-        monthIndex,
-        year,
-        date: paymentDate,
-        mode,
-        utr,
-        note,
-        createdAt: serverTimestamp(),
-        createdBy: currentUser.uid
-      });
-
-      closeModal();
-      showMessage(
-        `Payment recorded successfully!\n${member.name}\n${money(amount)}`
-      );
-
-    } catch (error) {
-      console.error("Payment save error:", error);
-
-      $("paymentStatus").textContent =
-        error.message || "Unable to save payment.";
-
-      $("paymentStatus").className = "small error";
-      saveButton.disabled = false;
-      saveButton.textContent = "Save Payment";
-    }
-  });
-}
-
-/* ==========================================
-   4. ADD EXPENSE POPUP
-========================================== */
-
-function openAddExpense() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  openModal("Add Committee Expense", `
-    <form id="expenseForm">
-
-      <div class="panel">
-        <h3>Expense Details</h3>
-
-        <label>Expense Title *</label>
-        <input class="field" id="expenseTitle"
-          maxlength="120"
-          placeholder="Example: Decoration" required>
-
-        <label>Amount (₹) *</label>
-        <input class="field" id="expenseAmount"
-          type="number" min="1" step="0.01"
-          placeholder="Enter expense amount" required>
-
-        <label>Expense Date *</label>
-        <input class="field" id="expenseDate"
-          type="date" required>
-
-        <label>Category *</label>
-        <select class="field" id="expenseCategory" required>
-          <option value="">Select Category</option>
-          <option value="Decoration">Decoration</option>
-          <option value="Puja Materials">Puja Materials</option>
-          <option value="Food">Food</option>
-          <option value="Sound & Lighting">Sound & Lighting</option>
-          <option value="Electricity">Electricity</option>
-          <option value="Transportation">Transportation</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <label>Paid To / Vendor</label>
-        <input class="field" id="expenseVendor"
-          maxlength="120"
-          placeholder="Optional">
-
-        <label>Bill / Reference Number</label>
-        <input class="field" id="expenseBill"
-          maxlength="100"
-          placeholder="Optional">
-
-        <label>Description</label>
-        <textarea class="field" id="expenseDescription"
-          rows="3" maxlength="300"
-          placeholder="Expense details"></textarea>
-      </div>
-
-      <button class="btn" id="saveExpenseBtn"
-        type="submit" style="width:100%">
-        Save Expense
-      </button>
-
-      <p class="small" id="expenseStatus"></p>
-    </form>
-  `);
-
-  $("expenseDate").value = new Date().toISOString().slice(0, 10);
-
-  $("expenseForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    if (!isAdmin()) {
-      showMessage("Admin permission required.", true);
-      return;
-    }
-
-    const title = $("expenseTitle").value.trim();
-    const amount = Number($("expenseAmount").value);
-    const date = $("expenseDate").value;
-    const category = $("expenseCategory").value;
-    const vendor = $("expenseVendor").value.trim();
-    const bill = $("expenseBill").value.trim();
-    const description = $("expenseDescription").value.trim();
-
-    if (!title || !Number.isFinite(amount) ||
-        amount <= 0 || !date || !category) {
-      $("expenseStatus").textContent =
-        "Please complete all required fields.";
-      $("expenseStatus").className = "small error";
-      return;
-    }
-
-    const saveButton = $("saveExpenseBtn");
-    saveButton.disabled = true;
-    saveButton.textContent = "Saving...";
-
-    try {
-      await addDoc(collection(db, "expenses"), {
-        title,
-        amount,
-        date,
-        category,
-        vendor,
-        bill,
-        description,
-        createdAt: serverTimestamp(),
-        createdBy: currentUser.uid
-      });
-
-      closeModal();
-      showMessage("Expense saved successfully!");
-
-    } catch (error) {
-      console.error("Expense save error:", error);
-
-      $("expenseStatus").textContent =
-        error.message || "Unable to save expense.";
-
-      $("expenseStatus").className = "small error";
-      saveButton.disabled = false;
-      saveButton.textContent = "Save Expense";
-    }
-  });
-}
-
-/* ==========================================
-   5. FINANCIAL REPORT POPUP
-========================================== */
-
-function openFinancialRecords() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  openModal("Financial Records", `
-    <div class="panel">
-      <h3>Financial Report</h3>
-
-      <label>Report Year</label>
-      <select class="field year-select" id="financialYear">
-        ${getPaymentYears().map(year => `
-          <option value="${year}" ${year === 2027 ? "selected" : ""}>
-            ${year}
-          </option>
-        `).join("")}
-      </select>
-
-      <div id="financialReport"></div>
-    </div>
-
-    <div class="report-actions">
-      <button class="btn" id="printFinancialReport">
-        Print / Save PDF
-      </button>
-    </div>
-  `, true);
-
-  $("financialYear").addEventListener("change", renderFinancialReport);
-
-  $("printFinancialReport").addEventListener("click", () => {
-    preparePrintReport("financialReport", "Committee Financial Report");
-  });
-
-  renderFinancialReport();
-}
-
-function renderFinancialReport() {
-  const year = Number($("financialYear").value);
-
-  const payments = paymentsData.filter(payment => {
-    const period = getPaymentPeriod(payment);
-    return period && period.year === year;
-  });
-
-  const expenses = expensesData.filter(expense => {
-    const date = new Date(expense.date || "");
-    return !isNaN(date.getTime()) && date.getFullYear() === year;
-  });
-
-  const collectionTotal = payments.reduce((sum, item) =>
-    sum + Number(item.amount || 0), 0
-  );
-
-  const expenseTotal = expenses.reduce((sum, item) =>
-    sum + Number(item.amount || 0), 0
-  );
-
-  $("financialReport").innerHTML = `
-    <div class="report-total">
-      <div class="card">
-        <small>Year Collection</small>
-        <strong>${money(collectionTotal)}</strong>
-      </div>
-      <div class="card">
-        <small>Year Expenses</small>
-        <strong>${money(expenseTotal)}</strong>
-      </div>
-      <div class="card">
-        <small>Year Balance</small>
-        <strong>${money(collectionTotal - expenseTotal)}</strong>
-      </div>
-      <div class="card">
-        <small>Payments Recorded</small>
-        <strong>${payments.length}</strong>
-      </div>
-    </div>
-
-    <h3>Payment Records</h3>
-    ${payments.length ? `
-      <table class="report-table">
-        <thead>
-          <tr>
-            <th>Member</th>
-            <th>Month</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Mode</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${payments.map(payment => `
-            <tr>
-              <td>${safeText(payment.memberName || "")}</td>
-              <td>${safeText(payment.month || "")}</td>
-              <td>${money(payment.amount)}</td>
-              <td>${safeText(payment.date || "")}</td>
-              <td>${safeText(payment.mode || "Old Record")}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    ` : `<p class="empty">No payment records for ${year}.</p>`}
-
-    <h3>Expense Records</h3>
-    ${expenses.length ? `
-      <table class="report-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${expenses.map(expense => `
-            <tr>
-              <td>${safeText(expense.title || "")}</td>
-              <td>${safeText(expense.category || "")}</td>
-              <td>${money(expense.amount)}</td>
-              <td>${safeText(expense.date || "")}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-    ` : `<p class="empty">No expense records for ${year}.</p>`}
-  `;
-}
-
-/* ==========================================
-   6. EXPENSE REPORT
-========================================== */
-
-function openExpenseReport() {
-  const expenses = [...expensesData].sort((a, b) =>
-    String(b.date || "").localeCompare(String(a.date || ""))
-  );
-
-  const total = expenses.reduce((sum, item) =>
-    sum + Number(item.amount || 0), 0
-  );
-
-  openModal("Total Expense Report", `
-    <div class="panel">
-      <h3>Committee Expenses</h3>
-      <div class="card">
-        <small>Total Expenses</small>
-        <strong>${money(total)}</strong>
-      </div>
-
-      ${expenses.length ? expenses.map(expense => `
-        <div class="listrow">
-          <b>${safeText(expense.title || "Expense")}</b>
-          <br>${safeText(expense.category || "Other")}
-          · ${safeText(expense.date || "")}
-          <br><strong>${money(expense.amount)}</strong>
-          ${expense.vendor
-            ? `<br><span class="small">Paid to: ${safeText(expense.vendor)}</span>`
-            : ""}
-          ${expense.bill
-            ? `<br><span class="small">Bill: ${safeText(expense.bill)}</span>`
-            : ""}
-          ${expense.description
-            ? `<br><span class="small">${safeText(expense.description)}</span>`
-            : ""}
-        </div>
-      `).join("") : `<p class="empty">No expenses recorded.</p>`}
-    </div>
-
-    <div class="report-actions">
-      <button class="btn" id="printExpenseReport">
-        Print / Save PDF
-      </button>
-    </div>
-  `, true);
-
-  $("printExpenseReport").addEventListener("click", () => {
-    preparePrintReport(
-      "expenseReportPrint",
-      "Committee Expense Report",
-      expenses,
-      total
-    );
-  });
-}
-
-/* ==========================================
-   7. PRINT / SAVE PDF
-========================================== */
-
-function preparePrintReport(sourceId, title, expenseRows = null, total = 0) {
-  let html = "";
-
-  if (expenseRows) {
-    html = `
-      <h1>Maa Mahalakshmi Puja Committee</h1>
-      <h2>${safeText(title)}</h2>
-      <h3>Total Expenses: ${money(total)}</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${expenseRows.map(item => `
-            <tr>
-              <td>${safeText(item.title || "")}</td>
-              <td>${safeText(item.category || "")}</td>
-              <td>${money(item.amount)}</td>
-              <td>${safeText(item.date || "")}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-      </table>
-      <p>Printed on: ${new Date().toLocaleString("en-IN")}</p>
-    `;
-  } else {
-    html = `
-      <h1>Maa Mahalakshmi Puja Committee</h1>
-      <h2>${safeText(title)}</h2>
-      ${$("financialReport").innerHTML}
-      <p>Printed on: ${new Date().toLocaleString("en-IN")}</p>
-    `;
-  }
-
-  $("reportPrint").innerHTML = html;
-  $("reportPrint").classList.remove("hidden");
-
-  window.print();
-
-  setTimeout(() => {
-    $("reportPrint").classList.add("hidden");
-    $("reportPrint").innerHTML = "";
-  }, 1000);
-}
-
-/* ==========================================
-   8. END PART 4
-========================================== */
-
-/* ==========================================
-   PART 5 — SUPER ADMIN SETTINGS
-========================================== */
-
-/* 1. SAVE PUBLIC SETTINGS */
-
-async function savePublicSettings(newSettings) {
-  if (!isSuper()) {
-    throw new Error("Only Super Admin can change website settings.");
-  }
-
-  await setDoc(
-    doc(db, "settings", "public"),
-    {
-      ...newSettings,
-      updatedAt: serverTimestamp(),
-      updatedBy: currentUser.uid
-    },
-    { merge: true }
-  );
-}
-
-/* ==========================================
-   2. WEBSITE SETTINGS POPUP
-========================================== */
-
-function openWebsiteSettings() {
-  if (!isSuper()) {
-    showMessage("Super Admin permission required.", true);
-    return;
-  }
-
-  const notice = settingsData.notice || {};
-  const gallery = settingsData.gallery || {};
-
-  const photos = Array.isArray(gallery.photos)
-    ? gallery.photos
-    : [];
-
-  openModal("Website Settings", `
-    <div class="panel">
-      <h3>Important Notice</h3>
-
-      <label>
-        <input type="checkbox" id="noticeEnabled"
-          ${notice.enabled ? "checked" : ""}>
-        Show Notice on Website
-      </label>
-
-      <label>Notice Text</label>
-      <textarea class="field" id="noticeText"
-        rows="5" maxlength="2000"
-        placeholder="Write important notice...">${safeText(notice.text || "")}</textarea>
-
-      <button class="btn" id="saveNoticeBtn">
-        Save Notice
-      </button>
-    </div>
-
-    <div class="panel">
-      <h3>Photo Gallery</h3>
-
-      <label>
-        <input type="checkbox" id="galleryEnabled"
-          ${gallery.enabled ? "checked" : ""}>
-        Show Gallery on Website
-      </label>
-
-      <label>Photo URLs</label>
-      <textarea class="field" id="galleryURLs"
-        rows="7"
-        placeholder="Enter one image URL per line">${safeText(photos.join("\n"))}</textarea>
-
-      <p class="small">
-        Use publicly accessible image URLs. One URL per line.
-      </p>
-
-      <button class="btn" id="saveGalleryBtn">
-        Save Gallery
-      </button>
-    </div>
-
-    <div class="panel">
-      <h3>Website Appearance</h3>
-      <p class="small">
-        Current design: Black + Gold Premium Theme.
-      </p>
-      <p class="small">
-        Theme and page structure are controlled through the website code.
-        These settings only control notice and gallery visibility.
-      </p>
-    </div>
-
-    <p class="small" id="settingsStatus"></p>
-  `, true);
-
-  $("saveNoticeBtn").addEventListener("click", async () => {
-    const button = $("saveNoticeBtn");
-    button.disabled = true;
-
-    try {
-      await savePublicSettings({
-        notice: {
-          enabled: $("noticeEnabled").checked,
-          text: $("noticeText").value.trim()
-        }
-      });
-
-      $("settingsStatus").textContent = "Notice saved successfully.";
-      $("settingsStatus").className = "small status";
-
-    } catch (error) {
-      console.error(error);
-      $("settingsStatus").textContent =
-        error.message || "Could not save notice.";
-      $("settingsStatus").className = "small error";
-    } finally {
-      button.disabled = false;
-    }
-  });
-
-  $("saveGalleryBtn").addEventListener("click", async () => {
-    const button = $("saveGalleryBtn");
-    button.disabled = true;
-
-    try {
-      const urls = $("galleryURLs").value
-        .split("\n")
-        .map(url => url.trim())
-        .filter(Boolean);
-
-      const invalidURL = urls.find(url => {
-        try {
-          const parsed = new URL(url);
-          return !["https:", "http:"].includes(parsed.protocol);
-        } catch {
-          return true;
-        }
-      });
-
-      if (invalidURL) {
-        throw new Error("Please enter valid HTTP/HTTPS image URLs.");
-      }
-
-      await savePublicSettings({
-        gallery: {
-          enabled: $("galleryEnabled").checked,
-          photos: urls
-        }
-      });
-
-      $("settingsStatus").textContent = "Gallery saved successfully.";
-      $("settingsStatus").className = "small status";
-
-    } catch (error) {
-      console.error(error);
-      $("settingsStatus").textContent =
-        error.message || "Could not save gallery.";
-      $("settingsStatus").className = "small error";
-    } finally {
-      button.disabled = false;
-    }
-  });
-}
-
-/* ==========================================
-   3. MANAGE ADMIN POPUP
-========================================== */
-
-function openManageAdmins() {
-  if (!isSuper()) {
-    showMessage("Only Super Admin can manage admins.", true);
-    return;
-  }
-
-  openModal("Manage Admins", `
-    <div class="panel">
-      <h3>Assign Admin Role</h3>
-
-      <p class="small">
-        The user must already have a Firebase Authentication account.
-        Enter their exact Firebase UID.
-      </p>
-
-      <label>Firebase User UID *</label>
-      <input class="field" id="adminUID"
-        placeholder="Enter Firebase Authentication UID" required>
-
-      <label>Admin Name</label>
-      <input class="field" id="adminName"
-        placeholder="Enter admin name">
-
-      <label>Role *</label>
-      <select class="field" id="adminRole">
-        <option value="president">President</option>
-        <option value="admin">Admin</option>
-      </select>
-
-      <button class="btn" id="assignAdminBtn">
-        Assign Role
-      </button>
-
-      <p class="small" id="adminStatus"></p>
-    </div>
-
-    <div class="panel">
-      <h3>Admin Permissions</h3>
-      <p class="small">
-        President/Admin roles are stored in the users collection.
-        The website UI will hide Super Admin-only options.
-      </p>
-    </div>
-  `);
-
-  $("assignAdminBtn").addEventListener("click", async () => {
-    const uid = $("adminUID").value.trim();
-    const name = $("adminName").value.trim();
-    const role = $("adminRole").value;
-
-    if (!uid) {
-      $("adminStatus").textContent = "Enter Firebase UID.";
-      $("adminStatus").className = "small error";
-      return;
-    }
-
-    if (uid === SUPER_ADMIN_UID) {
-      $("adminStatus").textContent =
-        "Super Admin account cannot be reassigned.";
-      $("adminStatus").className = "small error";
-      return;
-    }
-
-    const button = $("assignAdminBtn");
-    button.disabled = true;
-
-    try {
-      await setDoc(
-        doc(db, "users", uid),
-        {
-          uid,
-          name,
-          role,
-          updatedAt: serverTimestamp(),
-          updatedBy: currentUser.uid
-        },
-        { merge: true }
-      );
-
-      $("adminStatus").textContent =
-        `${name || uid} assigned as ${role}.`;
-
-      $("adminStatus").className = "small status";
-
-    } catch (error) {
-      console.error(error);
-
-      $("adminStatus").textContent =
-        error.message || "Could not assign role.";
-
-      $("adminStatus").className = "small error";
-
-    } finally {
-      button.disabled = false;
-    }
-  });
-}
-
-/* ==========================================
-   4. PAYMENT RECORD MANAGEMENT
-========================================== */
-
-function openPaymentManagement() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  const records = [...paymentsData].sort((a, b) =>
-    String(b.date || "").localeCompare(String(a.date || ""))
-  );
-
-  openModal("Payment Records", `
-    <div class="panel">
-      <h3>Search Payment Records</h3>
-      <input class="field" id="paymentRecordSearch"
-        placeholder="Search member name or Member ID">
-
-      <div id="paymentRecordList"></div>
-    </div>
-  `, true);
-
-  function renderPaymentRecords() {
-    const term = $("paymentRecordSearch").value.trim().toLowerCase();
-
-    const filtered = records.filter(item =>
-      String(item.memberName || "").toLowerCase().includes(term) ||
-      String(item.memberCode || "").toLowerCase().includes(term) ||
-      String(item.utr || "").toLowerCase().includes(term)
-    );
-
-    $("paymentRecordList").innerHTML = filtered.length
-      ? filtered.map(item => `
-        <div class="listrow">
-          <b>${safeText(item.memberName || "Unknown Member")}</b>
-          <br>${safeText(item.memberCode || "")}
-          · ${safeText(item.month || "")} ${safeText(item.year || "")}
-          <br><b>${money(item.amount)}</b>
-          · ${safeText(item.date || "")}
-          <br><span class="small">
-            ${safeText(item.mode || "Old Record")}
-            ${item.utr ? " · UTR: " + safeText(item.utr) : ""}
-          </span>
-          <br>
-          <button class="btn secondary"
-            data-edit-payment="${safeText(item.id)}">
-            Edit
-          </button>
-          <button class="btn danger"
-            data-delete-payment="${safeText(item.id)}">
-            Delete
-          </button>
-        </div>
-      `).join("")
-      : `<p class="empty">No payment records found.</p>`;
-
-    $("paymentRecordList").querySelectorAll("[data-edit-payment]")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          const item = records.find(record =>
-            record.id === button.dataset.editPayment
-          );
-          if (item) openEditPayment(item);
-        });
-      });
-
-    $("paymentRecordList").querySelectorAll("[data-delete-payment]")
-      .forEach(button => {
-        button.addEventListener("click", async () => {
-          if (!confirm("Delete this payment record permanently?")) return;
-
-          try {
-            await deleteDoc(doc(db, "payments", button.dataset.deletePayment));
-            showMessage("Payment record deleted.");
-          } catch (error) {
-            console.error(error);
-            showMessage("Could not delete payment record.", true);
-          }
-        });
-      });
-  }
-
-  $("paymentRecordSearch").addEventListener("input", renderPaymentRecords);
-  renderPaymentRecords();
-}
-
-/* ==========================================
-   5. EDIT PAYMENT
-========================================== */
-
-function openEditPayment(payment) {
-  if (!isAdmin()) return;
-
-  openModal("Edit Payment", `
-    <form id="editPaymentForm">
-      <div class="panel">
-        <p><b>Member:</b> ${safeText(payment.memberName || "")}</p>
-        <p><b>Member ID:</b> ${safeText(payment.memberCode || "")}</p>
-
-        <label>Amount (₹)</label>
-        <input class="field" id="editPaymentAmount"
-          type="number" min="1" step="0.01"
-          value="${safeText(payment.amount || "")}" required>
-
-        <label>Month</label>
-        <select class="field" id="editPaymentMonth">
-          ${PAYMENT_MONTHS.map((month, index) => `
-            <option value="${index}"
-              ${Number(payment.monthIndex) === index ||
-                (!Number.isInteger(payment.monthIndex) &&
-                payment.month === month) ? "selected" : ""}>
-              ${month}
-            </option>
-          `).join("")}
-        </select>
-
-        <label>Year</label>
-        <select class="field" id="editPaymentYear">
-          ${getPaymentYears().map(year => `
-            <option value="${year}"
-              ${Number(payment.year) === year ? "selected" : ""}>
-              ${year}
-            </option>
-          `).join("")}
-        </select>
-
-        <label>Payment Date</label>
-        <input class="field" id="editPaymentDate"
-          type="date" value="${safeText(payment.date || "")}" required>
-
-        <label>Payment Mode</label>
-        <select class="field" id="editPaymentMode">
-          ${["Cash", "UPI", "Bank Transfer", "Other"].map(mode => `
-            <option value="${mode}"
-              ${payment.mode === mode ? "selected" : ""}>
-              ${mode}
-            </option>
-          `).join("")}
-        </select>
-
-        <label>UTR / Transaction Number</label>
-        <input class="field" id="editPaymentUTR"
-          value="${safeText(payment.utr || "")}">
-
-        <label>Note</label>
-        <textarea class="field" id="editPaymentNote">${safeText(payment.note || "")}</textarea>
-      </div>
-
-      <button class="btn" type="submit" id="updatePaymentBtn">
-        Update Payment
-      </button>
-
-      <p class="small" id="editPaymentStatus"></p>
-    </form>
-  `);
-
-  $("editPaymentForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    const amount = Number($("editPaymentAmount").value);
-    const monthIndex = Number($("editPaymentMonth").value);
-    const year = Number($("editPaymentYear").value);
-    const date = $("editPaymentDate").value;
-
-    if (!Number.isFinite(amount) || amount <= 0 ||
-        !date || year < 2027) {
-      $("editPaymentStatus").textContent = "Check entered values.";
-      $("editPaymentStatus").className = "small error";
-      return;
-    }
-
-    const button = $("updatePaymentBtn");
-    button.disabled = true;
-
-    try {
-      await setDoc(
-        doc(db, "payments", payment.id),
-        {
-          amount,
-          month: PAYMENT_MONTHS[monthIndex],
-          monthIndex,
-          year,
-          date,
-          mode: $("editPaymentMode").value,
-          utr: $("editPaymentUTR").value.trim(),
-          note: $("editPaymentNote").value.trim(),
-          updatedAt: serverTimestamp(),
-          updatedBy: currentUser.uid
-        },
-        { merge: true }
-      );
-
-      closeModal();
-      showMessage("Payment updated successfully.");
-
-    } catch (error) {
-      console.error(error);
-      $("editPaymentStatus").textContent =
-        error.message || "Update failed.";
-      $("editPaymentStatus").className = "small error";
-      button.disabled = false;
-    }
-  });
-}
-
-/* ==========================================
-   6. EXPENSE RECORD MANAGEMENT
-========================================== */
-
-function openExpenseManagement() {
-  if (!isAdmin()) {
-    showMessage("Admin permission required.", true);
-    return;
-  }
-
-  const records = [...expensesData].sort((a, b) =>
-    String(b.date || "").localeCompare(String(a.date || ""))
-  );
-
-  openModal("Manage Expenses", `
-    <div class="panel">
-      <h3>Expense Records</h3>
-      <input class="field" id="expenseRecordSearch"
-        placeholder="Search expense title or category">
-
-      <div id="expenseRecordList"></div>
-    </div>
-  `, true);
-
-  function renderExpenseRecords() {
-    const term = $("expenseRecordSearch").value.trim().toLowerCase();
-
-    const filtered = records.filter(item =>
-      String(item.title || "").toLowerCase().includes(term) ||
-      String(item.category || "").toLowerCase().includes(term) ||
-      String(item.vendor || "").toLowerCase().includes(term)
-    );
-
-    $("expenseRecordList").innerHTML = filtered.length
-      ? filtered.map(item => `
-        <div class="listrow">
-          <b>${safeText(item.title || "Expense")}</b>
-          <br>${safeText(item.category || "")}
-          · ${safeText(item.date || "")}
-          <br><b>${money(item.amount)}</b>
-          <br>
-          <button class="btn secondary"
-            data-edit-expense="${safeText(item.id)}">
-            Edit
-          </button>
-          <button class="btn danger"
-            data-delete-expense="${safeText(item.id)}">
-            Delete
-          </button>
-        </div>
-      `).join("")
-      : `<p class="empty">No expenses found.</p>`;
-
-    $("expenseRecordList").querySelectorAll("[data-edit-expense]")
-      .forEach(button => {
-        button.addEventListener("click", () => {
-          const item = records.find(record =>
-            record.id === button.dataset.editExpense
-          );
-          if (item) openEditExpense(item);
-        });
-      });
-
-    $("expenseRecordList").querySelectorAll("[data-delete-expense]")
-      .forEach(button => {
-        button.addEventListener("click", async () => {
-          if (!confirm("Delete this expense permanently?")) return;
-
-          try {
-            await deleteDoc(doc(db, "expenses", button.dataset.deleteExpense));
-            showMessage("Expense deleted.");
-          } catch (error) {
-            console.error(error);
-            showMessage("Could not delete expense.", true);
-          }
-        });
-      });
-  }
-
-  $("expenseRecordSearch").addEventListener("input", renderExpenseRecords);
-  renderExpenseRecords();
-}
-
-/* ==========================================
-   7. EDIT EXPENSE
-========================================== */
-
-function openEditExpense(expense) {
-  if (!isAdmin()) return;
-
-  openModal("Edit Expense", `
-    <form id="editExpenseForm">
-      <div class="panel">
-        <label>Expense Title</label>
-        <input class="field" id="editExpenseTitle"
-          value="${safeText(expense.title || "")}" required>
-
-        <label>Amount (₹)</label>
-        <input class="field" id="editExpenseAmount"
-          type="number" min="1" step="0.01"
-          value="${safeText(expense.amount || "")}" required>
-
-        <label>Expense Date</label>
-        <input class="field" id="editExpenseDate"
-          type="date" value="${safeText(expense.date || "")}" required>
-
-        <label>Category</label>
-        <select class="field" id="editExpenseCategory">
-          ${[
-            "Decoration", "Puja Materials", "Food",
-            "Sound & Lighting", "Electricity",
-            "Transportation", "Other"
-          ].map(category => `
-            <option value="${category}"
-              ${expense.category === category ? "selected" : ""}>
-              ${category}
-            </option>
-          `).join("")}
-        </select>
-
-        <label>Paid To / Vendor</label>
-        <input class="field" id="editExpenseVendor"
-          value="${safeText(expense.vendor || "")}">
-
-        <label>Bill / Reference Number</label>
-        <input class="field" id="editExpenseBill"
-          value="${safeText(expense.bill || "")}">
-
-        <label>Description</label>
-        <textarea class="field" id="editExpenseDescription">${safeText(expense.description || "")}</textarea>
-      </div>
-
-      <button class="btn" id="updateExpenseBtn" type="submit">
-        Update Expense
-      </button>
-
-      <p class="small" id="editExpenseStatus"></p>
-    </form>
-  `);
-
-  $("editExpenseForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    const amount = Number($("editExpenseAmount").value);
-
-    if (!Number.isFinite(amount) || amount <= 0) {
-      $("editExpenseStatus").textContent = "Enter valid amount.";
-      $("editExpenseStatus").className = "small error";
-      return;
-    }
-
-    const button = $("updateExpenseBtn");
-    button.disabled = true;
-
-    try {
-      await setDoc(
-        doc(db, "expenses", expense.id),
-        {
-          title: $("editExpenseTitle").value.trim(),
-          amount,
-          date: $("editExpenseDate").value,
-          category: $("editExpenseCategory").value,
-          vendor: $("editExpenseVendor").value.trim(),
-          bill: $("editExpenseBill").value.trim(),
-          description: $("editExpenseDescription").value.trim(),
-          updatedAt: serverTimestamp(),
-          updatedBy: currentUser.uid
-        },
-        { merge: true }
-      );
-
-      closeModal();
-      showMessage("Expense updated successfully.");
-
-    } catch (error) {
-      console.error(error);
-      $("editExpenseStatus").textContent =
-        error.message || "Update failed.";
-      $("editExpenseStatus").className = "small error";
-      button.disabled = false;
-    }
-  });
-}
-
-/* ==========================================
-   8. END PART 5
-========================================== */
-
