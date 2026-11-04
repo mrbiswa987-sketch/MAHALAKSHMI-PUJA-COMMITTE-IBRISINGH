@@ -27,7 +27,7 @@ body.modal-open{overflow:hidden;position:fixed;width:100%;}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 header{
-  position:relative;text-align:center;padding:13px 12px 16px;
+  position:sticky;top:0;z-index:100;text-align:center;padding:13px 12px 16px;
   background:#17243d;border-bottom:1px solid var(--gold)
 }
 header h1{font-size:20px;color:var(--light);margin:7px 0 0;line-height:1.6}
@@ -43,10 +43,13 @@ header p{margin:0;color:var(--gold);font-size:13px}
   border-radius:7px;padding:9px;min-width:150px
 }
 .menu-box.show{display:block}
+.menu-box{max-height:calc(100vh - 75px);overflow-y:auto;box-shadow:0 8px 24px #0008}
 .menu-box button{
   display:block;width:100%;text-align:left;background:none;
-  border:0;color:var(--light);padding:11px
+  border:0;color:var(--light);padding:11px;border-radius:5px
 }
+.menu-box button:hover{background:#30415e}
+#adminMenuOptions{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
 
 /* Temporary CSS eye animation */
 .eye-area{
@@ -243,6 +246,7 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   <button class="menu" id="menuBtn" aria-label="Menu">☰</button>
   <div class="menu-box" id="menuBox">
     <button id="loginOpen">Admin Login</button>
+    <div id="adminMenuOptions" class="hidden"></div>
     <button id="logoutBtn" class="hidden">Logout</button>
   </div>
 
@@ -1028,7 +1032,26 @@ function openAuditLog(){
  }).catch(e=>openModal("Audit Log",`<p class="error">${safe(e.message)}. Check Firestore rules for auditLog.</p>`));
 }
 
-/* Header menu */
+/* Header menu: public visitors see Admin Login; admins see all admin options. */
+function renderHeaderMenu(){
+  const loggedAdmin=isAdmin();
+  $("loginOpen").classList.toggle("hidden",loggedAdmin);
+  $("logoutBtn").classList.toggle("hidden",!loggedAdmin);
+  const holder=$("adminMenuOptions");
+  holder.classList.toggle("hidden",!loggedAdmin);
+  if(!loggedAdmin){holder.innerHTML="";return;}
+  holder.innerHTML=`
+    <button data-admin-action="dashboard">▦ &nbsp; Dashboard Overview</button>
+    <button data-admin-action="member">＋ &nbsp; Add Member</button>
+    <button data-admin-action="payment">₹ &nbsp; Record Payment</button>
+    <button data-admin-action="expense">− &nbsp; Add Expense</button>
+    <button data-admin-action="financial">▤ &nbsp; Financial Records</button>
+    <button data-admin-action="reports">▣ &nbsp; Report Centre</button>
+    <button data-admin-action="audit">◷ &nbsp; Audit Log</button>
+    <button data-admin-action="register">☷ &nbsp; All Members Register</button>
+    ${isSuper()?`<button data-admin-action="settings">⚙ &nbsp; Website Settings</button><button data-admin-action="admins">♙ &nbsp; Manage Admins</button>`:""}
+  `;
+}
 $("menuBtn").onclick=()=>$("menuBox").classList.toggle("show");
 document.addEventListener("click",e=>{
   if(!$("menuBtn").contains(e.target)&&!$("menuBox").contains(e.target)){
@@ -1039,8 +1062,16 @@ $("loginOpen").onclick=()=>{
   $("menuBox").classList.remove("show");
   openLogin();
 };
+$("adminMenuOptions").addEventListener("click",e=>{
+  const button=e.target.closest("[data-admin-action]");
+  if(!button||!isAdmin())return;
+  const action=button.dataset.adminAction;
+  $("menuBox").classList.remove("show");
+  const actions={dashboard:openDashboard,member:openAddMember,payment:openAddPayment,expense:openAddExpense,financial:openFinancialRecords,reports:openReportCentre,audit:openAuditLog,register:openAllMembersRegister,settings:openWebsiteSettings,admins:openManageAdmins};
+  if(actions[action])actions[action]();
+});
 $("logoutBtn").onclick=async()=>{
-  try{await signOut(auth);closeModal();}
+  try{await signOut(auth);closeModal();$("menuBox").classList.remove("show");}
   catch(e){console.error(e);}
 };
 $("expensesCard").onclick=openExpenseReport;
@@ -1092,17 +1123,12 @@ onAuthStateChanged(auth,async user=>{
     }
   }
 
-  $("logoutBtn").classList.toggle("hidden",!user);
-  $("loginOpen").classList.toggle("hidden",!!user);
+  renderHeaderMenu();
   startPublicListeners();
 
-  if(user&&isAdmin()){
-    // Dashboard is opened manually from the menu after login.
-    $("loginOpen").classList.add("hidden");
-    $("logoutBtn").classList.remove("hidden");
-    openDashboard();
-  }else if(user&&!isAdmin()){
+  if(user&&!isAdmin()){
     alert("This account has no Admin permissions.");
+    try{await signOut(auth);}catch(e){console.error(e);}
   }
 });
 </script>
