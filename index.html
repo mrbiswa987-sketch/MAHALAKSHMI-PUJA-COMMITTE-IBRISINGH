@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#111d35">
+<meta name="theme-color" content="#075b46">
 <title>Maa Mahalakshmi Puja Committee - Ibrisingh</title>
 <meta name="description" content="Transparent Puja Committee member contribution and administration portal.">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -14,9 +14,9 @@
 
 <style>
 :root{
-  --bg:#111d35;--panel:#1b2a46;--gold:#efb544;
-  --light:#ffd477;--text:#f5f7fb;--muted:#bdc8d9;
-  --border:#52627d;--green:#62c58a;--red:#e16b6b;
+  --bg:#f7f8f2;--panel:#ffffff;--gold:#d8b66a;
+  --light:#075b46;--text:#202b27;--muted:#66756e;
+  --border:#dce7df;--green:#18a875;--red:#c94f4f;
 }
 *{box-sizing:border-box}
 body{
@@ -28,27 +28,27 @@ button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 header{
   position:sticky;top:0;z-index:100;text-align:center;padding:13px 12px 16px;
-  background:#17243d;border-bottom:1px solid var(--gold)
+  background:#ffffff;border-bottom:2px solid var(--green);box-shadow:0 3px 16px #075b4612
 }
-header h1{font-size:20px;color:var(--light);margin:7px 0 0;line-height:1.6}
-header p{margin:0;color:var(--gold);font-size:13px}
+header h1{font-size:20px;color:#075b46;margin:7px 0 0;line-height:1.6}
+header p{margin:0;color:#075b46;font-size:13px}
 .menu{
   position:absolute;left:12px;top:15px;
-  background:#15130e;border:1px solid var(--gold);
-  color:var(--light);padding:8px 11px;border-radius:6px
+  background:#075b46;border:1px solid var(--green);
+  color:#ffffff;padding:8px 11px;border-radius:6px
 }
 .menu-box{
   display:none;position:absolute;z-index:20;left:12px;top:57px;
-  background:#1b2a46;border:1px solid var(--gold);
+  background:#ffffff;border:1px solid var(--green);
   border-radius:7px;padding:9px;min-width:150px
 }
 .menu-box.show{display:block}
 .menu-box{max-height:calc(100vh - 75px);overflow-y:auto;box-shadow:0 8px 24px #0008}
 .menu-box button{
   display:block;width:100%;text-align:left;background:none;
-  border:0;color:var(--light);padding:11px;border-radius:5px
+  border:0;color:#075b46;padding:11px;border-radius:5px
 }
-.menu-box button:hover{background:#30415e}
+.menu-box button:hover{background:#e8f5ed}
 #adminMenuOptions{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
 
 /* Maa Mahalakshmi: animate only the two eye areas; the artwork itself stays still. */
@@ -60,7 +60,7 @@ header p{margin:0;color:var(--gold);font-size:13px}
 }
 .goddess-eye-base{display:block;width:100%;height:100%;object-fit:contain;background:transparent}
 .goddess-lids{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.goddess-lid{fill:#17243d;stroke:#17243d;stroke-width:1.5;stroke-linejoin:round;transform-box:fill-box;transform-origin:top center;animation:maaGentleBlink 6.2s infinite ease-in-out}
+.goddess-lid{fill:#ffffff;stroke:#ffffff;stroke-width:1.5;stroke-linejoin:round;transform-box:fill-box;transform-origin:top center;animation:maaGentleBlink 6.2s infinite ease-in-out}
 .goddess-lid.right{animation-delay:.035s}
 @keyframes maaGentleBlink{
   0%,88%,100%{transform:scaleY(0)}
@@ -69,26 +69,21 @@ header p{margin:0;color:var(--gold);font-size:13px}
   94%{transform:scaleY(0)}
 }
 @media(prefers-reduced-motion:reduce){.goddess-lid{animation:none;transform:scaleY(0)}}
-/* Neon glow for cards, panels, fields and interactive controls */
-.card,.panel,.member,.notice,.dashboard-action,.modal-box,.search,.field,.report-table{
-  border-color:#38f7c5!important;box-shadow:0 0 6px #00ffc477,0 0 15px #00eaff33, inset 0 0 5px #00ffc411;
-}
-.card:hover,.panel:hover,.member:hover,.dashboard-action:hover,.btn:hover{
-  box-shadow:0 0 8px #00ffc9aa,0 0 20px #00eaff55;
-}
-.btn{box-shadow:0 0 8px #00ffc955,0 0 15px #00eaff22}
+/* Soft emerald accents */
+.card,.panel,.member,.notice,.dashboard-action,.modal-box{box-shadow:0 4px 18px #075b4610}
+.card:hover,.panel:hover,.member:hover,.dashboard-action:hover,.btn:hover{box-shadow:0 5px 18px #075b4622}
 main{max-width:1050px;margin:auto}
 .hero{
   text-align:center;padding:34px 16px;
-  background:radial-gradient(ellipse,#30230d,#090909 75%)
+  background:radial-gradient(ellipse,#e5f4e9,#f7f8f2 75%)
 }
-.hero .symbol{font-size:25px;color:var(--gold)}
-.hero h2{font-size:23px;color:var(--light);line-height:1.7;margin:12px 0}
-.hero h3{font-size:18px;color:var(--light);margin:10px 0}
-.hero p{max-width:750px;margin:12px auto;color:#e0d5bb;font-size:14px;line-height:2}
-.hero .jai{color:var(--light);font-weight:bold;font-size:19px}
+.hero .symbol{font-size:25px;color:#075b46}
+.hero h2{font-size:23px;color:#075b46;line-height:1.7;margin:12px 0}
+.hero h3{font-size:18px;color:#075b46;margin:10px 0}
+.hero p{max-width:750px;margin:12px auto;color:#52645a;font-size:14px;line-height:2}
+.hero .jai{color:#075b46;font-weight:bold;font-size:19px}
 section{padding:20px 14px}
-h3.section-title{text-align:center;color:var(--light);font-size:18px;margin:0 0 16px}
+h3.section-title{text-align:center;color:#075b46;font-size:18px;margin:0 0 16px}
 .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .card,.panel{
   padding:15px 12px;background:var(--panel);
@@ -97,34 +92,34 @@ h3.section-title{text-align:center;color:var(--light);font-size:18px;margin:0 0 
 .card{text-align:center}
 .card small{font-size:12px;color:var(--muted)}
 .card strong{
-  display:block;color:var(--light);font-size:22px;
+  display:block;color:#075b46;font-size:22px;
   margin-top:9px;overflow-wrap:anywhere
 }
 .click-card{cursor:pointer;transition:.2s}
-.click-card:hover{border-color:var(--light);transform:translateY(-2px)}
+.click-card:hover{border-color:#075b46;transform:translateY(-2px)}
 .search,.field{
   width:100%;padding:12px;margin:5px 0 12px;
-  background:#14213a;color:white;border:1px solid #6f5923;
+  background:#ffffff;color:#202b27;border:1px solid #b9d6c5;
   border-radius:6px
 }
 label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
 .btn{
-  background:#d4af37;color:#161108;border:0;border-radius:6px;
+  background:#075b46;color:#ffffff;border:0;border-radius:6px;
   padding:11px 14px;font-weight:bold;margin:4px 2px
 }
-.btn.secondary{background:#30415e;color:var(--light);border:1px solid var(--border)}
+.btn.secondary{background:#e8f5ed;color:#075b46;border:1px solid var(--border)}
 .btn.danger{background:#702d2d;color:white}
 .btn:disabled{opacity:.5}
 .member{
   display:block;width:100%;text-align:left;padding:13px;margin:7px 0;
   background:var(--panel);border:1px solid var(--border);
-  border-radius:7px;color:var(--light)
+  border-radius:7px;color:#075b46
 }
 .member small{display:block;color:var(--muted);margin-top:5px}
 .note{text-align:center;color:var(--muted);font-size:12px;padding:14px;line-height:1.7}
 .notice{
   border:1px solid var(--gold);padding:15px;border-radius:8px;
-  background:#1b2a46;line-height:1.7;white-space:pre-wrap
+  background:#ffffff;line-height:1.7;white-space:pre-wrap
 }
 .small{font-size:12px;color:var(--muted)}
 .hidden{display:none!important}
@@ -132,7 +127,7 @@ label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
 .error{color:#ff9696}
 footer{
   border-top:1px solid var(--border);text-align:center;
-  padding:18px 10px;color:var(--gold);font-size:12px
+  padding:18px 10px;color:#075b46;font-size:12px
 }
 hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .listrow{border-bottom:1px solid #3b321e;padding:12px 0;line-height:1.7;overflow-wrap:anywhere}
@@ -141,13 +136,13 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .gallery img,.gallery iframe{display:block;width:100%;height:clamp(260px,68vh,720px);max-height:720px;min-height:260px;object-fit:contain;object-position:center;border:0;border-radius:10px;margin:auto;background:transparent;padding:0;box-shadow:0 0 12px #00ffc455,0 0 26px #00eaff22}.gallery iframe{max-width:560px;aspect-ratio:9/16;height:min(72vh,700px);background:#080808}.gallery-help{font-size:12px;color:var(--muted);text-align:center;margin-top:8px;overflow-wrap:anywhere}
 .gallery-controls{display:flex;justify-content:center;align-items:center;gap:15px;margin-top:12px}
 .gallery-controls button{
-  background:#30415e;color:var(--light);border:1px solid var(--border);
+  background:#e8f5ed;color:#075b46;border:1px solid var(--border);
   border-radius:5px;padding:7px 13px
 }
 .gallery-caption{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
 .report-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
 .report-table th,.report-table td{border:1px solid #57451e;padding:9px 5px;text-align:center}
-.report-table th{background:#344663;color:var(--light)}
+.report-table th{background:#dff0e5;color:#075b46}
 .report-table td{color:var(--text)}
 .paid{color:#62c58a;font-weight:bold}
 .partial{color:#f1bd57;font-weight:bold}
@@ -166,7 +161,7 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .modal-backdrop.open{display:flex}
 .modal-box{
   width:min(760px,100%);max-height:90dvh;overflow:auto;overscroll-behavior:contain;
-  background:#1b2a46;border:1px solid var(--gold);
+  background:#ffffff;border:1px solid var(--green);
   border-radius:12px;box-shadow:0 18px 70px #000;
   animation:modalIn .22s ease
 }
@@ -176,29 +171,29 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   to{opacity:1;transform:translateY(0) scale(1)}
 }
 .modal-head{
-  position:sticky;top:0;z-index:2;background:#263754;
+  position:sticky;top:0;z-index:2;background:#e8f5ed;
   border-bottom:1px solid var(--border);padding:15px 18px;
   display:flex;justify-content:space-between;align-items:center;gap:12px
 }
-.modal-head h2{font-size:18px;color:var(--light);margin:0}
+.modal-head h2{font-size:18px;color:#075b46;margin:0}
 .modal-close{
-  background:#382d17;color:#f5dfad;border:1px solid #8b6c28;
+  background:#e8f5ed;color:#075b46;border:1px solid #b9d6c5;
   border-radius:6px;font-size:21px;width:36px;height:36px
 }
 .modal-content{padding:18px}
-.modal-content h3{text-align:center;color:var(--light);font-size:17px}
+.modal-content h3{text-align:center;color:#075b46;font-size:17px}
 .modal-content .panel{margin-bottom:12px}
 .chart-row{margin:13px 0}
 .chart-label{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:6px}
-.bar-bg{height:11px;background:#344663;border-radius:20px;overflow:hidden}
-.bar-fill{height:100%;background:#c6a03c;border-radius:20px}
+.bar-bg{height:11px;background:#e5eee8;border-radius:20px;overflow:hidden}
+.bar-fill{height:100%;background:#18a875;border-radius:20px}
 .empty{text-align:center;color:var(--muted);padding:18px}
 .dashboard-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .dashboard-action{
-  background:#263754;color:var(--light);border:1px solid var(--border);
+  background:#e8f5ed;color:#075b46;border:1px solid var(--border);
   border-radius:8px;padding:17px 9px;text-align:center;line-height:1.5
 }
-.dashboard-action:hover{border-color:var(--gold);background:#344663}
+.dashboard-action:hover{border-color:#075b46;background:#344663}
 @media(min-width:650px){
   .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
   section{padding:24px}
@@ -279,6 +274,16 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
     <div class="notice" id="publicNotice"></div>
   </section>
 
+  <section id="upiSection" class="hidden">
+    <h3 class="section-title">UPI Donation</h3>
+    <div class="panel" style="text-align:center">
+      <img id="upiQrImage" alt="Committee UPI QR Code" style="display:none;max-width:260px;width:100%;height:auto;object-fit:contain;margin:8px auto;border-radius:8px">
+      <p id="upiReceiver" class="small"></p>
+      <p id="upiAddress" style="font-weight:bold;color:#075b46"></p>
+      <p class="small">After payment, share the screenshot in the committee WhatsApp group. Admin will verify and update your payment.</p>
+    </div>
+  </section>
+
   <section id="gallerySection" class="hidden">
     <h3 class="section-title">Photo &amp; Reel Gallery</h3>
     <div class="panel">
@@ -289,6 +294,15 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
         <button id="nextPhoto">❯</button>
       </div>
       <p class="gallery-caption">Maa Mahalakshmi Puja Committee · Ibrisingh</p>
+    </div>
+  </section>
+
+  <section id="presidentSection" class="hidden">
+    <h3 class="section-title">Committee President</h3>
+    <div class="panel" style="text-align:center">
+      <strong id="presidentName" style="color:#075b46;font-size:18px"></strong>
+      <p id="presidentPhone" class="small"></p>
+      <a id="presidentWhatsApp" class="btn" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener">WhatsApp President</a>
     </div>
   </section>
 
@@ -684,6 +698,15 @@ function showGalleryPhoto(){
 function renderSettings(){
   $("noticeSection").classList.toggle("hidden",!(settingsData.noticeEnabled&&settingsData.noticeText));
   $("publicNotice").textContent=settingsData.noticeText||"";
+  const hasPresident=!!(settingsData.presidentName||settingsData.presidentPhone);
+  $("presidentSection").classList.toggle("hidden",!hasPresident);
+  $("presidentName").textContent=settingsData.presidentName||"Committee President";
+  $("presidentPhone").textContent=settingsData.presidentPhone?"WhatsApp: +"+settingsData.presidentPhone:"";
+  $("presidentWhatsApp").href=settingsData.presidentPhone?"https://wa.me/"+settingsData.presidentPhone:"#";
+  $("upiSection").classList.toggle("hidden",!(settingsData.upiEnabled&&settingsData.upiQrUrl));
+  if(settingsData.upiQrUrl){$("upiQrImage").src=settingsData.upiQrUrl;$("upiQrImage").style.display=settingsData.upiEnabled?"block":"none";}
+  $("upiReceiver").textContent=settingsData.upiName?"Pay to: "+settingsData.upiName:"";
+  $("upiAddress").textContent=settingsData.upiId||"";
   galleryPhotos=settingsData.galleryEnabled?getPhotoURLs():[];
   $("gallerySection").classList.toggle("hidden",!galleryPhotos.length);
   stopGallery();galleryIndex=0;
@@ -827,8 +850,10 @@ function openAddPayment(){
       return;
     }
     try{
-      await addDoc(collection(db,"payments"),{
-        memberId:id,memberName:m.name,amount,month,date,status,method,createdAt:serverTimestamp()
+      const paymentRef=doc(collection(db,"payments"));
+      const receiptNo=status==="Paid"?`MHP-R-${date.replace(/-/g,"")}-${paymentRef.id.slice(-6).toUpperCase()}`:"";
+      await setDoc(paymentRef,{
+        memberId:id,memberName:m.name,amount,month,date,status,method,receiptNo,createdAt:serverTimestamp()
       });
       await writeAudit("PAYMENT_ADDED",`${m.name}: ${money(amount)} for ${month} (${status})`);
       $("formMessage").textContent="Payment saved successfully.";
@@ -873,6 +898,21 @@ function openAddExpense(){
   };
 }
 
+async function sharePaymentReceipt(paymentId){
+  const payment=paymentData.find(p=>p.id===paymentId);
+  if(!payment)return;
+  const member=memberData.find(m=>m.id===payment.memberId);
+  let phone="";
+  try{const snap=await getDoc(doc(db,"memberPrivate",payment.memberId));if(snap.exists())phone=String(snap.data().phone||"").replace(/\D/g,"");}catch(e){console.warn(e);}
+  if(!phone){openModal("Member WhatsApp Number",`<p>Phone number is not available in the private member record.</p><p class="small">Ask Super Admin to add the member's mobile number.</p>`);return;}
+  const receiptNo=payment.receiptNo||("MHP-R-"+String(payment.date||today).replace(/-/g,"")+"-"+payment.id.slice(-6).toUpperCase());
+  const body=`Maa Mahalakshmi Puja Committee, Ibrisingh\nPayment Receipt: ${receiptNo}\nMember: ${member?.name||payment.memberName||"Member"}\nAmount: ${money(payment.amount)}\nPurpose: ${payment.month||"Donation"}\nDate: ${payment.date||""}\nStatus: Verified / Paid\nThank you for your contribution.\nJai Maa Mahalakshmi 🙏`;
+  $("reportPrint").innerHTML=`<h1>Maa Mahalakshmi Puja Committee — Ibrisingh</h1><h2>Donation Receipt</h2><p><b>Receipt No:</b> ${safe(receiptNo)}</p><p><b>Member:</b> ${safe(member?.name||payment.memberName||"")}</p><p><b>Amount:</b> ${money(payment.amount)}</p><p><b>Purpose:</b> ${safe(payment.month||"Donation")}</p><p><b>Date:</b> ${safe(payment.date||"")}</p><p><b>Status:</b> Verified / Paid</p><p>Thank you for your contribution. Jai Maa Mahalakshmi 🙏</p>`;
+  openModal("Send Payment Receipt",`<p>Receipt <b>${safe(receiptNo)}</b> is ready.</p><p class="small">First save the receipt as PDF, then send it through the President/Admin's own WhatsApp account.</p><button class="btn" id="receiptPrintBtn">Print / Save PDF</button><button class="btn secondary" id="receiptWhatsAppBtn">Open Member WhatsApp</button>`);
+  $("receiptPrintBtn").onclick=()=>printReport(false);
+  $("receiptWhatsAppBtn").onclick=()=>window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(body),"_blank","noopener");
+}
+
 function openFinancialRecords(){
   const payments=paymentData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
   const expenses=expenseData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
@@ -881,6 +921,7 @@ function openFinancialRecords(){
     ${payments.length?payments.map(x=>`
       <div class="listrow">
         ${safe(x.memberName)} · ${safe(x.month)} · ${safe(x.date)} — <b>${money(x.amount)}</b>
+        ${x.status==="Paid"||!x.status?`<button class="btn" data-share-receipt="${safe(x.id)}">WhatsApp Receipt</button>`:""}
         <button class="btn danger" data-delete-payment="${safe(x.id)}">Delete</button>
       </div>
     `).join(""):'<p class="empty">No payments recorded.</p>'}
@@ -897,8 +938,10 @@ function openFinancialRecords(){
   `,true);
 
   $("modalContent").addEventListener("click",async e=>{
+    const receipt=e.target.closest("[data-share-receipt]");
     const p=e.target.closest("[data-delete-payment]");
     const x=e.target.closest("[data-delete-expense]");
+    if(receipt){sharePaymentReceipt(receipt.dataset.shareReceipt);return;}
     if(!isAdmin())return;
     if(p&&confirm("Delete this payment record?")){
       try{await deleteDoc(doc(db,"payments",p.dataset.deletePayment));openFinancialRecords();}
@@ -936,6 +979,21 @@ function openWebsiteSettings(){
     <p class="small">Photos: use a public direct JPG/PNG/WEBP URL. Reels: use an individual Instagram Reel link, not the profile /reels/ page.</p>
     <textarea id="galleryUrl" class="field" rows="4">${safe(urls.join("\n"))}</textarea>
     <label><input type="checkbox" id="galleryEnabled" ${settingsData.galleryEnabled?"checked":""}> Show photo gallery</label>
+    <hr>
+    <h3>President Contact Details</h3>
+    <label>President Name</label>
+    <input id="presidentNameInput" class="field" value="${safe(settingsData.presidentName||"")}" placeholder="President full name">
+    <label>President WhatsApp Number (with country code, e.g. 919876543210)</label>
+    <input id="presidentPhoneInput" class="field" inputmode="numeric" value="${safe(settingsData.presidentPhone||"")}" placeholder="91XXXXXXXXXX">
+    <hr>
+    <h3>UPI Donation QR Settings</h3>
+    <label>Public QR Image URL (upload image to a public image host first)</label>
+    <input id="upiQrUrl" class="field" type="url" value="${safe(settingsData.upiQrUrl||"")}" placeholder="https://.../upi-qr.png">
+    <label>UPI ID</label>
+    <input id="upiId" class="field" value="${safe(settingsData.upiId||"")}" placeholder="name@bank">
+    <label>Account / Receiver Name</label>
+    <input id="upiName" class="field" value="${safe(settingsData.upiName||"")}" placeholder="Committee account name">
+    <label><input type="checkbox" id="upiEnabled" ${settingsData.upiEnabled?"checked":""}> Enable UPI QR for members</label>
     <button class="btn" id="saveSettingsBtn">Save Website Settings</button>
     <p id="formMessage" class="small"></p>
   `);
@@ -949,7 +1007,13 @@ function openWebsiteSettings(){
         noticeText:$("noticeText").value.trim(),
         noticeEnabled:$("noticeEnabled").checked,
         galleryUrls:photoUrls,galleryUrl:photoUrls[0]||"",
-        galleryEnabled:$("galleryEnabled").checked,
+        galleryEnabled:$ ("galleryEnabled").checked,
+        presidentName:$ ("presidentNameInput").value.trim(),
+        presidentPhone:$ ("presidentPhoneInput").value.replace(/\D/g, ""),
+        upiQrUrl:$ ("upiQrUrl").value.trim(),
+        upiId:$ ("upiId").value.trim(),
+        upiName:$ ("upiName").value.trim(),
+        upiEnabled:$ ("upiEnabled").checked,
         updatedAt:serverTimestamp()
       });
       $("formMessage").textContent="Website settings saved.";
