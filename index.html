@@ -4,8 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#111d35">
 <title>Maa Mahalakshmi Puja Committee - Ibrisingh</title>
+<meta name="description" content="Transparent Puja Committee member contribution and administration portal.">
 <link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:title" content="Maa Mahalakshmi Puja Committee - Ibrisingh">
 <meta property="og:description" content="Devotion, unity and service at Ibrisingh.">
@@ -13,21 +14,21 @@
 
 <style>
 :root{
-  --bg:#090909;--panel:#15130e;--gold:#d4af37;
-  --light:#f1d580;--text:#f8f1df;--muted:#bdb5a3;
-  --border:#5e4b20;--green:#62c58a;--red:#c65353;
+  --bg:#111d35;--panel:#1b2a46;--gold:#efb544;
+  --light:#ffd477;--text:#f5f7fb;--muted:#bdc8d9;
+  --border:#52627d;--green:#62c58a;--red:#e16b6b;
 }
 *{box-sizing:border-box}
 body{
   margin:0;background:var(--bg);color:var(--text);
   font-family:Arial,sans-serif
 }
-body.modal-open{overflow:hidden}
+body.modal-open{overflow:hidden;position:fixed;width:100%;}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 header{
   position:relative;text-align:center;padding:13px 12px 16px;
-  background:#11100c;border-bottom:1px solid var(--gold)
+  background:#17243d;border-bottom:1px solid var(--gold)
 }
 header h1{font-size:20px;color:var(--light);margin:7px 0 0;line-height:1.6}
 header p{margin:0;color:var(--gold);font-size:13px}
@@ -38,7 +39,7 @@ header p{margin:0;color:var(--gold);font-size:13px}
 }
 .menu-box{
   display:none;position:absolute;z-index:20;left:12px;top:57px;
-  background:#17150f;border:1px solid var(--gold);
+  background:#1b2a46;border:1px solid var(--gold);
   border-radius:7px;padding:9px;min-width:150px
 }
 .menu-box.show{display:block}
@@ -67,7 +68,7 @@ header p{margin:0;color:var(--gold);font-size:13px}
 }
 .eye:after{
   content:"";position:absolute;left:-3px;right:-3px;top:-30px;
-  height:30px;background:#11100c;border-bottom:2px solid #d4af37;
+  height:30px;background:#17243d;border-bottom:2px solid #d4af37;
   animation:eyelid 5s infinite
 }
 @keyframes eyelid{
@@ -113,7 +114,7 @@ h3.section-title{text-align:center;color:var(--light);font-size:18px;margin:0 0 
 .click-card:hover{border-color:var(--light);transform:translateY(-2px)}
 .search,.field{
   width:100%;padding:12px;margin:5px 0 12px;
-  background:#0e0d0a;color:white;border:1px solid #6f5923;
+  background:#14213a;color:white;border:1px solid #6f5923;
   border-radius:6px
 }
 label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
@@ -121,7 +122,7 @@ label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
   background:#d4af37;color:#161108;border:0;border-radius:6px;
   padding:11px 14px;font-weight:bold;margin:4px 2px
 }
-.btn.secondary{background:#282319;color:var(--light);border:1px solid var(--border)}
+.btn.secondary{background:#30415e;color:var(--light);border:1px solid var(--border)}
 .btn.danger{background:#702d2d;color:white}
 .btn:disabled{opacity:.5}
 .member{
@@ -133,7 +134,7 @@ label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
 .note{text-align:center;color:var(--muted);font-size:12px;padding:14px;line-height:1.7}
 .notice{
   border:1px solid var(--gold);padding:15px;border-radius:8px;
-  background:#17130a;line-height:1.7;white-space:pre-wrap
+  background:#1b2a46;line-height:1.7;white-space:pre-wrap
 }
 .small{font-size:12px;color:var(--muted)}
 .hidden{display:none!important}
@@ -146,17 +147,17 @@ footer{
 hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .listrow{border-bottom:1px solid #3b321e;padding:12px 0;line-height:1.7;overflow-wrap:anywhere}
 .row-actions{display:flex;gap:6px;flex-wrap:wrap}
-.gallery{position:relative;overflow:hidden;min-height:190px;background:#0e0d0a}
+.gallery{position:relative;overflow:hidden;min-height:190px;background:#14213a}
 .gallery img{width:100%;height:300px;object-fit:contain;border-radius:8px;display:block}
 .gallery-controls{display:flex;justify-content:center;align-items:center;gap:15px;margin-top:12px}
 .gallery-controls button{
-  background:#282319;color:var(--light);border:1px solid var(--border);
+  background:#30415e;color:var(--light);border:1px solid var(--border);
   border-radius:5px;padding:7px 13px
 }
 .gallery-caption{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
 .report-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
 .report-table th,.report-table td{border:1px solid #57451e;padding:9px 5px;text-align:center}
-.report-table th{background:#30230d;color:var(--light)}
+.report-table th{background:#344663;color:var(--light)}
 .report-table td{color:var(--text)}
 .paid{color:#62c58a;font-weight:bold}
 .partial{color:#f1bd57;font-weight:bold}
@@ -170,12 +171,12 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .modal-backdrop{
   display:none;position:fixed;inset:0;z-index:1000;
   background:rgba(0,0,0,.78);backdrop-filter:blur(4px);
-  padding:18px;align-items:center;justify-content:center
+  padding:18px;align-items:center;justify-content:center;overscroll-behavior:contain
 }
 .modal-backdrop.open{display:flex}
 .modal-box{
-  width:min(760px,100%);max-height:90vh;overflow:auto;
-  background:#17150f;border:1px solid var(--gold);
+  width:min(760px,100%);max-height:90dvh;overflow:auto;overscroll-behavior:contain;
+  background:#1b2a46;border:1px solid var(--gold);
   border-radius:12px;box-shadow:0 18px 70px #000;
   animation:modalIn .22s ease
 }
@@ -185,7 +186,7 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   to{opacity:1;transform:translateY(0) scale(1)}
 }
 .modal-head{
-  position:sticky;top:0;z-index:2;background:#211b0e;
+  position:sticky;top:0;z-index:2;background:#263754;
   border-bottom:1px solid var(--border);padding:15px 18px;
   display:flex;justify-content:space-between;align-items:center;gap:12px
 }
@@ -199,15 +200,15 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
 .modal-content .panel{margin-bottom:12px}
 .chart-row{margin:13px 0}
 .chart-label{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:6px}
-.bar-bg{height:11px;background:#332b1a;border-radius:20px;overflow:hidden}
+.bar-bg{height:11px;background:#344663;border-radius:20px;overflow:hidden}
 .bar-fill{height:100%;background:#c6a03c;border-radius:20px}
 .empty{text-align:center;color:var(--muted);padding:18px}
 .dashboard-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .dashboard-action{
-  background:#211b0e;color:var(--light);border:1px solid var(--border);
+  background:#263754;color:var(--light);border:1px solid var(--border);
   border-radius:8px;padding:17px 9px;text-align:center;line-height:1.5
 }
-.dashboard-action:hover{border-color:var(--gold);background:#30230d}
+.dashboard-action:hover{border-color:var(--gold);background:#344663}
 @media(min-width:650px){
   .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
   section{padding:24px}
@@ -364,7 +365,12 @@ let unsubscribers=[],galleryPhotos=[],galleryIndex=0,galleryTimer=null;
 let selectedMemberId=null;
 
 /* Popup functions */
+let savedScrollY=0;
 function openModal(title,html,wide=false){
+  if(!$("modalBackdrop").classList.contains("open")){
+    savedScrollY=window.scrollY;
+    document.body.style.top=`-${savedScrollY}px`;
+  }
   $("modalTitle").textContent=title;
   $("modalContent").innerHTML=html;
   $("modalBox").classList.toggle("wide",wide);
@@ -374,6 +380,8 @@ function openModal(title,html,wide=false){
 function closeModal(){
   $("modalBackdrop").classList.remove("open");
   document.body.classList.remove("modal-open");
+  document.body.style.top="";
+  window.scrollTo(0,savedScrollY);
   $("modalContent").innerHTML="";
 }
 $("modalClose").onclick=closeModal;
@@ -409,7 +417,7 @@ function listen(path,callback,sortField){
 
 /* Financial overview */
 function showMoney(){
-  const total=paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const total=paymentData.filter(p=>(p.status||"Paid")==="Paid").reduce((s,p)=>s+Number(p.amount||0),0);
   const costs=expenseData.reduce((s,e)=>s+Number(e.amount||0),0);
   $("collection").textContent=money(total);
   $("expenses").textContent=money(costs);
@@ -419,7 +427,7 @@ function showMoney(){
 /* Members */
 function renderMembers(){
   const q=$("search").value.trim().toLowerCase();
-  const list=memberData.filter(m=>String(m.name||"").toLowerCase().includes(q))
+  const list=memberData.filter(m=>m.active!==false&&String(m.name||"").toLowerCase().includes(q))
     .sort((a,b)=>String(a.name||"").localeCompare(String(b.name||"")));
 
   $("members").innerHTML=list.length?list.map(m=>`
@@ -459,7 +467,7 @@ function monthlyReport(id,year){
   paymentData.filter(p=>p.memberId===id).forEach(p=>{
     const period=getPaymentPeriod(p);
     if(!period||period.year!==Number(year)||period.month<0||period.month>11)return;
-    result[period.month].total+=Number(p.amount||0);
+    if((p.status||"Paid")==="Paid")result[period.month].total+=Number(p.amount||0);
     result[period.month].entries.push(p);
   });
   result.forEach(m=>{
@@ -683,7 +691,7 @@ function openLogin(){
 /* Admin dashboard popup */
 function openDashboard(){
   if(!isAdmin())return;
-  const total=paymentData.reduce((s,p)=>s+Number(p.amount||0),0);
+  const total=paymentData.filter(p=>(p.status||"Paid")==="Paid").reduce((s,p)=>s+Number(p.amount||0),0);
   const costs=expenseData.reduce((s,e)=>s+Number(e.amount||0),0);
 
   openModal("Admin Dashboard",`
@@ -700,6 +708,9 @@ function openDashboard(){
       <button class="dashboard-action" id="openAddPayment">₹<br>Record Payment</button>
       <button class="dashboard-action" id="openAddExpense">−<br>Add Expense</button>
       <button class="dashboard-action" id="openFinancialRecords">▤<br>Financial Records</button>
+      <button class="dashboard-action" id="openReports">▣<br>Report Centre</button>
+      <button class="dashboard-action" id="openAuditLog">◷<br>Audit Log</button>
+      <button class="dashboard-action" id="openAllRegister">☷<br>All Members Register</button>
       ${isSuper()?`
         <button class="dashboard-action" id="openWebsiteSettings">⚙<br>Website Settings</button>
         <button class="dashboard-action" id="openManageAdmins">♙<br>Manage Admins</button>
@@ -712,6 +723,9 @@ function openDashboard(){
   $("openAddPayment").onclick=openAddPayment;
   $("openAddExpense").onclick=openAddExpense;
   $("openFinancialRecords").onclick=openFinancialRecords;
+  $("openReports").onclick=openReportCentre;
+  $("openAuditLog").onclick=openAuditLog;
+  $("openAllRegister").onclick=openAllMembersRegister;
   if(isSuper()){
     $("openWebsiteSettings").onclick=openWebsiteSettings;
     $("openManageAdmins").onclick=openManageAdmins;
@@ -732,7 +746,8 @@ function openAddMember(){
     const phone=$("newMemberPhone").value.trim();
     if(!name)return $("formMessage").textContent="Enter member name.";
     try{
-      const ref=await addDoc(collection(db,"members"),{name,createdAt:serverTimestamp()});
+      const ref=await addDoc(collection(db,"members"),{name,active:true,createdAt:serverTimestamp()});
+      await writeAudit("MEMBER_ADDED",`Added member ${name}`);
       if(phone)await setDoc(doc(db,"memberPrivate",ref.id),{phone});
       $("formMessage").textContent="Member added successfully.";
       $("formMessage").className="small status";
@@ -754,6 +769,10 @@ function openAddPayment(){
     <input id="paymentAmount" class="field" type="number" min="1" step="1" placeholder="Amount">
     <label>Month / Purpose</label>
     <input id="paymentMonth" class="field" placeholder="e.g. January 2027 / Donation">
+    <label>Payment Status</label>
+    <select id="paymentStatus" class="field"><option value="Paid">Paid / Verified</option><option value="Awaiting verification">Awaiting verification</option><option value="Waived / Exempt">Waived / Exempt</option></select>
+    <label>Payment Method</label>
+    <select id="paymentMethod" class="field"><option>Cash</option><option>UPI</option><option>Bank Transfer</option><option>Other</option></select>
     <label>Payment Date</label>
     <input id="paymentDate" class="field" type="date" value="${today}">
     <button class="btn" id="addPaymentBtn">Save Payment</button>
@@ -765,14 +784,16 @@ function openAddPayment(){
     const amount=Number($("paymentAmount").value);
     const month=$("paymentMonth").value.trim();
     const date=$("paymentDate").value;
+    const status=$("paymentStatus").value,method=$("paymentMethod").value;
     if(!m||!Number.isFinite(amount)||amount<=0||!month||!date){
       $("formMessage").textContent="Enter member, valid amount, month/purpose and date.";
       return;
     }
     try{
       await addDoc(collection(db,"payments"),{
-        memberId:id,memberName:m.name,amount,month,date,createdAt:serverTimestamp()
+        memberId:id,memberName:m.name,amount,month,date,status,method,createdAt:serverTimestamp()
       });
+      await writeAudit("PAYMENT_ADDED",`${m.name}: ${money(amount)} for ${month} (${status})`);
       $("formMessage").textContent="Payment saved successfully.";
       $("formMessage").className="small status";
       $("paymentAmount").value="";$("paymentMonth").value="";
@@ -803,7 +824,8 @@ function openAddExpense(){
       return;
     }
     try{
-      await addDoc(collection(db,"expenses"),{title,amount,date,createdAt:serverTimestamp()});
+      await addDoc(collection(db,"expenses"),{title,amount,date,category:title,createdAt:serverTimestamp()});
+      await writeAudit("EXPENSE_ADDED",`${title}: ${money(amount)}`);
       $("formMessage").textContent="Expense saved successfully.";
       $("formMessage").className="small status";
       $("expenseTitle").value="";$("expenseAmount").value="";
@@ -936,6 +958,74 @@ function openManageAdmins(){
       $("formMessage").className="small status";
     }catch(e){$("formMessage").textContent=e.message;$("formMessage").className="small error";}
   };
+}
+
+
+/* Reports, shared register, audit history and notice archive */
+async function writeAudit(action,details){
+  if(!isAdmin())return;
+  try{await addDoc(collection(db,"auditLog"),{action,details,actorUid:currentUser?.uid||"",actorEmail:currentUser?.email||"",createdAt:serverTimestamp(),date:new Date().toISOString()});}
+  catch(e){console.warn("Audit log could not be saved",e);}
+}
+function openAllMembersRegister(){
+  const year=new Date().getFullYear();
+  const rows=memberData.filter(m=>m.active!==false).slice().sort((a,b)=>String(a.name).localeCompare(String(b.name))).map((m,i)=>{
+    const r=monthlyReport(m.id,year);
+    return `<tr><td>${i+1}</td><td>${safe(m.name)}</td>${r.map(x=>`<td class="${x.status.toLowerCase()}">${x.status==="Paid"?"✓":x.status==="Partial"?"◐":"—"}</td>`).join("")}<td>${money(r.reduce((a,x)=>a+x.total,0))}</td></tr>`;
+  }).join("");
+  openModal(`All Members Register — ${year}`,`<p class="small">View-only public register. Private contact details are not displayed.</p><div style="overflow-x:auto"><table class="report-table"><thead><tr><th>SL</th><th>Member</th>${months.map(m=>`<th>${m.slice(0,3)}</th>`).join("")}<th>Total</th></tr></thead><tbody>${rows||`<tr><td colspan="15">No active members</td></tr>`}</tbody></table></div><div class="report-actions"><button class="btn" id="registerPrint">Print / Save PDF</button></div>`,true);
+  $("registerPrint").onclick=()=>{ $("reportPrint").innerHTML=`<h1>Maa Mahalakshmi Puja Committee — Ibrisingh</h1><h2>All Members Register ${year}</h2><table>${$("modalContent").querySelector("table").innerHTML}</table>`;window.print();};
+}
+function openReportCentre(){
+  openModal("Report Centre",`<p class="small">Choose a report. Exports are generated from the live records currently loaded.</p>
+  <label>Report Year</label><select id="exportYear" class="field">${availableGlobalYears().map(y=>`<option value="${y}">${y}</option>`).join("")}</select>
+  <div class="dashboard-actions">
+   <button class="dashboard-action" id="exportMonthly">Monthly Collection CSV</button>
+   <button class="dashboard-action" id="exportYearly">Yearly Member Statement CSV</button>
+   <button class="dashboard-action" id="exportPaid">Paid Member List CSV</button>
+   <button class="dashboard-action" id="exportUnpaid">Unpaid Member List CSV</button>
+   <button class="dashboard-action" id="exportExpenses">Expense Report CSV</button>
+   <button class="dashboard-action" id="exportAll">Full Financial CSV</button>
+  </div><p class="small">CSV files open in Excel. Use Print / Save PDF in individual reports for PDF output.</p>`);
+  const bind=(id,fn)=>$(id).onclick=fn;
+  bind("exportMonthly",()=>downloadCSV("monthly-collection.csv",monthlyCollectionRows(Number($("exportYear").value))));
+  bind("exportYearly",()=>downloadCSV("yearly-member-statement.csv",yearlyRows(Number($("exportYear").value))));
+  bind("exportPaid",()=>downloadCSV("paid-members.csv",memberStatusRows(Number($("exportYear").value),"Paid")));
+  bind("exportUnpaid",()=>downloadCSV("unpaid-members.csv",memberStatusRows(Number($("exportYear").value),"Unpaid")));
+  bind("exportExpenses",()=>downloadCSV("expense-report.csv",[["Date","Category","Description","Amount"],...expenseData.map(e=>[e.date||"",e.category||"",e.title||"",e.amount||0])]));
+  bind("exportAll",()=>downloadCSV("committee-financial-records.csv",[["Type","Name","Month","Date","Amount","Status","Method"],...paymentData.map(p=>["Payment",p.memberName||"",p.month||"",p.date||"",p.amount||0,p.status||"Paid",p.method||""]),...expenseData.map(e=>["Expense",e.title||"","",e.date||"",e.amount||"","",""])]));
+}
+function availableGlobalYears(){
+ const y=new Set([new Date().getFullYear()]);
+ paymentData.forEach(p=>{const x=getPaymentPeriod(p);if(x?.year)y.add(x.year);});
+ return [...y].sort((a,b)=>b-a);
+}
+function monthlyCollectionRows(year){
+ return [["Month","Expected Collection","Received","Remaining"],...months.map((m,i)=>{
+  const active=memberData.filter(x=>x.active!==false).length, received=paymentData.filter(p=>{const x=getPaymentPeriod(p);return x&&x.year===year&&x.month===i&&(p.status||"Paid")==="Paid";}).reduce((a,p)=>a+Number(p.amount||0),0);
+  const expected=active*MINIMUM_MONTHLY;return [m,expected,received,Math.max(0,expected-received)];
+ })];
+}
+function yearlyRows(year){
+ return [["Member","Month","Amount","Status","Date","Method"],...memberData.flatMap(m=>monthlyReport(m.id,year).flatMap(r=>r.entries.map(p=>[m.name,r.name,p.amount||0,p.status||"Paid",p.date||"",p.method||""])))];
+}
+function memberStatusRows(year,status){
+ return [["Member","Year","Paid Months","Partial Months","Unpaid Months","Total Paid"],...memberData.filter(m=>m.active!==false).map(m=>{
+  const r=monthlyReport(m.id,year),total=r.reduce((a,x)=>a+x.total,0),paid=r.filter(x=>x.status==="Paid").length,partial=r.filter(x=>x.status==="Partial").length,unpaid=r.filter(x=>x.status==="Unpaid").length;
+  return {m,paid,partial,unpaid,total};
+ }).filter(x=>status==="Paid"?x.paid>0:x.unpaid>0).map(x=>[x.m.name,year,x.paid,x.partial,x.unpaid,x.total])];
+}
+function downloadCSV(filename,rows){
+ const csv=rows.map(row=>row.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\r\n");
+ const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+function openAuditLog(){
+ if(!isAdmin())return;
+ getDocs(query(collection(db,"auditLog"),orderBy("createdAt","desc"))).then(snap=>{
+  const items=snap.docs.map(d=>d.data());
+  openModal("Audit Log",items.length?items.map(x=>`<div class="listrow"><b>${safe(x.action)}</b><br>${safe(x.details)}<br><span class="small">${safe(x.actorEmail)} · ${safe(x.date||"")}</span></div>`).join(""):'<p class="empty">No audit entries yet.</p>',true);
+ }).catch(e=>openModal("Audit Log",`<p class="error">${safe(e.message)}. Check Firestore rules for auditLog.</p>`));
 }
 
 /* Header menu */
