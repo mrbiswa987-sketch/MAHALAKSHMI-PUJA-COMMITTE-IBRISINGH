@@ -282,6 +282,9 @@ button:focus-visible,.btn:focus-visible,.dashboard-action:focus-visible{outline:
  .card,.panel,.member,.notice,.dashboard-action,.modal-box{box-shadow:none!important}
 }
 
+
+.admin-member-search-results{display:grid;gap:8px;margin:10px 0 18px}.admin-search-result{display:flex;align-items:center;justify-content:space-between;text-align:left;padding:12px 14px;border:1px solid #b88a3b;border-radius:12px;background:#fffaf0;color:#4b1424;box-shadow:0 0 10px rgba(212,165,70,.18)}.admin-search-result small{display:block;color:#79515b}.admin-member-payment-summary{display:grid;gap:10px}.admin-member-payment-summary .report-table{width:100%;border-collapse:collapse}.admin-member-payment-summary .report-table th,.admin-member-payment-summary .report-table td{padding:10px;border:1px solid #c9ad7a;text-align:left}.admin-member-payment-summary .report-table th{background:#641d31;color:#fff8e8}.admin-member-payment-summary .table-wrap{overflow-x:auto}.admin-member-payment-summary .btn{margin:5px 6px 5px 0}
+@media print{#reportPrint{font-family:Arial,sans-serif;color:#111;background:#fff}#reportPrint table{width:100%;border-collapse:collapse;font-size:10pt}#reportPrint th,#reportPrint td{border:1px solid #555;padding:7px;text-align:left}#reportPrint th{background:#eee!important;color:#111!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}#reportPrint h1{text-align:center;font-size:17pt}#reportPrint h2,#reportPrint h3{margin:12px 0 6px}}
 </style>
 </head>
 
@@ -965,10 +968,54 @@ async function sharePaymentReceipt(paymentId){
   $("receiptWhatsAppBtn").onclick=()=>window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(body),"_blank","noopener");
 }
 
+function adminMemberPaymentHTML(member,year,phone=""){
+  const report=monthlyReport(member.id,year);
+  const total=report.reduce((sum,m)=>sum+m.total,0);
+  const pending=Math.max(0,(12*MINIMUM_MONTHLY)-total);
+  const rows=report.map(m=>`<tr><td>${m.name}</td><td>${money(m.total)}</td><td>${m.status}</td></tr>`).join("");
+  return `<div class="admin-member-payment-summary">
+    <h3>${safe(member.name)}</h3>
+    <p><b>Member ID:</b> ${safe(member.memberCode||member.memberId||member.id)}</p>
+    ${phone?`<p><b>Mobile:</b> ${safe(phone)}</p>`:""}
+    <p><b>Total Paid:</b> ${money(total)} &nbsp; <b>Pending:</b> ${money(pending)}</p>
+    <label>Payment Year</label><select id="adminMemberYear" class="field">${availableYears(member.id).map(y=>`<option value="${y}" ${Number(y)===Number(year)?"selected":""}>${y}</option>`).join("")}</select>
+    <div class="table-wrap"><table class="report-table"><thead><tr><th>Month</th><th>Paid Amount</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="small">Calculation: ₹${MINIMUM_MONTHLY} monthly × 12 months. Pending is based on paid records in the selected year.</p>
+    <button class="btn" id="adminMemberWhatsApp">📲 Send WhatsApp Report</button>
+    <button class="btn secondary" id="adminMemberRefresh">↻ Refresh Details</button>
+  </div>`;
+}
+
+async function openAdminMemberPaymentPopup(memberId,year){
+  if(!isAdmin())return;
+  const member=memberData.find(m=>m.id===memberId);
+  if(!member)return;
+  const selectedYear=Number(year||new Date().getFullYear());
+  let phone="";
+  try{const snap=await getDoc(doc(db,"memberPrivate",memberId));if(snap.exists())phone=String(snap.data().phone||"").replace(/\D/g,"");}catch(e){console.warn("Member phone unavailable",e);}
+  openModal("Member Payment Details",adminMemberPaymentHTML(member,selectedYear,phone),true);
+  $("adminMemberYear").onchange=()=>openAdminMemberPaymentPopup(memberId,$("adminMemberYear").value);
+  $("adminMemberRefresh").onclick=()=>openAdminMemberPaymentPopup(memberId,selectedYear);
+  $("adminMemberWhatsApp").onclick=()=>{
+    if(!phone){alert("Member mobile number is not available in memberPrivate. Please add it first.");return;}
+    const report=monthlyReport(memberId,selectedYear);
+    const total=report.reduce((sum,m)=>sum+m.total,0);
+    const pending=Math.max(0,12*MINIMUM_MONTHLY-total);
+    const monthLines=report.map(m=>`*${m.name}: ${money(m.total)}* ${m.status==="Paid"?"✅":m.status==="Partial"?"🟡":"❌"}`).join("\n");
+    const body=`*🙏 MAA MAHALAKSHMI PUJA COMMITTEE – IBRISINGH 🙏*\n\n*Member Name:* ${member.name}\n*Member ID:* ${member.memberCode||member.memberId||member.id}\n*Payment Year:* ${selectedYear}\n\n*MONTH-WISE PAYMENT DETAILS*\n${monthLines}\n\n*Total Paid: ${money(total)}*\n*Pending Amount: ${money(pending)}*\n\n*Thank you for your contribution.*\n*ଜୟ ମା' ମହାଲକ୍ଷ୍ମୀ 🙏🌺*`;
+    window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(body),"_blank","noopener");
+  };
+}
+
 function openFinancialRecords(){
   const payments=paymentData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
   const expenses=expenseData.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));
+  if(!isAdmin()){openModal("Financial Records","<p>Admin access required.</p>");return;}
   openModal("Financial Records",`
+    <h3>Member Payment Search</h3>
+    <input id="adminMemberSearch" class="field" type="search" placeholder="Search member name or Member ID..." autocomplete="off">
+    <div id="adminMemberSearchResults" class="admin-member-search-results"><p class="small">Type a member name or ID to view month-wise payment details.</p></div>
+    <hr>
     <h3>Payments</h3>
     ${payments.length?payments.map(x=>`
       <div class="listrow">
@@ -989,7 +1036,15 @@ function openFinancialRecords(){
     <p id="recordMessage" class="small"></p>
   `,true);
 
+  const memberSearch=$("adminMemberSearch");
+  memberSearch.oninput=()=>{
+    const q=memberSearch.value.trim().toLowerCase();
+    const matches=q?memberData.filter(m=>String(m.name||"").toLowerCase().includes(q)||String(m.memberCode||m.memberId||m.id||"").toLowerCase().includes(q)).slice(0,12):[];
+    $("adminMemberSearchResults").innerHTML=matches.length?matches.map(m=>`<button type="button" class="member admin-search-result" data-admin-member="${safe(m.id)}"><b>${safe(m.name)}</b><small>${safe(m.memberCode||m.memberId||m.id)}</small></button>`).join(""):q?'<p class="small">No matching member found.</p>':'<p class="small">Type a member name or ID to view month-wise payment details.</p>';
+  };
   $("modalContent").addEventListener("click",async e=>{
+    const memberButton=e.target.closest("[data-admin-member]");
+    if(memberButton){openAdminMemberPaymentPopup(memberButton.dataset.adminMember);return;}
     const receipt=e.target.closest("[data-share-receipt]");
     const p=e.target.closest("[data-delete-payment]");
     const x=e.target.closest("[data-delete-expense]");
@@ -1010,9 +1065,11 @@ function openFinancialRecords(){
       <h1>Maa Mahalakshmi Puja Committee — Ibrisingh</h1>
       <h2>Financial Report</h2>
       <h3>Payments</h3>
-      ${payments.map(p=>`<p>${safe(p.memberName)} | ${safe(p.month)} | ${safe(p.date)} | ${money(p.amount)}</p>`).join("")}
+      <table class="report-table"><thead><tr><th>Member</th><th>Month</th><th>Date</th><th>Amount</th></tr></thead><tbody>
+      ${payments.map(p=>`<tr><td>${safe(p.memberName)}</td><td>${safe(p.month)}</td><td>${safe(p.date)}</td><td>${money(p.amount)}</td></tr>`).join("")}</tbody></table>
       <h3>Expenses</h3>
-      ${expenses.map(x=>`<p>${safe(x.title)} | ${safe(x.date)} | ${money(x.amount)}</p>`).join("")}
+      <table class="report-table"><thead><tr><th>Description</th><th>Date</th><th>Amount</th></tr></thead><tbody>
+      ${expenses.map(x=>`<tr><td>${safe(x.title)}</td><td>${safe(x.date)}</td><td>${money(x.amount)}</td></tr>`).join("")}</tbody></table>
     `;
     printReport(false);
   };
@@ -1270,6 +1327,8 @@ function startPublicListeners(){
   unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();}));
   unsubscribers.push(listen("payments",d=>{
     paymentData=d;showMoney();
+    const yearSelect=$("adminMemberYear");
+    if(yearSelect&&selectedMemberId&&isAdmin())openAdminMemberPaymentPopup(selectedMemberId,yearSelect.value);
   }));
   unsubscribers.push(listen("expenses",d=>{
     expenseData=d;showMoney();
