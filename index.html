@@ -630,7 +630,7 @@ function instagramEmbedURL(raw){
     if(!/(^|\.)instagram\.com$/i.test(u.hostname))return null;
     const match=u.pathname.match(/^\/(reel|p|tv)\/([A-Za-z0-9_-]+)\/?/i);
     if(!match)return null;
-    return `https://www.instagram.com/${match[1].toLowerCase()}/${match[2]}/embed/`;
+    return `https://www.instagram.com/${match[1].toLowerCase()}/${match[2]}/embed/?autoplay=1&mute=1`;
   }catch(_){return null;}
 }
 function showGalleryPhoto(){
@@ -638,7 +638,7 @@ function showGalleryPhoto(){
   const url=galleryPhotos[galleryIndex];
   const embed=instagramEmbedURL(url);
   if(embed){
-    $("publicGallery").innerHTML=`<iframe id="galleryReel" src="${safe(embed)}" title="Instagram Reel" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="gallery-help">Instagram Reel · Play directly here. If Instagram blocks embedding, open the Reel: <a href="${safe(url)}" target="_blank" rel="noopener noreferrer">Open on Instagram</a></p>`;
+    $("publicGallery").innerHTML=`<iframe id="galleryReel" src="${safe(embed)}" title="Instagram Reel" loading="eager" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="gallery-help">Instagram Reel · Autoplay requested (muted). Instagram/browser restrictions may still require tapping Play. If embedding is blocked, open the Reel: <a href="${safe(url)}" target="_blank" rel="noopener noreferrer">Open on Instagram</a></p>`;
   }else{
     $("publicGallery").innerHTML=`<img id="galleryImage" src="${safe(url)}" alt="Committee gallery photo" loading="eager" referrerpolicy="no-referrer">`;
     const image=$("galleryImage");
