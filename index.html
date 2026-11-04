@@ -256,7 +256,7 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   </section>
 
   <section id="gallerySection" class="hidden">
-    <h3 class="section-title">Photo Gallery</h3>
+    <h3 class="section-title">Photo &amp; Reel Gallery</h3>
     <div class="panel">
       <div class="gallery" id="publicGallery"></div>
       <div class="gallery-controls">
@@ -639,6 +639,8 @@ function showGalleryPhoto(){
   const embed=instagramEmbedURL(url);
   if(embed){
     $("publicGallery").innerHTML=`<iframe id="galleryReel" src="${safe(embed)}" title="Instagram Reel" loading="eager" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="gallery-help">Instagram Reel · Autoplay requested (muted). Instagram/browser restrictions may still require tapping Play. If embedding is blocked, open the Reel: <a href="${safe(url)}" target="_blank" rel="noopener noreferrer">Open on Instagram</a></p>`;
+  }else if(/^https:\/\/(www\.)?instagram\.com\//i.test(url)){
+    $("publicGallery").innerHTML=`<div class="gallery-help">This Instagram link is not an individual Reel. Please add a direct Reel link like <b>instagram.com/reel/REEL_ID/</b>, or use a direct JPG, PNG or WEBP photo URL. <a href="${safe(url)}" target="_blank" rel="noopener noreferrer">Open Instagram link</a></div>`;
   }else{
     $("publicGallery").innerHTML=`<img id="galleryImage" src="${safe(url)}" alt="Committee gallery photo" loading="eager" referrerpolicy="no-referrer">`;
     const image=$("galleryImage");
@@ -897,7 +899,8 @@ function openWebsiteSettings(){
     <textarea id="noticeText" class="field" rows="3">${safe(settingsData.noticeText||"")}</textarea>
     <label><input type="checkbox" id="noticeEnabled" ${settingsData.noticeEnabled?"checked":""}> Show notice on public website</label>
     <hr>
-    <label>Photo URLs or Instagram Reel links (one URL per line)</label>
+    <label>Photos + Instagram Reel links (one URL per line)</label>
+    <p class="small">Photos: use a public direct JPG/PNG/WEBP URL. Reels: use an individual Instagram Reel link, not the profile /reels/ page.</p>
     <textarea id="galleryUrl" class="field" rows="4">${safe(urls.join("\n"))}</textarea>
     <label><input type="checkbox" id="galleryEnabled" ${settingsData.galleryEnabled?"checked":""}> Show photo gallery</label>
     <button class="btn" id="saveSettingsBtn">Save Website Settings</button>
