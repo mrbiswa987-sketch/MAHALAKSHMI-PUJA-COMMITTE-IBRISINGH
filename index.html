@@ -446,6 +446,29 @@ let currentUser=null,currentRole="public";
 let memberData=[],paymentData=[],expenseData=[],settingsData={};
 let unsubscribers=[],galleryPhotos=[],galleryIndex=0,galleryTimer=null;
 let selectedMemberId=null;
+let memberCodeMigrationRunning=false;
+
+function nextMemberCode(){
+  const nums=memberData.map(m=>String(m.memberCode||m.memberId||"").match(/^MLIBR-P(\d+)$/i)).filter(Boolean).map(x=>Number(x[1]));
+  const next=(nums.length?Math.max(...nums):0)+1;
+  return `MLIBR-P${String(next).padStart(2,"0")}`;
+}
+
+async function ensureExistingMemberCodes(){
+  if(memberCodeMigrationRunning||!isAdmin()||!memberData.length)return;
+  const missing=memberData.filter(m=>!/^MLIBR-P\d+$/i.test(String(m.memberCode||m.memberId||"")));
+  if(!missing.length)return;
+  memberCodeMigrationRunning=true;
+  try{
+    for(const member of missing){
+      const code=nextMemberCode();
+      await setDoc(doc(db,"members",member.id),{memberCode:code},{merge:true});
+      member.memberCode=code;
+    }
+    renderMembers();
+  }catch(error){console.warn("Member ID migration failed",error);}
+  finally{memberCodeMigrationRunning=false;}
+}
 
 /* Popup functions */
 let savedScrollY=0;
@@ -516,7 +539,7 @@ function renderMembers(){
   $("members").innerHTML=list.length?list.map(m=>`
     <button class="member" data-member="${safe(m.id)}">
       ${safe(m.name)}
-      <small>Click to view member details and full year report</small>
+      <small>Member ID: ${safe(m.memberCode||m.memberId||"Pending ID")} · Click to view details</small>
     </button>
   `).join(""):'<p class="note">No members found.</p>';
 }
@@ -861,7 +884,8 @@ function openAddMember(){
     const phone=$("newMemberPhone").value.trim();
     if(!name)return $("formMessage").textContent="Enter member name.";
     try{
-      const ref=await addDoc(collection(db,"members"),{name,active:true,createdAt:serverTimestamp()});
+      const memberCode=nextMemberCode();
+      const ref=await addDoc(collection(db,"members"),{name,memberCode,active:true,createdAt:serverTimestamp()});
       await writeAudit("MEMBER_ADDED",`Added member ${name}`);
       if(phone)await setDoc(doc(db,"memberPrivate",ref.id),{phone});
       $("formMessage").textContent="Member added successfully.";
@@ -1324,7 +1348,7 @@ $("nextPhoto").onclick=()=>{
 /* Firebase listeners */
 function startPublicListeners(){
   stopListeners();
-  unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();}));
+  unsubscribers.push(listen("members",d=>{memberData=d;renderMembers();ensureExistingMemberCodes();}));
   unsubscribers.push(listen("payments",d=>{
     paymentData=d;showMoney();
     const yearSelect=$("adminMemberYear");
