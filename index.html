@@ -233,6 +233,55 @@ hr{border:0;border-top:1px solid var(--border);margin:16px 0}
   #reportPrint .listrow{border-bottom:1px solid #aaa!important;padding:3mm 0!important;break-inside:avoid!important;color:#000!important}
   #reportPrint .small{color:#333!important}
 }
+
+/* === FINAL ROYAL CREAM + MAROON + GOLD NEON THEME === */
+:root{
+ --bg:#fff8e9;--panel:#fffdf7;--gold:#d6a83f;--light:#641b2b;
+ --text:#38242a;--muted:#80666a;--border:#e5c979;--green:#b88625;--red:#a52c3b;
+ --maroon:#641b2b;--gold-glow:rgba(214,168,63,.42);--gold-soft:rgba(214,168,63,.18)
+}
+body{background:radial-gradient(ellipse at top,#fffdf5 0%,#fff8e9 62%,#f7ead2 100%);color:var(--text)}
+header{padding:6px 10px 8px;background:rgba(255,253,247,.97);border-bottom:1px solid var(--gold);box-shadow:0 3px 18px var(--gold-soft)}
+header h1{font-size:clamp(15px,3.5vw,18px);color:var(--maroon);margin:2px 0 0;line-height:1.35}
+header p{font-size:11px;color:#8a641d;line-height:1.25}
+.goddess-eye-wrap{width:min(76px,19vw);margin:0 auto 1px;filter:drop-shadow(0 0 5px #d6a83f99) drop-shadow(0 0 12px #d6a83f55)}
+.menu{top:9px;left:10px;background:var(--maroon);border:1px solid var(--gold);color:#fff8e9;box-shadow:0 0 8px var(--gold-glow)}
+.menu-box{top:45px;background:#fffdf7;border:1px solid var(--gold);box-shadow:0 0 15px var(--gold-glow),0 8px 24px #3b172222}
+.menu-box button{color:var(--maroon)}.menu-box button:hover{background:#f8edcf}
+.hero{background:radial-gradient(ellipse at center,#fff1c9 0%,#fff9ec 58%,#fff8e9 100%);border-bottom:1px solid #ead49a}
+.hero .symbol,.hero h2,.hero h3,.hero .jai,h3.section-title{color:var(--maroon)}
+.hero p{color:#70565a}
+.card,.panel,.member,.notice,.dashboard-action,.modal-box{
+ border-color:#dfbd62;box-shadow:0 0 0 1px rgba(214,168,63,.12),0 3px 14px rgba(100,27,43,.07),0 0 10px rgba(214,168,63,.12)
+}
+.card:hover,.panel:hover,.member:hover,.dashboard-action:hover,.btn:hover,.click-card:hover{
+ border-color:#c99527;box-shadow:0 0 7px rgba(214,168,63,.55),0 0 18px rgba(214,168,63,.28),0 7px 20px rgba(100,27,43,.12)
+}
+.card strong{color:var(--maroon)}
+.search,.field{background:#fffdf7;color:#38242a;border:1px solid #d9bd78;box-shadow:inset 0 1px 3px #641b2b0a}
+.search:focus,.field:focus{outline:none;border-color:#c99527;box-shadow:0 0 0 3px rgba(214,168,63,.2),0 0 10px rgba(214,168,63,.22)}
+label{color:#70565a}
+.btn{background:linear-gradient(135deg,#641b2b,#812c3d);color:#fff8e9;border:1px solid #d6a83f;box-shadow:0 0 8px rgba(214,168,63,.25)}
+.btn.secondary{background:#fff3d6;color:var(--maroon);border:1px solid var(--gold)}
+.btn.danger{background:#8d1f32;color:white}
+.modal-backdrop{background:rgba(39,12,19,.72)}
+.modal-box{background:#fffdf7;border:1px solid var(--gold);box-shadow:0 0 18px rgba(214,168,63,.28),0 18px 70px #260d14aa}
+.modal-head{background:linear-gradient(110deg,#641b2b,#7a2939);border-bottom:1px solid var(--gold)}
+.modal-head h2{color:#fff4d8}.modal-close{background:#fff3d6;color:var(--maroon);border:1px solid var(--gold)}
+.modal-content h3{color:var(--maroon)}
+.dashboard-action{background:linear-gradient(145deg,#fffdf7,#fff3d8);color:var(--maroon);border:1px solid #d6a83f}
+.dashboard-action:hover{background:#fff0c9;color:#641b2b}
+.bar-bg{background:#f0dfb9}.bar-fill{background:linear-gradient(90deg,#641b2b,#d6a83f);box-shadow:0 0 8px rgba(214,168,63,.55)}
+#adminMenuOptions{border-color:#e5c979}
+/* Neon-style gold edge glow: gentle at rest, brighter on hover/focus */
+.card,.panel,.member,.notice,.dashboard-action,.modal-box,.report-total .card{transition:box-shadow .22s ease,border-color .22s ease,transform .22s ease}
+button:focus-visible,.btn:focus-visible,.dashboard-action:focus-visible{outline:2px solid #d6a83f;outline-offset:3px;box-shadow:0 0 0 4px rgba(214,168,63,.2),0 0 16px rgba(214,168,63,.4)}
+@media(max-width:480px){header{padding:5px 8px 7px}header h1{font-size:15px}.goddess-eye-wrap{width:min(65px,17vw)}.menu{top:7px;padding:6px 9px}}
+@media print{
+ body{background:#fff!important;color:#000!important}
+ .card,.panel,.member,.notice,.dashboard-action,.modal-box{box-shadow:none!important}
+}
+
 </style>
 </head>
 
@@ -634,17 +683,20 @@ function openExpenseReport(){
     </div>
   `,true);
 
+  let filteredExpenses=sorted.slice();
   $("expenseFilterDate").onchange=e=>{
     const date=e.target.value;
-    const filtered=date?sorted.filter(x=>x.date===date):sorted;
-    $("expenseDetailList").innerHTML=expenseListHTML(filtered);
+    filteredExpenses=date?sorted.filter(x=>x.date===date):sorted.slice();
+    $("expenseDetailList").innerHTML=expenseListHTML(filteredExpenses);
   };
   $("printExpenseReport").onclick=()=>{
+    const filteredTotal=filteredExpenses.reduce((sum,x)=>sum+Number(x.amount||0),0);
     $("reportPrint").innerHTML=`
       <h1>Maa Mahalakshmi Puja Committee, Ibrisingh</h1>
       <h2>Total Expenses – Expense Report</h2>
-      <h3>Total: ${money(total)}</h3>
-      ${expenseListHTML(sorted)}
+      <h3>Total: ${money(filteredTotal)}</h3>
+      <p>Records: ${filteredExpenses.length}${$("expenseFilterDate").value?` · Date: ${safe($("expenseFilterDate").value)}`:" · All dates"}</p>
+      ${expenseListHTML(filteredExpenses)}
       <p>Generated: ${safe(new Date().toLocaleString())}</p>
     `;
     printReport(false);
@@ -1088,14 +1140,35 @@ function openReportCentre(){
    <button class="dashboard-action" id="exportUnpaid">Unpaid Member List CSV</button>
    <button class="dashboard-action" id="exportExpenses">Expense Report CSV</button>
    <button class="dashboard-action" id="exportAll">Full Financial CSV</button>
-  </div><p class="small">CSV files open in Excel. Use Print / Save PDF in individual reports for PDF output.</p>`);
+  </div>
+  <p class="small">CSV files open in Excel. Use the PDF buttons below to print or save the selected report as PDF.</p>
+  <div class="dashboard-actions">
+   <button class="dashboard-action" id="pdfMonthly">Monthly Collection PDF</button>
+   <button class="dashboard-action" id="pdfYearly">Yearly Member Statement PDF</button>
+   <button class="dashboard-action" id="pdfPaid">Paid Member List PDF</button>
+   <button class="dashboard-action" id="pdfUnpaid">Unpaid Member List PDF</button>
+   <button class="dashboard-action" id="pdfExpenses">Expense Report PDF</button>
+   <button class="dashboard-action" id="pdfAll">Full Financial PDF</button>
+  </div>`);
   const bind=(id,fn)=>$(id).onclick=fn;
-  bind("exportMonthly",()=>downloadCSV("monthly-collection.csv",monthlyCollectionRows(Number($("exportYear").value))));
-  bind("exportYearly",()=>downloadCSV("yearly-member-statement.csv",yearlyRows(Number($("exportYear").value))));
-  bind("exportPaid",()=>downloadCSV("paid-members.csv",memberStatusRows(Number($("exportYear").value),"Paid")));
-  bind("exportUnpaid",()=>downloadCSV("unpaid-members.csv",memberStatusRows(Number($("exportYear").value),"Unpaid")));
+  const selectedYear=()=>Number($("exportYear").value);
+  const makeTable=(title,rows)=>{
+    const headers=rows[0]||[],body=rows.slice(1);
+    $("reportPrint").innerHTML=`<h1>Maa Mahalakshmi Puja Committee — Ibrisingh</h1><h2>${safe(title)} (${selectedYear()})</h2><table><thead><tr>${headers.map(h=>`<th>${safe(h)}</th>`).join("")}</tr></thead><tbody>${body.length?body.map(row=>`<tr>${row.map(v=>`<td>${safe(v)}</td>`).join("")}</tr>`).join(""):`<tr><td colspan="${Math.max(1,headers.length)}">No records found</td></tr>`}</tbody></table><p>Generated: ${safe(new Date().toLocaleString())}</p>`;
+    printReport(true);
+  };
+  bind("exportMonthly",()=>downloadCSV("monthly-collection.csv",monthlyCollectionRows(selectedYear())));
+  bind("exportYearly",()=>downloadCSV("yearly-member-statement.csv",yearlyRows(selectedYear())));
+  bind("exportPaid",()=>downloadCSV("paid-members.csv",memberStatusRows(selectedYear(),"Paid")));
+  bind("exportUnpaid",()=>downloadCSV("unpaid-members.csv",memberStatusRows(selectedYear(),"Unpaid")));
   bind("exportExpenses",()=>downloadCSV("expense-report.csv",[["Date","Category","Description","Amount"],...expenseData.map(e=>[e.date||"",e.category||"",e.title||"",e.amount||0])]));
   bind("exportAll",()=>downloadCSV("committee-financial-records.csv",[["Type","Name","Month","Date","Amount","Status","Method"],...paymentData.map(p=>["Payment",p.memberName||"",p.month||"",p.date||"",p.amount||0,p.status||"Paid",p.method||""]),...expenseData.map(e=>["Expense",e.title||"","",e.date||"",e.amount||"","",""])]));
+  bind("pdfMonthly",()=>makeTable("Monthly Collection Report",monthlyCollectionRows(selectedYear())));
+  bind("pdfYearly",()=>makeTable("Yearly Member Statement",yearlyRows(selectedYear())));
+  bind("pdfPaid",()=>makeTable("Paid Member List",memberStatusRows(selectedYear(),"Paid")));
+  bind("pdfUnpaid",()=>makeTable("Unpaid Member List",memberStatusRows(selectedYear(),"Unpaid")));
+  bind("pdfExpenses",()=>makeTable("Expense Report",[["Date","Category","Description","Amount"],...expenseData.map(e=>[e.date||"",e.category||"",e.title||"",money(e.amount||0)])]));
+  bind("pdfAll",()=>makeTable("Full Financial Report",[["Type","Name","Month","Date","Amount","Status","Method"],...paymentData.map(p=>["Payment",p.memberName||"",p.month||"",p.date||"",money(p.amount||0),p.status||"Paid",p.method||""]),...expenseData.map(e=>["Expense",e.title||"","",e.date||"",money(e.amount||0),"",""])]));
 }
 function availableGlobalYears(){
  const y=new Set([new Date().getFullYear()]);
